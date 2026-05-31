@@ -17,8 +17,8 @@
 
     .ripple-container {
         position: relative;
-        width: 150px; /* സൈസ് അല്പം കൂട്ടി */
-        height: 150px;
+        width: 120px; /* സൈസ് അല്പം കൂട്ടി */
+        height: 120px;
         display: flex;
         justify-content: center;
         align-items: center;
@@ -26,14 +26,17 @@
 
     .bus-logo {
         width: 100px; /* ലോഗോയുടെ സൈസ് */
-        height: auto;
         z-index: 2; /* ലോഗോ മുകളിൽ വരാൻ */
     }
 
     .circle {
         position: absolute;
+        top: 50%;
+        left: 50%;
         width: 100px; /* സർക്കിളിന്റെ സൈസ് ലോഗോയ്ക്ക് തുല്യം */
         height: 100px;
+        margin-top: -50px;
+        margin-left: -50px;
         border: 3px solid #ffcc00;
         border-radius: 50%;
         animation: ripple 2s linear infinite;
