@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="ml">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>NammadaBus.in | Live Bus Timings</title>
+    <link rel="stylesheet" href="style.css">
+    
+    <link rel="manifest" href="manifest.json">
+    <meta name="theme-color" content="#ff4757">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+</head>
+<body>
+
+    <header class="app-header">
+        <h1>🚌 NammadaBus.in</h1>
+        <p>നമ്മുടെ സ്വന്തം ബസ് സമയവിവരങ്ങൾ</p>
+        <button id="langBtn" class="lang-btn">English</button>
+    </header>
+
+    <main class="container">
+        <section class="location-section">
+            <button id="startLocBtn" class="btn btn-start">📍 Live Location Share ചെയ്യാം</button>
+            <button id="stopLocBtn" class="btn btn-stop" style="display:none;">🛑 Sharing നിർത്താം</button>
+            <div id="shareLinkContainer" class="share-box" style="display:none;">
+                <input type="text" id="shareUrlInput" readonly>
+                <button id="copyLinkBtn" class="btn-copy">Copy</button>
+            </div>
+        </section>
+
+        <div class="search-container">
+            <input type="text" id="searchBar" placeholder="ബസ് പേര് അല്ലെങ്കിൽ റൂട്ട് സെർച്ച് ചെയ്യാം...">
+        </div>
+
+        <section class="tabs-section">
+            <h2 id="sourceTitle">നിങ്ങൾ ഇപ്പോൾ എവിടെയാണ്? (Starting Point)</h2>
+            <div class="source-tabs">
+                <button id="srcChelliparamba" class="src-tab active">ചെല്ലിപ്പറമ്പ് / ചെമ്പേരി</button>
+                <button id="srcKuthuparamba" class="src-tab">കൂത്തുപറമ്പ് / കണ്ണൂർ</button>
+            </div>
+
+            <h2 id="destTitle">ഏത് ഭാഗത്തേക്കാണ് പോകേണ്ടത്? (Destination)</h2>
+            <div id="destContainer" class="dest-tabs-container">
+                </div>
+        </section>
+
+        <section id="busList" class="bus-list">
+            </section>
+    </main>
+
+    <button id="openFeedbackBtn" class="feedback-trigger-btn">💬 Suggestions</button>
+    
+    <div id="feedbackModal" class="modal">
+        <div class="modal-content">
+            <span class="close-modal">&times;</span>
+            <h3>നിങ്ങളുടെ നിർദ്ദേശങ്ങൾ അറിയിക്കൂ</h3>
+            <textarea id="feedbackText" placeholder="പുതിയ സമയങ്ങൾ അല്ലെങ്കിൽ മാറ്റങ്ങൾ ഇവിടെ ടൈപ്പ് ചെയ്യാം..."></textarea>
+            <button id="submitFeedbackBtn" class="btn btn-start">Submit</button>
+        </div>
+    </div>
+
+    <div id="securityAlert" class="security-banner">⚠️ Security Lock: Screenshots and printing are disabled on this app.</div>
+
+    <script>
+        if ('serviceWorker' in navigator) {
+            window.addEventListener('load', () => {
+                navigator.serviceWorker.register('sw.js')
+                    .then(() => console.log('App ready for offline use.'))
+                    .catch(err => console.error('PWA Setup Failed:', err));
+            });
+        }
+    </script>
+    <script src="app.js"></script>
+</body>
+</html>
