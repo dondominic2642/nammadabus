@@ -1,147 +1,280 @@
-:root {
-    --primary: #ff4757;
-    --dark: #2f3542;
-    --light: #f1f2f6;
-    --white: #ffffff;
-    --gray: #747d8c;
-    --shadow: 0 4px 12px rgba(0,0,0,0.08);
-}
+/* ==========================================================================
+   NAMMADABUS.IN - MASTER STYLE SHEET (HTML-ൽ നിന്നും വേർതിരിച്ചത്)
+   ========================================================================== */
 
+/* അടിസ്ഥാന സെറ്റിംഗ്സ് */
 * {
-    box-sizing: border-box;
     margin: 0;
     padding: 0;
-    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
-    user-select: none; /* Anti-copy security */
+    box-sizing: border-box;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
 
 body {
-    background-color: #f7f9fb;
-    color: var(--dark);
-    padding-bottom: 60px;
+    background-color: #f8fafc;
+    color: #334155;
+    line-height: 1.6;
+    -webkit-tap-highlight-color: transparent;
 }
 
-.app-header {
-    background: var(--primary);
-    color: var(--white);
-    text-align: center;
-    padding: 20px;
-    position: relative;
-    box-shadow: var(--shadow);
+/* ഹെഡർ ഡിസൈൻ (പഴയ ബ്ലൂ തീം) */
+header {
+    background-color: #1e3a8a; 
+    color: #ffffff;
+    padding: 16px 20px;
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+    border-bottom-left-radius: 16px;
+    border-bottom-right-radius: 16px;
 }
 
-.app-header h1 { font-size: 24px; font-weight: 800; }
-.app-header p { font-size: 13px; opacity: 0.9; margin-top: 4px; }
-
-.lang-btn {
-    position: absolute;
-    right: 15px;
-    top: 22px;
-    background: rgba(255,255,255,0.2);
-    border: none;
-    color: var(--white);
-    padding: 6px 12px;
-    border-radius: 20px;
-    font-size: 12px;
-    cursor: pointer;
-    font-weight: bold;
-}
-
-.container {
-    max-width: 600px;
+.header-container {
+    max-width: 500px;
     margin: 0 auto;
-    padding: 15px;
-}
-
-.btn {
-    width: 100%;
-    padding: 12px;
-    border-radius: 8px;
-    border: none;
-    font-size: 15px;
-    font-weight: bold;
-    cursor: pointer;
-    transition: 0.2s;
-}
-.btn-start { background: #2ed573; color: var(--white); }
-.btn-stop { background: var(--primary); color: var(--white); }
-
-.share-box {
-    margin-top: 10px;
-    display: flex;
-    gap: 5px;
-}
-.share-box input {
-    flex: 1;
-    padding: 10px;
-    border: 1px solid #ddd;
-    border-radius: 6px;
-    font-size: 12px;
-}
-.btn-copy { background: #1e90ff; color: white; border: none; padding: 0 15px; border-radius: 6px; cursor: pointer; }
-
-.search-container { margin: 15px 0; }
-#searchBar {
-    width: 100%;
-    padding: 14px;
-    border: 2px solid #e1e8ed;
-    border-radius: 12px;
-    font-size: 15px;
-    outline: none;
-    box-shadow: var(--shadow);
-}
-#searchBar:focus { border-color: var(--primary); }
-
-h2 { font-size: 14px; color: var(--gray); margin: 15px 0 8px 0; font-weight: 600; }
-
-.source-tabs, .dest-tabs-container {
-    display: flex;
-    gap: 8px;
-    margin-bottom: 10px;
-    overflow-x: auto;
-    padding-bottom: 5px;
-}
-
-.src-tab, .dest-tab {
-    padding: 10px 18px;
-    border-radius: 25px;
-    border: 1px solid #e1e8ed;
-    background: var(--white);
-    font-size: 14px;
-    white-space: nowrap;
-    cursor: pointer;
-    font-weight: bold;
-    color: var(--dark);
-}
-.src-tab.active, .dest-tab.active {
-    background: var(--primary);
-    color: var(--white);
-    border-color: var(--primary);
-}
-
-.bus-list { margin-top: 15px; }
-.bus-card {
-    background: var(--white);
-    padding: 16px;
-    border-radius: 12px;
-    margin-bottom: 10px;
     display: flex;
     justify-content: space-between;
     align-items: center;
-    box-shadow: var(--shadow);
-    border-left: 5px solid var(--primary);
+}
+
+.logo-section {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+.logo-section i {
+    font-size: 1.25rem;
+    color: #93c5fd;
+}
+
+.logo-section h1 {
+    font-size: 1.3rem;
+    font-weight: 800;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.live-badge {
+    background-color: #22c55e;
+    color: white;
+    font-size: 10px;
+    font-weight: bold;
+    padding: 4px 10px;
+    border-radius: 20px;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+/* മെയിൻ ബോഡി കണ്ടെയ്നർ */
+main {
+    max-width: 500px;
+    margin: 0 auto;
+    padding: 20px 16px;
+}
+
+/* സെർച്ച് ബോക്സ് സ്റ്റൈൽ */
+.search-card {
+    background-color: #ffffff;
+    padding: 18px;
+    border-radius: 20px;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.02);
+    margin-bottom: 20px;
+    border: 1px solid #e2e8f0;
+}
+
+.search-card label {
+    display: block;
+    font-size: 11px;
+    font-weight: 700;
+    color: #94a3b8;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    margin-bottom: 8px;
+}
+
+.search-wrapper {
+    position: relative;
+    display: flex;
+    align-items: center;
+}
+
+.search-wrapper input {
+    width: 100%;
+    background-color: #f8fafc;
+    border: 1px solid #e2e8f0;
+    border-radius: 12px;
+    padding: 12px 45px 12px 15px;
+    font-size: 14px;
+    outline: none;
+    transition: all 0.2s ease;
+}
+
+.search-wrapper input:focus {
+    border-color: #3b82f6;
+    background-color: #ffffff;
+    box-shadow: 0 0 0 4px rgba(59, 130, 246, 0.12);
+}
+
+.search-btn {
+    position: absolute;
+    right: 6px;
+    background-color: #3b82f6;
+    color: white;
+    border: none;
+    padding: 7px 12px;
+    border-radius: 8px;
     cursor: pointer;
 }
-.bus-info h3 { font-size: 16px; color: #1e272e; margin-bottom: 4px; }
-.bus-info p { font-size: 13px; color: var(--gray); }
-.map-hint { font-size: 11px; color: #1e90ff; margin-top: 4px; font-weight: bold; }
-.bus-time { font-size: 16px; font-weight: 800; color: var(--primary); background: #fff0f2; padding: 6px 12px; border-radius: 8px; }
 
-.feedback-trigger-btn { position: fixed; bottom: 15px; right: 15px; background: var(--dark); color: white; border: none; padding: 10px 16px; border-radius: 20px; font-size: 13px; font-weight: bold; cursor: pointer; box-shadow: var(--shadow); }
-.modal { display: none; position: fixed; top:0; left:0; width:100%; height:100%; background:rgba(0,0,0,0.5); align-items:center; justify-content:center; padding:20px; z-index: 999; }
-.modal-content { background:white; padding:20px; border-radius:12px; width:100%; max-width:400px; position:relative; }
-.close-modal { position:absolute; top:10px; right:15px; font-size:24px; cursor:pointer; color:var(--gray); }
-.modal-content textarea { width:100%; height:100px; margin:12px 0; padding:10px; border:1px solid #ddd; border-radius:6px; resize:none; }
+/* റൂട്ട് ഫിൽട്ടർ ബട്ടണുകൾ */
+.filter-container {
+    display: flex;
+    gap: 10px;
+    overflow-x: auto;
+    padding-bottom: 8px;
+    margin-bottom: 24px;
+}
 
-.security-banner { display:none; position:fixed; top:20px; left:50%; transform:translateX(-50%); background:rgba(0,0,0,0.9); color:white; padding:12px 24px; border-radius:30px; font-size:12px; text-align:center; z-index:9999; width:90%; max-width:400px; }
+/* ബട്ടണുകളുടെ സ്ക്രോൾബാർ കാണാതിരിക്കാൻ */
+.filter-container::-webkit-scrollbar {
+    display: none;
+}
+.filter-container {
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+}
+
+.filter-btn {
+    background-color: #ffffff;
+    color: #64748b;
+    border: 1px solid #e2e8f0;
+    padding: 8px 16px;
+    border-radius: 12px;
+    font-size: 13px;
+    font-weight: 600;
+    cursor: pointer;
+    white-space: nowrap;
+    transition: all 0.2s ease;
+}
+
+.filter-btn.active, .filter-btn:hover {
+    background-color: #3b82f6;
+    color: #ffffff;
+    border-color: #3b82f6;
+}
+
+/* ബസ് വിവരങ്ങൾ കാണിക്കുന്ന ലിസ്റ്റ് */
+.bus-list-title {
+    font-size: 11px;
+    font-weight: 800;
+    color: #94a3b8;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    margin-bottom: 12px;
+    padding-left: 4px;
+}
+
+.bus-card {
+    background-color: #ffffff;
+    padding: 16px;
+    border-radius: 18px;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.01);
+    border: 1px solid #e2e8f0;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 12px;
+    cursor: pointer;
+    transition: transform 0.2s ease, border-color 0.2s;
+}
+
+.bus-card:hover {
+    transform: translateY(-2px);
+    border-color: #bfdbfe;
+}
+
+.bus-info-left {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+}
+
+.bus-icon-box {
+    width: 44px;
+    height: 44px;
+    background-color: #eff6ff;
+    color: #3b82f6;
+    border-radius: 12px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 16px;
+}
+
+.bus-type-tag {
+    font-size: 9px;
+    font-weight: 700;
+    text-transform: uppercase;
+    padding: 2px 6px;
+    border-radius: 4px;
+    display: inline-block;
+}
+
+.type-ls { background-color: #fef3c7; color: #d97706; }
+.type-ord { background-color: #f1f5f9; color: #475569; }
+
+.bus-route-name {
+    font-size: 15px;
+    font-weight: 700;
+    color: #1e293b;
+    margin-top: 2px;
+}
+
+.bus-via-route {
+    font-size: 12px;
+    color: #64748b;
+}
+
+.bus-time-right {
+    text-align: right;
+}
+
+.bus-time {
+    font-size: 17px;
+    font-weight: 800;
+    color: #1e3a8a;
+}
+
+.bus-status {
+    font-size: 10px;
+    font-weight: 600;
+    color: #16a34a;
+    background-color: #f0fdf4;
+    padding: 2px 6px;
+    border-radius: 6px;
+    display: inline-block;
+    margin-top: 4px;
+}
+
+.bus-status.status-wait {
+    color: #475569;
+    background-color: #f1f5f9;
+}
+
+/* ഫൂട്ടർ സ്റ്റൈൽ */
+footer {
+    background-color: #ffffff;
+    border-top: 1px solid #e2e8f0;
+    padding: 20px;
+    text-align: center;
+    margin-top: 40px;
+}
+
+footer p {
+    font-size: 12px;
+    color: #94a3b8;
+    font-weight: 500;
+}
 
