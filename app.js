@@ -400,3 +400,57 @@ function toggleLanguage() {
 // Initializing Core Engine Lifecycles
 activateSecurity();
 buildDestTabs();
+// ==========================================================================
+// NEW FEATURES: LIVE SEARCH & FILTER (നിന്റെ പഴയ app.js-ന്റെ താഴെ പേസ്റ്റ് ചെയ്യേണ്ടത്)
+// ==========================================================================
+
+// ആപ്പ് ലോഡ് ചെയ്യുമ്പോൾ സെർച്ച് ഫീച്ചർ കൂടി ആക്റ്റീവ് ആക്കാൻ
+document.addEventListener("DOMContentLoaded", () => {
+    initSearchFeature();
+});
+
+// 1. ലൈവ് സെർച്ച് ലോജിക്
+function initSearchFeature() {
+    const searchInput = document.getElementById('busSearchInput');
+    
+    if (searchInput) {
+        searchInput.addEventListener('input', (e) => {
+            const filterValue = e.target.value.toLowerCase().trim();
+            const busCards = document.querySelectorAll('.bus-card');
+            
+            busCards.forEach((card) => {
+                const routeName = card.querySelector('.bus-route-name')?.textContent.toLowerCase() || '';
+                const viaRoute = card.querySelector('.bus-via-route')?.textContent.toLowerCase() || '';
+                
+                if (routeName.includes(filterValue) || viaRoute.includes(filterValue)) {
+                    card.style.display = "flex";
+                } else {
+                    card.style.display = "none";
+                }
+            });
+        });
+    }
+}
+
+// 2. റൂട്ട് ഫിൽട്ടർ ബട്ടൺ ലോജിക്
+function filterRoute(route) {
+    const busCards = document.querySelectorAll('.bus-card');
+    
+    busCards.forEach((card) => {
+        const cardRoute = card.getAttribute('data-route');
+        
+        if (route === 'all' || cardRoute === route) {
+            card.style.display = "flex";
+        } else {
+            card.style.display = "none";
+        }
+    });
+
+    // ക്ലിക്ക് ചെയ്ത ബട്ടൺ മാത്രം ബ്ലൂ കളർ ആക്കാൻ
+    const buttons = document.querySelectorAll('.filter-btn');
+    buttons.forEach(btn => btn.classList.remove('active'));
+    
+    if (window.event && window.event.target) {
+        window.event.target.classList.add('active');
+    }
+}
