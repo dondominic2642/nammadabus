@@ -48,7 +48,7 @@ const masterBusData = {
             { time: "12:50 PM", name: "ചൈത്രം", nameEn: "Chaithram", route: "പയ്യാവൂർ വഴി ഇരുട്ടി", routeEn: "via Payyavur to Iritty" },
             { time: "01:15 PM", name: "സെന്റ് മേരീസ്", nameEn: "St. Marys", route: "പയ്യാവൂർ വഴി ഇരുട്ടി", routeEn: "via Payyavur to Iritty" },
             { time: "02:00 PM", name: "സെവൻ സ്റ്റാർ", nameEn: "Seven Star", route: "പയ്യാവൂർ വഴി ഇരുട്ടി", routeEn: "via Payyavur to Iritty" },
-            { time: "02:20 PM", name: "ഷൈൻ സ്റ്റാർ", nameEn: "Shine Star", route: "പയ്യാവൂർ വഴി ഇരുട്ടി", routeEn: "via Payyavur to Iritty" },
+            { time: "02:20 PM", name: "ഷൈн സ്റ്റാർ", nameEn: "Shine Star", route: "പയ്യാവൂർ വഴി ഇരുട്ടി", routeEn: "via Payyavur to Iritty" },
             { time: "03:00 PM", name: "KSRTC", nameEn: "KSRTC", route: "പയ്യാവൂർ, ഇരുട്ടി വഴി മാനന്തവാടി", routeEn: "via Payyavur, Iritty to Mananthavady" },
             { time: "03:35 PM", name: "പ്രൊവിഡൻസ്", nameEn: "Providence", route: "പയ്യാവൂർ, ഇരുട്ടി വഴി തലശ്ശേരി", routeEn: "via Payyavur, Iritty to Thalassery" },
             { time: "03:50 PM", name: "സാത്വിക", nameEn: "Sathwika", route: "പയ്യാവൂർ വഴി ഇരുട്ടി", routeEn: "via Payyavur to Iritty" },
@@ -80,18 +80,18 @@ const masterBusData = {
             { time: "05:45 PM", name: "KSRTC", nameEn: "KSRTC", route: "ആലക്കോട് വഴി ചെറുപുഴ", routeEn: "via Alakode to Cherupuzha" }
         ],
         kudiyanmala: [
-            { time: "08:50 AM", name: "കേരള", nameEn: "Kerala", route: "കൂടിയാന്മലക്ക് നേരിട്ട്", routeEn: "Direct to Kudiyanmala" },
-            { time: "11:00 AM", name: "ചൈത്രം", nameEn: "Chaithram", route: "കൂടിയാന്മലക്ക് നേരിട്ട്", routeEn: "Direct to Kudiyanmala" },
-            { time: "12:15 PM", name: "സെവൻ സ്റ്റാർ", nameEn: "Seven Star", route: "കൂടിയാന്മലക്ക് നേരിട്ട്", routeEn: "Direct to Kudiyanmala" },
-            { time: "02:15 PM", name: "ഗാലക്സി", nameEn: "Galaxy", route: "കൂടിയാന്മലക്ക് നേരിട്ട്", routeEn: "Direct to Kudiyanmala" },
-            { time: "03:50 PM", name: "കേരള", nameEn: "Kerala", route: "കൂടിയാന്മലക്ക് നേരിട്ട്", routeEn: "Direct to Kudiyanmala" },
-            { time: "05:15 PM", name: "ചൈത്രം", nameEn: "Chaithram", route: "കൂടിയാന്മലക്ക് നേരിട്ട്", routeEn: "Direct to Kudiyanmala" },
+            { time: "08:50 AM", name: "കേരള", nameEn: "Kerala", route: "கூടിയാന്മലക്ക് നേരിട്ട്", routeEn: "Direct to Kudiyanmala" },
+            { time: "11:00 AM", name: "ചൈത്രം", nameEn: "Chaithram", route: "கூടിയാന്മലക്ക് നേരിട്ട്", routeEn: "Direct to Kudiyanmala" },
+            { time: "12:15 PM", name: "സെവൻ സ്റ്റാർ", nameEn: "Seven Star", route: "கூടിയാന്മലക്ക് നേരിട്ട്", routeEn: "Direct to Kudiyanmala" },
+            { time: "02:15 PM", name: "ഗാലക്സി", nameEn: "Galaxy", route: "கூടിയാന്മലക്ക് നേരിട്ട്", routeEn: "Direct to Kudiyanmala" },
+            { time: "03:50 PM", name: "കേരള", nameEn: "Kerala", route: "கூടിയാന്മലക്ക് നേരിട്ട്", routeEn: "Direct to Kudiyanmala" },
+            { time: "05:15 PM", name: "ചൈത്രം", nameEn: "Chaithram", route: "கூടിയാന്മലക്ക് നേരിട്ട്", routeEn: "Direct to Kudiyanmala" },
             { time: "05:40 PM", name: "ശ്യാമളക്ഷ്മി", nameEn: "Shyamalakshmi", route: "കൂടിയാന്മല വഴി വലിയരിക്കമല", routeEn: "via Kudiyanmala to Valiyarikkamala" },
-            { time: "06:15 PM", name: "സെവൻ സ്റ്റാർ", nameEn: "Seven Star", route: "കൂടിയാന്മലക്ക് നേരിട്ട്", routeEn: "Direct to Kudiyanmala" }
+            { time: "06:15 PM", name: "സെവൻ സ്റ്റാർ", nameEn: "Seven Star", route: "கூടിയാന്മലക്ക് നേരിട്ട്", routeEn: "Direct to Kudiyanmala" }
         ],
         eruppazha: [
             { time: "07:45 AM", name: "സൽസബീൽ", nameEn: "Salsabeel", route: "എരുപ്പശ്ശേരി (എരുപ്പഹ)", routeEn: "Eruppazha" },
-            { time: "08:30 AM", name: "പ്രിൻസ്", nameEn: "Prince", route: "എരുപ്പശ്ശേരി (എരുപ്പഹ)", routeEn: "Eruppazha" },
+            { time: "08:30 AM", name: "പ്риൻസ്", nameEn: "Prince", route: "എരുപ്പശ്ശേരി (എരുപ്പഹ)", routeEn: "Eruppazha" },
             { time: "09:40 AM", name: "ശ്രേയസ്", nameEn: "Shreyas", route: "എരുപ്പശ്ശേരി (എരുപ്പഹ)", routeEn: "Eruppazha" },
             { time: "10:20 AM", name: "സെന്റ് ജോർജ്", nameEn: "St. George", route: "എരുപ്പശ്ശേരി (എരുപ്പഹ)", routeEn: "Eruppazha" },
             { time: "11:50 AM", name: "സൽസബീൽ", nameEn: "Salsabeel", route: "എരുപ്പശ്ശേരി (എരുപ്പഹ)", routeEn: "Eruppazha" },
@@ -104,11 +104,11 @@ const masterBusData = {
         arikamala: [
             { time: "08:55 AM", name: "മീനാക്ഷി", nameEn: "Meenakshi", route: "ചെറിയരിക്കമല", routeEn: "Cheriyarikkamala" },
             { time: "12:05 PM", name: "Family", nameEn: "Family", route: "ചെറിയരിക്കമല", routeEn: "Cheriyarikkamala" },
-            { time: "02:30 PM", name: "KSRTC", nameEn: "KSRTC", route: "വлияരിക്കമല", routeEn: "Valiyarikkamala" },
+            { time: "02:30 PM", name: "KSRTC", nameEn: "KSRTC", route: "വലിയരിക്കമല", routeEn: "Valiyarikkamala" },
             { time: "02:30 PM", name: "AIശ്വര്യ", nameEn: "Aishwarya", route: "ചെറിയരിക്കമല", routeEn: "Cheriyarikkamala" },
             { time: "06:00 PM", name: "മീനാക്ഷി", nameEn: "Meenakshi", route: "ചെറിയരിക്കമല", routeEn: "Cheriyarikkamala" },
             { time: "06:55 PM", name: "നന്ദനം", nameEn: "Nandanam", route: "മിഡിലായം", routeEn: "Midilayam" },
-            { time: "07:25 PM", name: "KSRTC", nameEn: "KSRTC", route: "വлияരിക്കമല", routeEn: "Valiyarikkamala" },
+            { time: "07:25 PM", name: "KSRTC", nameEn: "KSRTC", route: "വലിയരിക്കമല", routeEn: "Valiyarikkamala" },
             { time: "07:45 PM", name: "നന്ദനം", nameEn: "Nandanam", route: "ചെറിയരിക്കമല", routeEn: "Cheriyarikkamala" }
         ],
         cherupuzha_net: [
@@ -211,9 +211,8 @@ const destRouteNames = {
 let currentLang = 'ml';
 let selectedSource = 'chelliparamba';
 let selectedDest = 'taliparamba';
-let watchId = null;
 
-// Helper to calculate total minutes for fast numeric time computations
+// Helper to calculate total minutes
 function getMinutesFromTimeStr(timeStr) {
     const [time, modifier] = timeStr.split(' ');
     let [hours, minutes] = time.split(':').map(Number);
@@ -222,235 +221,110 @@ function getMinutesFromTimeStr(timeStr) {
     return hours * 60 + minutes;
 }
 
-// Map database to precompute and inject sorted minutes structure for 60fps sorting operations
+// Precompute minutes and sort
 Object.keys(masterBusData).forEach(sourceKey => {
     Object.keys(masterBusData[sourceKey]).forEach(destKey => {
         masterBusData[sourceKey][destKey].forEach(bus => {
             bus._minutes = getMinutesFromTimeStr(bus.time);
         });
-        // Pre-sort collections by actual chronologic time logic instead of arbitrary strings
         masterBusData[sourceKey][destKey].sort((a, b) => a._minutes - b._minutes);
     });
 });
 
-// 🔒 ANTI-SCREENSHOT & APP PROTECTION
+// 🔒 SECURITY (Context Menu Block)
 function activateSecurity() {
     document.addEventListener('contextmenu', e => e.preventDefault());
-    document.addEventListener('keydown', function(e) {
-        if (e.key === 'PrintScreen' || (e.ctrlKey && e.key === 'p') || (e.metaKey && e.shiftKey && e.key === 's')) {
-            e.preventDefault();
-            const banner = document.getElementById('securityAlert');
-            if (banner) {
-                banner.style.display = 'block';
-                setTimeout(() => { banner.style.display = 'none'; }, 3000);
-            }
-        }
-    });
 }
 
-// 📍 LIVE GPS LOCATION SHARING
-document.getElementById('startLocBtn').addEventListener('click', () => {
-    if (!navigator.geolocation) return alert("Location tracking not supported on this phone.");
-    document.getElementById('startLocBtn').style.display = 'none';
-    document.getElementById('stopLocBtn').style.display = 'inline-block';
-
-    watchId = navigator.geolocation.watchPosition((position) => {
-        // Fixed coordinates interpolation syntax typo safely
-        const secureUrl = `https://maps.google.com/?q=${position.coords.latitude},${position.coords.longitude}`;
-        document.getElementById('shareUrlInput').value = secureUrl;
-        document.getElementById('shareLinkContainer').style.display = 'flex';
-    }, e => console.error(e), { enableHighAccuracy: true, timeout: 15000, maximumAge: 10000 });
-});
-
-document.getElementById('stopLocBtn').addEventListener('click', () => {
-    if (watchId !== null) {
-        navigator.geolocation.clearWatch(watchId);
-        watchId = null;
-    }
-    document.getElementById('startLocBtn').style.display = 'inline-block';
-    document.getElementById('stopLocBtn').style.display = 'none';
-    document.getElementById('shareLinkContainer').style.display = 'none';
-});
-
-document.getElementById('copyLinkBtn').addEventListener('click', () => {
-    const copyText = document.getElementById('shareUrlInput');
-    copyText.select();
-    navigator.clipboard.writeText(copyText.value);
-    alert(currentLang === 'ml' ? "ട്രാക്കിംഗ് ലിങ്ക് കോപ്പി ചെയ്തു!" : "Tracking link copied!");
-});
-
-// 📉 DEBOUNCING FOR SEARCH
-let debounceTimeout;
-document.getElementById('searchBar').addEventListener('input', () => {
-    clearTimeout(debounceTimeout);
-    debounceTimeout = setTimeout(() => renderBuses(), 200); // Accelerated matching window down to 200ms
-});
-
-// 💬 FEEDBACK SYSTEM
-const modal = document.getElementById('feedbackModal');
-document.getElementById('openFeedbackBtn').addEventListener('click', () => modal.style.display = 'flex');
-document.querySelector('.close-modal').addEventListener('click', () => modal.style.display = 'none');
-
-document.getElementById('submitFeedbackBtn').addEventListener('click', () => {
-    const fbText = document.getElementById('feedbackText').value.trim();
-    if (fbText === "") return;
-    alert(currentLang === 'ml' ? "സജഷൻ ലഭിച്ചു, നന്ദി!" : "Feedback submitted, thank you!");
-    document.getElementById('feedbackText').value = "";
-    modal.style.display = 'none';
-});
-
-// ENGINE LOGIC
-document.getElementById('srcChelliparamba').addEventListener('click', function() { changeSource('chelliparamba', this); });
-document.getElementById('srcKuthuparamba').addEventListener('click', function() { changeSource('kuthuparamba', this); });
-document.getElementById('langBtn').addEventListener('click', toggleLanguage);
-
-function changeSource(sourceId, element) {
-    if (selectedSource === sourceId) return;
-    selectedSource = sourceId;
-    document.getElementById('srcChelliparamba').classList.remove('active');
-    document.getElementById('srcKuthuparamba').classList.remove('active');
-    element.classList.add('active');
-    buildDestTabs();
-}
-
-function buildDestTabs() {
-    const destContainer = document.getElementById('destContainer');
-    destContainer.innerHTML = '';
-    const routes = destRouteNames[selectedSource];
+// 🔄 CHANGE SOURCE LOGIC (Called from HTML tabs)
+function selectSource(sourceId) {
+    selectedSource = sourceId.toLowerCase(); // HTML-ൽ നിന്നുള്ള വാല്യൂ ചെറുതാക്കുന്നു
     
-    if (!routes.some(r => r.id === selectedDest)) selectedDest = routes[0].id;
-
-    // PERFORMANCE GAIN: Leveraging DocumentFragments to render out of loop operations smoothly
-    const fragment = document.createDocumentFragment();
-
-    routes.forEach((route) => {
-        const btn = document.createElement('button');
-        btn.className = `dest-tab ${route.id === selectedDest ? 'active' : ''}`;
-        btn.innerText = currentLang === 'ml' ? route.ml : route.en;
-        
-        btn.addEventListener('click', function() {
-            document.querySelectorAll('.dest-tab').forEach(b => b.classList.remove('active'));
-            btn.classList.add('active');
-            selectedDest = route.id;
-            renderBuses();
-        });
-        fragment.appendChild(btn);
-    });
+    // ടാബുകളുടെ ആക്റ്റീവ് സ്റ്റൈൽ മാറ്റാൻ
+    document.querySelectorAll('.src-tab').forEach(btn => btn.classList.remove('active'));
     
-    destContainer.appendChild(fragment);
+    // തനിയെ ആദ്യത്തെ ഡെസ്റ്റിനേഷൻ സെലക്ട് ചെയ്യാൻ
+    selectedDest = Object.keys(masterBusData[selectedSource])[0];
+    
+    renderDestinations();
     renderBuses();
 }
 
-function renderBuses() {
-    const listDiv = document.getElementById('busList');
-    listDiv.innerHTML = '';
+// 🎯 RENDER DESTINATION TABS BASED ON SOURCE
+function renderDestinations() {
+    const container = document.getElementById('destContainer');
+    if (!container) return;
     
-    const searchQuery = document.getElementById('searchBar').value.toLowerCase().trim();
-    const currentBuses = masterBusData[selectedSource][selectedDest] || [];
-
-    // Filter processing
-    const filteredBuses = currentBuses.filter(bus => {
-        if (!searchQuery) return true;
-        return bus.name.toLowerCase().includes(searchQuery) || 
-               bus.nameEn.toLowerCase().includes(searchQuery) || 
-               bus.route.toLowerCase().includes(searchQuery) ||
-               bus.routeEn.toLowerCase().includes(searchQuery);
+    container.innerHTML = '';
+    const destinations = destRouteNames[selectedSource] || [];
+    
+    destinations.forEach(dest => {
+        const btn = document.createElement('button');
+        btn.className = `dest-tab ${selectedDest === dest.id ? 'active' : ''}`;
+        btn.textContent = currentLang === 'ml' ? dest.ml : dest.en;
+        btn.onclick = () => {
+            selectedDest = dest.id;
+            document.querySelectorAll('.dest-tab').forEach(b => b.classList.remove('active'));
+            btn.classList.add('active');
+            renderBuses();
+        };
+        container.appendChild(btn);
     });
+}
 
-    if (filteredBuses.length === 0) {
-        listDiv.innerHTML = `<p style="color:#999; text-align:center; padding:20px;">${currentLang === 'ml' ? 'ബസുകൾ ഒന്നും കണ്ടെത്തിയില്ല!' : 'No buses found'}</p>`;
+// 🚌 RENDER BUS LIST TO THE SCREEN
+function renderBuses() {
+    const listContainer = document.getElementById('busList');
+    if (!listContainer) return;
+    
+    listContainer.innerHTML = '';
+    const buses = (masterBusData[selectedSource] && masterBusData[selectedSource][selectedDest]) ? masterBusData[selectedSource][selectedDest] : [];
+    
+    if (buses.length === 0) {
+        listContainer.innerHTML = `<p style="padding: 20px; text-align:center;">${currentLang === 'ml' ? 'ബസുകൾ ലഭ്യമല്ല' : 'No buses found'}</p>`;
         return;
     }
-
-    // PERFORMANCE GAIN: Buffered render batch inside an in-memory document fragment
-    const fragment = document.createDocumentFragment();
-
-    filteredBuses.forEach(bus => {
+    
+    buses.forEach(bus => {
         const card = document.createElement('div');
         card.className = 'bus-card';
+        
+        const busName = currentLang === 'ml' ? bus.name : bus.nameEn;
+        const busRoute = currentLang === 'ml' ? bus.route : bus.routeEn;
+        
         card.innerHTML = `
             <div class="bus-info">
-                <h3>${currentLang === 'ml' ? bus.name : bus.nameEn}</h3>
-                <p>${currentLang === 'ml' ? bus.route : bus.routeEn}</p>
-                <div class="map-hint">${currentLang === 'ml' ? '🗺️ റൂട്ട് / ട്രാഫിക് പരിശോധിക്കാം' : '🗺️ Check Route / Traffic'}</div>
+                <span class="bus-time"><i class="fa-regular fa-clock"></i> ${bus.time}</span>
+                <h3 class="bus-title">${busName}</h3>
+                <p class="bus-route">${busRoute}</p>
             </div>
-            <div class="bus-time">${bus.time}</div>
         `;
-        card.addEventListener('click', () => {
-            const queryToken = encodeURIComponent(bus.name + ' bus ' + bus.route + ' Kerala');
-            window.open(`https://www.google.com/maps/search/?api=1&query=${queryToken}`, '_blank');
-        });
-        fragment.appendChild(card);
+        listContainer.appendChild(card);
     });
-
-    listDiv.appendChild(fragment);
 }
 
-function toggleLanguage() {
-    currentLang = currentLang === 'ml' ? 'en' : 'ml';
-    document.getElementById('langBtn').innerText = currentLang === 'ml' ? 'English' : 'മലയാളം';
-    document.getElementById('searchBar').placeholder = currentLang === 'ml' ? 'ബസ് പേര് അല്ലെങ്കിൽ റൂട്ട് സെർച്ച് ചെയ്യാം...' : 'Search bus name or route...';
-    document.getElementById('sourceTitle').innerText = currentLang === 'ml' ? 'നിങ്ങൾ ഇപ്പോൾ എവിടെയാണ്? (Starting Point)' : 'Where are you now? (Starting Point)';
-    document.getElementById('destTitle').innerText = currentLang === 'ml' ? 'ഏത് ഭാഗത്തേക്കാണ് പോകേണ്ടത്? (Destination)' : 'Where do you want to go? (Destination)';
-    document.getElementById('srcChelliparamba').innerText = currentLang === 'ml' ? 'ചെല്ലിപ്പറമ്പ് / ചെമ്പേരി' : 'Chelliparamba / Chemperi';
-    document.getElementById('srcKuthuparamba').innerText = currentLang === 'ml' ? 'കൂത്തുപറമ്പ് / കണ്ണൂർ' : 'Kuthuparamba / Kannur';
-    buildDestTabs();
-}
-
-// Initializing Core Engine Lifecycles
-activateSecurity();
-buildDestTabs();
-// ==========================================================================
-// NEW FEATURES: LIVE SEARCH & FILTER (നിന്റെ പഴയ app.js-ന്റെ താഴെ പേസ്റ്റ് ചെയ്യേണ്ടത്)
-// ==========================================================================
-
-// ആപ്പ് ലോഡ് ചെയ്യുമ്പോൾ സെർച്ച് ഫീച്ചർ കൂടി ആക്റ്റീവ് ആക്കാൻ
-document.addEventListener("DOMContentLoaded", () => {
-    initSearchFeature();
-});
-
-// 1. ലൈവ് സെർച്ച് ലോജിക്
-function initSearchFeature() {
+// 🌐 CHANGE LANGUAGE LOGIC
+function changeLang(lang) {
+    currentLang = lang;
+    
+    // UI-ലെ ചില തലക്കെട്ടുകൾ മാറ്റാൻ
+    const sourceTitle = document.getElementById('sourceTitle');
     const searchInput = document.getElementById('busSearchInput');
     
-    if (searchInput) {
-        searchInput.addEventListener('input', (e) => {
-            const filterValue = e.target.value.toLowerCase().trim();
-            const busCards = document.querySelectorAll('.bus-card');
-            
-            busCards.forEach((card) => {
-                const routeName = card.querySelector('.bus-route-name')?.textContent.toLowerCase() || '';
-                const viaRoute = card.querySelector('.bus-via-route')?.textContent.toLowerCase() || '';
-                
-                if (routeName.includes(filterValue) || viaRoute.includes(filterValue)) {
-                    card.style.display = "flex";
-                } else {
-                    card.style.display = "none";
-                }
-            });
-        });
+    if (currentLang === 'ml') {
+        if(sourceTitle) sourceTitle.textContent = "നിങ്ങൾ ഇപ്പോൾ എവിടെയാണ്?";
+        if(searchInput) searchInput.placeholder = "ബസ് പേര് അല്ലെങ്കിൽ റൂട്ട് സെർച്ച് ചെയ്യാം...";
+    } else {
+        if(sourceTitle) sourceTitle.textContent = "Where are you now?";
+        if(searchInput) searchInput.placeholder = "Search bus name or route...";
     }
+    
+    renderDestinations();
+    renderBuses();
 }
 
-// 2. റൂട്ട് ഫിൽട്ടർ ബട്ടൺ ലോജിക്
-function filterRoute(route) {
-    const busCards = document.querySelectorAll('.bus-card');
-    
-    busCards.forEach((card) => {
-        const cardRoute = card.getAttribute('data-route');
-        
-        if (route === 'all' || cardRoute === route) {
-            card.style.display = "flex";
-        } else {
-            card.style.display = "none";
-        }
-    });
-
-    // ക്ലിക്ക് ചെയ്ത ബട്ടൺ മാത്രം ബ്ലൂ കളർ ആക്കാൻ
-    const buttons = document.querySelectorAll('.filter-btn');
-    buttons.forEach(btn => btn.classList.remove('active'));
-    
-    if (window.event && window.event.target) {
-        window.event.target.classList.add('active');
-    }
-}
+// 🚀 INITIALIZE APP ON LOAD
+window.addEventListener('DOMContentLoaded', () => {
+    activateSecurity();
+    selectSource('chelliparamba'); // Default ആയി ചെമ്പേരി ലോഡ് ചെയ്യും
+});
