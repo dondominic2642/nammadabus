@@ -105,9 +105,7 @@
         </section>
 
         <section id="busList" class="bus-list">
-            </section>
-    </main>
-<div class="alarm-controls">
+            <div class="alarm-controls">
     <select id="alarm-time">
         <option value="5">5 മിനിറ്റ് മുൻപ്</option>
         <option value="10">10 മിനിറ്റ് മുൻപ്</option>
@@ -121,6 +119,9 @@
 
     <button onclick="setMyAlarm('നിന്റെ ബസ് പേര് ഇവിടെ')">Set Alarm</button>
 </div>
+
+            </section>
+    </main>
 
     <button id="openFeedbackBtn" class="feedback-trigger-btn">💬 Suggestions</button>
     
@@ -154,8 +155,6 @@ window.addEventListener('load', function() {
         }
     }, 2000); // 2 സെക്കൻഡ് കഴിഞ്ഞാൽ സ്പ്ലാഷ് മാറും
 });
-
-        <script>
     if ("Notification" in window) {
         Notification.requestPermission();
     }
