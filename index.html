@@ -3,80 +3,93 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>NammadaBus.in</title>
+    <title>NammadaBus.in | Live Bus Timings</title>
+    <link rel="stylesheet" href="style.css">
+    
+    <!-- PWA & Mobile App Settings -->
+    <link rel="manifest" href="manifest.json">
+    <meta name="theme-color" content="#ff4757">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
 </head>
 <body>
 
-    <div id="splash-screen">
-        <img src="icon-192.png" alt="Logo">
+    <!-- 🚌 360° SPIN & FADE INTRO SPLASH SCREEN -->
+    <div id="introScreen" class="intro-overlay">
+        <div class="intro-content">
+            <div class="intro-logo">🚌</div>
+            <h1 class="intro-title">NammadaBus.in</h1>
+        </div>
     </div>
 
+    <!-- MAIN APP CONTENT (INTRO കഴിഞ്ഞാൽ ഇത് കാണാം) -->
     <header class="app-header">
-        <h1>NammadaBus.in</h1>
+        <h1>🚌 NammadaBus.in</h1>
         <p>നമ്മുടെ സ്വന്തം ബസ് സമയവിവരങ്ങൾ</p>
+        <button id="langBtn" class="lang-btn">English</button>
     </header>
 
     <main class="container">
-        
+        <!-- Live Location Feature -->
+        <section class="location-section">
+            <button id="startLocBtn" class="btn btn-start">📍 Live Location Share ചെയ്യാം</button>
+            <button id="stopLocBtn" class="btn btn-stop" style="display:none;">🛑 Sharing നിർത്താം</button>
+            <div id="shareLinkContainer" class="share-box" style="display:none;">
+                <input type="text" id="shareUrlInput" readonly>
+                <button id="copyLinkBtn" class="btn-copy">Copy</button>
+            </div>
+        </section>
+
+        <!-- Search Bar -->
         <div class="search-container">
             <input type="text" id="searchBar" placeholder="ബസ് പേര് അല്ലെങ്കിൽ റൂട്ട് സെർച്ച് ചെയ്യാം...">
         </div>
 
+        <!-- Dynamic Tabs -->
         <section class="tabs-section">
-            <h2 id="sourceTitle">നിങ്ങൾ ഇപ്പോൾ എവിടെയാണ്?</h2>
+            <h2 id="sourceTitle">നിങ്ങൾ ഇപ്പോൾ എവിടെയാണ്? (Starting Point)</h2>
             <div class="source-tabs">
                 <button id="srcChelliparamba" class="src-tab active">ചെല്ലിപ്പറമ്പ് / ചെമ്പേരി</button>
-                <button id="srcKuthuparamba" class="src-tab">കൂത്തുപറമ്പ് / കണ്ണൂർ</button>
+                <button id="srcKuthuparamba" class="src-tab">கூത്തുപറമ്പ് / കണ്ണൂർ</button>
             </div>
-            <h2 id="destTitle">ഏത് ഭാഗത്തേക്കാണ് പോകേണ്ടത്?</h2>
-            <div id="destContainer" class="dest-tabs-container"></div>
+
+            <h2 id="destTitle">ഏത് ഭാഗത്തേക്കാണ് പോകേണ്ടത്? (Destination)</h2>
+            <div id="destContainer" class="dest-tabs-container">
+                <!-- Destinations injected via JS -->
+            </div>
         </section>
 
+        <!-- Bus List Display -->
         <section id="busList" class="bus-list">
+            <!-- Bus cards injected via JS -->
         </section>
-
-        <button id="openFeedbackBtn" class="feedback-trigger-btn">💬 Suggestions</button>
     </main>
 
+    <!-- Feedback Feature -->
+    <button id="openFeedbackBtn" class="feedback-trigger-btn">💬 Suggestions</button>
+    
+    <div id="feedbackModal" class="modal">
+        <div class="modal-content">
+            <span class="close-modal">&times;</span>
+            <h3>നിങ്ങളുടെ നിർദ്ദേശങ്ങൾ അറിയിക്കൂ</h3>
+            <textarea id="feedbackText" placeholder="പുതിയ സമയങ്ങൾ അല്ലെങ്കിൽ മാറ്റങ്ങൾ ഇവിടെ ടൈപ്പ് ചെയ്യാം..."></textarea>
+            <button id="submitFeedbackBtn" class="btn btn-start">Submit</button>
+        </div>
+    </div>
+
+    <!-- Security Alert Banner -->
+    <div id="securityAlert" class="security-banner">⚠️ Security Lock: Screenshots and printing are disabled on this app.</div>
+
+    <!-- Service Worker Registration -->
     <script>
-        // സ്പ്ലാഷ് സ്‌ക്രീൻ ലോജിക്
-        window.addEventListener('load', function() {
-            setTimeout(() => {
-                let splash = document.getElementById('splash-screen');
-                if (splash) splash.style.display = 'none';
-            }, 2000);
-        });
-
-        // അലാറം ഫങ്ക്ഷനുകൾ
-        function speakAlarm(busName, minutes, language) {
-            let message = (language === 'ml') 
-                ? `${busName} ബസ് ${minutes} മിനിറ്റിനുള്ളിൽ എത്തും.` 
-                : `Attention, ${busName} bus will arrive in ${minutes} minutes.`;
-            
-            let speech = new SpeechSynthesisUtterance(message);
-            speech.lang = (language === 'ml') ? 'ml-IN' : 'en-US';
-            window.speechSynthesis.speak(speech);
+        if ('serviceWorker' in navigator) {
+            window.addEventListener('load', () => {
+                navigator.serviceWorker.register('sw.js')
+                    .then(() => console.log('App ready for offline use.'))
+                    .catch(err => console.error('PWA Setup Failed:', err));
+            });
         }
-
-        function triggerAlarm(busName, minutes, language) {
-            if (Notification.permission === "granted") {
-                new Notification("Nammadabus Alert!", {
-                    body: (language === 'ml') ? `${busName} ബസ് ${minutes} മിനിറ്റിനുള്ളിൽ!` : `${busName} bus in ${minutes} mins`
-                });
-            }
-            speakAlarm(busName, minutes, language);
-        }
-
-        function setMyAlarm(busName) {
-            // ബസ് ലിസ്റ്റിൽ നിന്ന് സമയം എടുക്കുന്നു
-            let minutes = document.getElementById('alarm-time').value;
-            let language = document.getElementById('lang-select').value;
-            triggerAlarm(busName, minutes, language);
-        }
-
-        // പെർമിഷൻ ചോദിക്കുന്നു
-        if ("Notification" in window) Notification.requestPermission();
     </script>
+    <script src="app.js"></script>
 </body>
 </html>
-
