@@ -72,36 +72,6 @@
         <img src="icon-192.png" class="icon-192"> <!-- നിന്റെ ലോഗോ ഫയൽ നെയിം ഇവിടെ കൊടുക്കുക -->
     </div>
 </div>
-<script>
-    // 1. Notification Permission ചോദിക്കുന്നു
-if ("Notification" in window) {
-    Notification.requestPermission();
-}
-
-// 2. വോയിസ് അലേർട്ട് ഫങ്ക്ഷൻ (മലയാളം & ഇംഗ്ലീഷ്)
-function speakAlarm(busName, minutes, language) {
-    let message = (language === 'ml') 
-        ? `ശ്രദ്ധിക്കുക, ${busName} ബസ് ${minutes} മിനിറ്റിനുള്ളിൽ എത്തും.` 
-        : `Attention, ${busName} bus will arrive in ${minutes} minutes.`;
-    
-    let speech = new SpeechSynthesisUtterance(message);
-    speech.lang = (language === 'ml') ? 'ml-IN' : 'en-US';
-    window.speechSynthesis.speak(speech);
-}
-
-// 3. അലാറം ട്രിഗർ ചെയ്യേണ്ട ലോജിക് (ബസ് സമയം ആകുമ്പോൾ വിളിക്കാൻ)
-function triggerAlarm(busName, minutes, language) {
-    // നോട്ടിഫിക്കേഷൻ അയക്കുന്നു
-    if (Notification.permission === "granted") {
-        new Notification("Nammadabus Alert!", {
-            body: (language === 'ml') ? `${busName} ബസ് ${minutes} മിനിറ്റിനുള്ളിൽ!` : `${busName} bus in ${minutes} mins!`
-        });
-    }
-    
-    // വോയിസ് അലേർട്ട് വിളിക്കുന്നു
-    speakAlarm(busName, minutes, language);
-}
-</script>
     <header class="app-header">
         <h1>🚌 NammadaBus.in</h1>
         <p>നമ്മുടെ സ്വന്തം ബസ് സമയവിവരങ്ങൾ</p>
@@ -137,6 +107,20 @@ function triggerAlarm(busName, minutes, language) {
         <section id="busList" class="bus-list">
             </section>
     </main>
+<div class="alarm-controls">
+    <select id="alarm-time">
+        <option value="5">5 മിനിറ്റ് മുൻപ്</option>
+        <option value="10">10 മിനിറ്റ് മുൻപ്</option>
+        <option value="15">15 മിനിറ്റ് മുൻപ്</option>
+    </select>
+
+    <select id="lang-select">
+        <option value="ml">Malayalam</option>
+        <option value="en">English</option>
+    </select>
+
+    <button onclick="setMyAlarm('നിന്റെ ബസ് പേര് ഇവിടെ')">Set Alarm</button>
+</div>
 
     <button id="openFeedbackBtn" class="feedback-trigger-btn">💬 Suggestions</button>
     
@@ -167,6 +151,37 @@ window.addEventListener('load', function() {
         document.getElementById('splash-screen').style.display = 'none';
     }, 2000); // 2000ms = 2 സെക്കൻഡ് (2 sec)
 });
+        <script>
+    if ("Notification" in window) {
+        Notification.requestPermission();
+    }
+
+    function speakAlarm(busName, minutes, language) {
+        let message = (language === 'ml') 
+            ? `ശ്രദ്ധിക്കുക, ${busName} ബസ് ${minutes} മിനിറ്റിനുള്ളിൽ എത്തും.` 
+            : `Attention, ${busName} bus will arrive in ${minutes} minutes.`;
+        
+        let speech = new SpeechSynthesisUtterance(message);
+        speech.lang = (language === 'ml') ? 'ml-IN' : 'en-US';
+        window.speechSynthesis.speak(speech);
+    }
+
+    function triggerAlarm(busName, minutes, language) {
+        if (Notification.permission === "granted") {
+            new Notification("Nammadabus Alert!", {
+                body: (language === 'ml') ? `${busName} ബസ് ${minutes} മിനിറ്റിനുള്ളിൽ!` : `${busName} bus in ${minutes} mins!`
+            });
+        }
+        speakAlarm(busName, minutes, language);
+    }
+
+    function setMyAlarm(busName) {
+        let minutes = document.getElementById('alarm-time').value;
+        let language = document.getElementById('lang-select').value;
+        triggerAlarm(busName, minutes, language);
+    }
+</script>
+
 </script>
 </body>
 </html>
