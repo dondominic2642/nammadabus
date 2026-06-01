@@ -1,354 +1,99 @@
 <!DOCTYPE html>
 <html lang="ml">
 <head>
-    <script async src="https://www.googletagmanager.com/gtag/js?id=G-PHQ8GQDMMQ"></script>
-    <script>
-      window.dataLayer = window.dataLayer || [];
-      function gtag(){dataLayer.push(arguments);}
-      gtag('js', new Date());
-      gtag('config', 'G-PHQ8GQDMMQ');
-    </script>
-
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>NammadaBus.in</title>
+    <title>NammadaBus.in - നമ്മുടെ സ്വന്തം ബസ് സമയവിവരങ്ങൾ</title>
     
-    <meta name="theme-color" content="#2e7d32">
+    <link rel="manifest" href="./manifest.json">
+    <meta name="theme-color" content="#ff2e4d">
+    
     <meta name="apple-mobile-web-app-capable" content="yes">
-    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
-    <link rel="manifest" href="manifest.json">
-    <link rel="apple-touch-icon" href="icon-192.png">
+    <meta name="apple-mobile-web-app-status-bar-style" content="default">
+    <meta name="apple-mobile-web-app-title" content="Nammada Bus">
+    <link rel="apple-touch-icon" href="./icon-192.png">
 
-    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
+    <link rel="stylesheet" href="./style.css">
     
-    <style>
-        :root {
-            --primary-green: #2e7d32;      /* Deep Forest Green for accents */
-            --pale-green: #e8f5e9;         /* Beautiful Pale Green background */
-            --accent-green: #a5d6a7;       /* Soft Green for borders/tabs */
-            --dark-gray: #2c3e50;
-            --white: #ffffff;
-        }
-
-        body {
-            margin: 0;
-            padding: 0;
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            background-color: var(--pale-green);
-            color: var(--dark-gray);
-        }
-
-        /* Top Header Banner Layout */
-        .header-banner {
-            background-color: var(--white);
-            border-bottom: 3px solid var(--accent-green);
-            padding: 15px 20px;
-            box-shadow: 0 2px 10px rgba(0,0,0,0.05);
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-        }
-
-        .header-banner h1 {
-            margin: 0;
-            font-size: 2rem;
-            font-weight: 800;
-            color: var(--primary-green);
-        }
-
-        /* Header Button Actions */
-        .header-actions {
-            display: flex;
-            gap: 10px;
-        }
-
-        .share-loc-btn {
-            background-color: var(--primary-green);
-            color: var(--white);
-            border: none;
-            padding: 10px 16px;
-            font-size: 0.9rem;
-            font-weight: bold;
-            border-radius: 20px;
-            cursor: pointer;
-            display: flex;
-            align-items: center;
-            gap: 6px;
-            transition: all 0.2s ease;
-            box-shadow: 0 2px 5px rgba(46,125,50,0.2);
-        }
-
-        .share-loc-btn:hover {
-            background-color: #1b5e20;
-            transform: translateY(-1px);
-        }
-
-        .lang-toggle-btn {
-            background-color: #1a1a1a;
-            color: var(--white);
-            border: none;
-            padding: 10px 16px;
-            font-size: 0.9rem;
-            font-weight: bold;
-            border-radius: 20px;
-            cursor: pointer;
-            transition: all 0.2s ease;
-        }
-
-        .lang-toggle-btn:hover {
-            background-color: #333333;
-        }
-
-        /* Main Content Container */
-        .main-content {
-            max-width: 900px;
-            margin: 0 auto;
-            padding: 25px 15px;
-            text-align: center;
-        }
-
-        .search-hint {
-            border: 1px solid var(--accent-green);
-            display: inline-block;
-            padding: 4px 12px;
-            color: #558b2f;
-            font-size: 0.85rem;
-            margin-bottom: 15px;
-            border-radius: 20px;
-            background-color: var(--white);
-            font-weight: 600;
-        }
-
-        .section-title {
-            font-size: 1.4rem;
-            margin: 0 0 20px 0;
-            color: var(--dark-gray);
-            font-weight: 700;
-        }
-
-        .source-container {
-            display: flex;
-            justify-content: center;
-            gap: 12px;
-            margin-bottom: 25px;
-            flex-wrap: wrap;
-        }
-
-        .source-btn {
-            padding: 12px 26px;
-            font-size: 1.05rem;
-            font-weight: bold;
-            border: 2px solid var(--primary-green);
-            border-radius: 30px;
-            cursor: pointer;
-            background-color: var(--white);
-            color: var(--primary-green);
-            transition: all 0.25s ease;
-            box-shadow: 0 2px 6px rgba(0,0,0,0.03);
-        }
-
-        /* Layout Grid split for Bus list and Map */
-        .app-layout {
-            display: flex;
-            gap: 20px;
-            margin-top: 25px;
-            flex-wrap: wrap;
-        }
-
-        .bus-list-section {
-            flex: 1.2;
-            min-width: 320px;
-            text-align: left;
-        }
-
-        .map-section {
-            flex: 1;
-            min-width: 320px;
-            background: var(--white);
-            border: 1px solid var(--accent-green);
-            border-radius: 16px;
-            padding: 15px;
-            box-shadow: 0 4px 15px rgba(0,0,0,0.04);
-            position: sticky;
-            top: 20px;
-            height: fit-content;
-        }
-
-        #map {
-            width: 100%;
-            height: 380px;
-            border-radius: 12px;
-            margin-top: 10px;
-            z-index: 1;
-        }
-
-        #destContainer {
-            display: flex;
-            justify-content: center;
-            gap: 8px;
-            flex-wrap: wrap;
-            margin: 20px 0;
-        }
-
-        /* Clean White Bus Card Styling */
-        .bus-card {
-            border: 1px solid var(--accent-green);
-            border-radius: 12px;
-            padding: 16px;
-            margin: 12px 0;
-            box-shadow: 0 2px 8px rgba(0,0,0,0.02);
-            background-color: var(--white);
-            cursor: pointer;
-            transition: all 0.2s ease;
-        }
-
-        .bus-card:hover {
-            border-color: var(--primary-green);
-            transform: translateY(-2px);
-            box-shadow: 0 4px 12px rgba(46,125,50,0.1);
-        }
-
-        .bus-card.selected {
-            border: 2px solid var(--primary-green);
-            background-color: #f1f8e9;
-        }
-
-        .traffic-indicator {
-            display: inline-block;
-            padding: 4px 10px;
-            border-radius: 20px;
-            font-size: 0.8rem;
-            font-weight: bold;
-            margin-top: 8px;
-        }
-
-        /* 📍 LOCATION SHARE MODAL POPUP */
-        .modal-overlay {
-            position: fixed;
-            top: 0; left: 0; width: 100%; height: 100%;
-            background: rgba(0,0,0,0.4);
-            display: none;
-            justify-content: center;
-            align-items: center;
-            z-index: 9999;
-        }
-
-        .modal-box {
-            background: var(--white);
-            padding: 25px;
-            border-radius: 16px;
-            max-width: 400px;
-            width: 90%;
-            text-align: center;
-            box-shadow: 0 10px 25px rgba(0,0,0,0.15);
-            animation: fadeIn 0.3s ease;
-        }
-
-        .modal-box h3 { margin: 0 0 15px 0; color: var(--primary-green); }
-        .modal-box p { font-size: 0.9rem; color: #555; }
-        
-        .time-select {
-            width: 100%;
-            padding: 10px;
-            margin: 15px 0;
-            border-radius: 8px;
-            border: 1px solid var(--accent-green);
-            font-size: 1rem;
-        }
-
-        .modal-buttons {
-            display: flex;
-            gap: 10px;
-            justify-content: center;
-            margin-top: 15px;
-        }
-
-        .btn-action {
-            padding: 10px 20px;
-            border-radius: 20px;
-            border: none;
-            font-weight: bold;
-            cursor: pointer;
-        }
-        .btn-confirm { background: var(--primary-green); color: white; }
-        .btn-cancel { background: #e0e0e0; color: #333; }
-
-        @keyframes fadeIn {
-            from { opacity: 0; transform: translateY(-10px); }
-            to { opacity: 1; transform: translateY(0); }
-        }
-
-        @media (max-width: 650px) {
-            .header-banner { flex-direction: column; gap: 12px; text-align: center; }
-            .app-layout { flex-direction: column; }
-            .map-section { position: relative; top: 0; }
-        }
-    </style>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Manjari:wght@400;700&family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
 </head>
 <body>
 
-    <header class="header-banner">
-        <h1>NammadaBus.in</h1>
-        <div class="header-actions">
-            <button id="shareLocBtn" class="share-loc-btn" onclick="openShareModal()">
-                <span>📍 Share Location</span>
-            </button>
-            <button id="langToggleBtn" class="lang-toggle-btn" onclick="toggleLanguage()">English</button>
+    <header class="app-header">
+        <div class="header-container">
+            <div class="logo-area">
+                <span class="bus-emoji">🚌</span>
+                <h1>NammadaBus<span>.in</span></h1>
+            </div>
+            <p class="tagline">നമ്മുടെ സ്വന്തം ബസ് സമയവിവരങ്ങൾ</p>
         </div>
     </header>
 
-    <main class="main-content">
-        <div id="searchHint" class="search-hint">ബസ് പേര് അല്ലെങ്കിൽ</div>
-        <h2 id="sourceTitle" class="section-title">നിങ്ങൾ ഇപ്പോൾ എവിടെയാണ്?</h2>
-
-        <div class="source-container">
-            <button id="srcBtnChelli" class="source-btn" onclick="selectSource('chelliparamba')">ചെല്ലിപ്പറമ്പ് / ചെമ്പേരി</button>
-            <button id="srcBtnKuthu" class="source-btn" onclick="selectSource('kuthuparamba')">കൂത്തുപറമ്പ് / കണ്ണൂർ</button>
+    <main class="app-container">
+        
+        <div class="action-banner">
+            <button id="liveLocationBtn" class="btn-live">
+                <span class="pulse-dot"></span> Live Location Share ചെയ്യാം
+            </button>
         </div>
 
-        <hr style="border: 0; border-top: 1px solid var(--accent-green); margin: 20px 0;">
-
-        <div id="destContainer"></div>
-
-        <div class="app-layout">
-            <div class="bus-list-section">
-                <div id="busList"></div>
-            </div>
-            
-            <div class="map-section">
-                <h3 id="mapHeading" style="margin: 0 0 10px 0; font-size: 1.1rem; color: #222;">📍 ലൈവ് ട്രാക്കിംഗ് (Live Status)</h3>
-                <p id="mapSubText" style="margin: 0; font-size: 0.9rem; color: #666;">ട്രാഫിക്കും ലൈവ് ലൊക്കേഷനും കാണാൻ ഏതെങ്കിലും ഒരു ബസിൽ ക്ലിക്ക് ചെയ്യുക.</p>
-                <div id="map"></div>
+        <div class="search-box-card">
+            <div class="input-wrapper">
+                <span class="search-icon">🔍</span>
+                <input type="text" id="busSearchInput" placeholder="ബസ് പേര് അല്ലെങ്കിൽ റൂട്ട് ടൈപ്പ് ചെയ്യാം...">
             </div>
         </div>
+
+        <section class="routing-section">
+            <div class="route-group">
+                <label class="section-title">നിങ്ങൾ ഇപ്പോൾ എവിടെയാണ്? <span class="sub-label">(Starting Point)</span></label>
+                <div class="chip-container" id="originChips">
+                    </div>
+            </div>
+
+            <div class="route-group">
+                <label class="section-title">ഏത് ഭാഗത്തേക്കാണ് പോകേണ്ടത്? <span class="sub-label">(Destination)</span></label>
+                <div class="chip-row-wrapper">
+                    <button class="nav-arrow left" id="slideLeftBtn" aria-label="Scroll Left">❬</button>
+                    <div class="chip-container horizontal-scroll" id="destinationChips">
+                        </div>
+                    <button class="nav-arrow right" id="slideRightBtn" aria-label="Scroll Right">❭</button>
+                </div>
+            </div>
+        </section>
+
+        <div id="filterStatusMessage" class="status-info-bar">
+            കണ്ണൂർ ഭാഗത്ത് നിന്ന് കൂട്ടുപുഴ റൂട്ടിലെ ബസുകൾ കാണിക്കുന്നു
+        </div>
+
+        <section class="results-section" id="busResultsContainer">
+            </section>
     </main>
 
-    <div id="shareModal" class="modal-overlay">
-        <div class="modal-box">
-            <h3 id="modalTitle">ലൊക്കേഷൻ ഷെയർ ചെയ്യുക</h3>
-            <p id="modalDesc">നിങ്ങളുടെ ലൈവ് ലൊക്കേഷൻ മറ്റുള്ളവർക്ക് ഷെയർ ചെയ്യാനുള്ള സമയം തിരഞ്ഞെടുക്കുക:</p>
-            <select id="timeLimit" class="time-select">
-                <option value="15">15 മിനിറ്റ് (15 Minutes)</option>
-                <option value="30">30 മിനിറ്റ് (30 Minutes)</option>
-                <option value="60">1 മണിക്കൂർ (1 Hour)</option>
-                <option value="120">2 മണിക്കൂർ (2 Hours)</option>
-            </select>
-            <div class="modal-buttons">
-                <button class="btn-action btn-confirm" onclick="generateShareLink()">Generate Link</button>
-                <button class="btn-action btn-cancel" onclick="closeShareModal()">Cancel</button>
-            </div>
+    <div class="modal-overlay" id="feedbackModal">
+        <div class="modal-card">
+            <button class="modal-close-btn" id="closeModalBtn" aria-label="Close Feedback">×</button>
+            <h3>നിങ്ങളുടെ നിർദ്ദേശങ്ങൾ അറിയിക്കൂ</h3>
+            <textarea id="feedbackText" placeholder="എവിടെയാണ് മാറ്റങ്ങൾ വരുത്തേണ്ടത്? ഇവിടെ ടൈപ്പ് ചെയ്യാം..."></textarea>
+            <button class="btn-submit" id="submitFeedbackBtn">Submit</button>
         </div>
     </div>
 
-    <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
-    <script src="app.js"></script>
+    <footer class="app-footer">
+        <p>© 2026 NammadaBus.in | Created with ❤️</p>
+    </footer>
+
+    <script src="./app.js"></script>
 
     <script>
         if ('serviceWorker' in navigator) {
             window.addEventListener('load', () => {
-                navigator.serviceWorker.register('service-worker.js')
-                    .then(reg => console.log('PWA Service Worker Active'))
-                    .catch(err => console.log('PWA Register Fail', err));
+                // Points perfectly to your verified service-worker.js to clean up any 404 errors
+                navigator.serviceWorker.register('./service-worker.js')
+                    .then(reg => console.log('Service Worker successfully registered! Scope:', reg.scope))
+                    .catch(err => console.error('PWA Service Worker Registration failed:', err));
             });
         }
     </script>
