@@ -53,7 +53,7 @@
             <h2 id="sourceTitle">നിങ്ങൾ ഇപ്പോൾ എവിടെയാണ്?</h2>
             <div class="source-tabs">
                 <button class="src-tab active" onclick="selectSource('Chelliparamba')">ചെല്ലിപ്പറമ്പ് / ചെമ്പേരി</button>
-                <button class="src-tab" onclick="selectSource('Kuthuparamba')">കൂത്തുപറമ്പ് / കണ്ണൂർ</button>
+                <button class="src-tab" onclick="selectSource('Kuthuparamba')">கூത്തുപറമ്പ് / കണ്ണൂർ</button>
             </div>
             <div id="destContainer" class="dest-tabs-container"></div>
         </section>
@@ -69,7 +69,10 @@
     <script>
         // Splash Screen Logic (2 seconds)
         window.addEventListener('load', () => {
-            setTimeout(() => document.getElementById('splash-screen').style.display = 'none', 2000);
+            setTimeout(() => {
+                const splash = document.getElementById('splash-screen');
+                if(splash) splash.style.display = 'none';
+            }, 2000);
         });
 
         // Search Logic
@@ -84,7 +87,10 @@
         function openFeedback() { window.location.href = "mailto:your-email@example.com?subject=Suggestions"; }
         
         // Language placeholder
-        function changeLang(lang) { console.log("Language changed to: " + lang); renderBuses(); }
+        function changeLang(lang) { 
+            console.log("Language changed to: " + lang); 
+            if(typeof renderBuses === "function") renderBuses(); 
+        }
     </script>
 
     <!-- Connect your app logic -->
