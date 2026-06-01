@@ -148,9 +148,13 @@
     <script>
 window.addEventListener('load', function() {
     setTimeout(function() {
-        document.getElementById('splash-screen').style.display = 'none';
-    }, 2000); // 2000ms = 2 സെക്കൻഡ് (2 sec)
+        let splash = document.getElementById('splash-screen');
+        if (splash) {
+            splash.style.display = 'none'; // ഇതിൽ മാറ്റം വന്നിട്ടുണ്ടോ എന്ന് നോക്കുക
+        }
+    }, 2000); // 2 സെക്കൻഡ് കഴിഞ്ഞാൽ സ്പ്ലാഷ് മാറും
 });
+
         <script>
     if ("Notification" in window) {
         Notification.requestPermission();
