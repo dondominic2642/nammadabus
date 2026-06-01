@@ -1,32 +1,85 @@
+// =========================================================================
+// 🚌 NAMMADA BUS - COMPLETE ROUTING & TIMING DATABASE (app.js)
+// =========================================================================
+
 const masterBusData = {
     chelliparamba: {
         taliparamba: [
-            { time: "05:30 AM", name: "ജെ ജെ (ചെമ്പേരിയിൽ നിന്ന് 5:25)", nameEn: "JJ (From Chemperi 5:25)", route: "ശ്രീകണ്ഠാപുരം, തളിപ്പറമ്പ് വഴി", routeEn: "via Sreekandapuram, Taliparamba" },
-            { time: "06:45 AM", name: "സാഗര (ചെമ്പേരിയിൽ നിന്ന് 6:35)", nameEn: "Sagara (From Chemperi 6:35)", route: "ശ്രീകണ്ഠാപുരം, തളിപ്പറമ്പ് വഴി", routeEn: "via Sreekandapuram, Taliparamba" },
+            { time: "05:30 AM", name: "JJ (ജെ ജെ)", nameEn: "JJ", route: "ചെമ്പേരി - ശ്രീകണ്ഠാപുരം - തളിപ്പറമ്പ്", routeEn: "Chemperi - Sreekandapuram - Taliparamba" },
+            { time: "06:15 AM", name: "SMRITI (സ്മൃതി)", nameEn: "Smriti", route: "ശ്രീകണ്ഠാപുരം - തളിപ്പറമ്പ് വഴി കണ്ണൂർ", routeEn: "via Sreekandapuram - Taliparamba to Kannur" },
+            { time: "06:45 AM", name: "SAGARA (സാഗര)", nameEn: "Sagara", route: "ചെമ്പേരി - ശ്രീകണ്ഠാപുരം - തളിപ്പറമ്പ്", routeEn: "Chemperi - Sreekandapuram - Taliparamba" },
             { time: "06:55 AM", name: "KSRTC", nameEn: "KSRTC", route: "പുളിക്കുരുമ്പ - തളിപ്പറമ്പ്", routeEn: "Pulikkurumba to Taliparamba" },
-            { time: "07:35 AM", name: "നന്ദനം", nameEn: "Nandanam", route: "ശ്രീകണ്ഠാപുരം, തളിപ്പറമ്പ് വഴി", routeEn: "via Sreekandapuram, Taliparamba" },
-            { time: "08:30 AM", name: "കുന്നത്ത്", nameEn: "Kunnath", route: "ശ്രീകണ്ഠാപുരം വഴി തളിപ്പറമ്പ്", routeEn: "via Sreekandapuram to Taliparamba" }
+            { time: "07:15 AM", name: "ST. ANTONY (സെന്റ് ആന്റണി)", nameEn: "St. Antony", route: "ശ്രീകണ്ഠാപുരം - തളിപ്പറമ്പ്", routeEn: "Sreekandapuram to Taliparamba" },
+            { time: "07:35 AM", name: "NANDANAM (നന്ദനം)", nameEn: "Nandanam", route: "ചെമ്പേരി - ശ്രീകണ്ഠാപുരം - തളിപ്പറമ്പ് വഴി പയ്യന്നൂർ", routeEn: "via Sreekandapuram - Taliparamba to Payyanur" },
+            { time: "08:10 AM", name: "AVM", nameEn: "AVM", route: "ശ്രീകണ്ഠാപുരം - തളിപ്പറമ്പ്", routeEn: "Sreekandapuram to Taliparamba" },
+            { time: "08:30 AM", name: "KUNNATH (കുന്നത്ത്)", nameEn: "Kunnath", route: "ശ്രീകണ്ഠാപുരം വഴി തളിപ്പറമ്പ്", routeEn: "via Sreekandapuram to Taliparamba" },
+            { time: "09:15 AM", name: "KSRTC Ordinary", nameEn: "KSRTC Ordinary", route: "പയ്യാവൂർ - ശ്രീകണ്ഠാപുരം - തളിപ്പറമ്പ്", routeEn: "Payyavoor - Sreekandapuram - Taliparamba" },
+            { time: "10:05 AM", name: "MATHA (മാതാ)", nameEn: "Matha", route: "ശ്രീകണ്ഠാപുരം - തളിപ്പറമ്പ്", routeEn: "Sreekandapuram to Taliparamba" },
+            { time: "11:20 AM", name: "KSRTC FP", nameEn: "KSRTC Fast Passenger", route: "ശ്രീകണ്ഠാപുരം - തളിപ്പറമ്പ് വഴി കോഴിക്കോട്", routeEn: "via Sreekandapuram - Taliparamba to Kozhikode" },
+            { time: "12:45 PM", name: "SMRITI (സ്മൃതി)", nameEn: "Smriti", route: "ശ്രീകണ്ഠാപുരം - തളിപ്പറമ്പ്", routeEn: "Sreekandapuram to Taliparamba" },
+            { time: "01:30 PM", name: "JJ (ജെ ജെ)", nameEn: "JJ", route: "ചെമ്പേരി - തളിപ്പറമ്പ്", routeEn: "Chemperi to Taliparamba" },
+            { time: "02:20 PM", name: "NANDANAM (നന്ദനം)", nameEn: "Nandanam", route: "ശ്രീകണ്ഠാപുരം - തളിപ്പറമ്പ്", routeEn: "Sreekandapuram to Taliparamba" },
+            { time: "03:40 PM", name: "KSRTC", nameEn: "KSRTC", route: "ശ്രീകണ്ഠാപുരം - തളിപ്പറമ്പ്", routeEn: "Sreekandapuram to Taliparamba" },
+            { time: "04:15 PM", name: "AVM", nameEn: "AVM", route: "ശ്രീകണ്ഠാപുരം - തളിപ്പറമ്പ് വഴി കണ്ണൂർ", routeEn: "via Sreekandapuram - Taliparamba to Kannur" },
+            { time: "05:10 PM", name: "SAGARA (സാഗര)", nameEn: "Sagara", route: "ശ്രീകണ്ഠാപുരം - തളിപ്പറമ്പ്", routeEn: "Sreekandapuram to Taliparamba" },
+            { time: "06:30 PM", name: "ST. ANTONY (സെന്റ് ആന്റണി)", nameEn: "St. Antony", route: "ശ്രീകണ്ഠാപുരം - തളിപ്പറമ്പ് (അവസാന സർവീസ്)", routeEn: "Sreekandapuram to Taliparamba (Last Service)" }
         ],
         iritty: [
-            { time: "07:30 AM", name: "ശ്യാമളക്ഷ്മി", nameEn: "Shyamalakshmi", route: "ഇരുട്ടിക്ക് നേരിട്ട്", routeEn: "Direct to Iritty" },
-            { time: "07:55 AM", name: "KSRTC", nameEn: "KSRTC", route: "ഇരുട്ടി വഴി മാനന്തവാടി", routeEn: "via Iritty to Mananthavady" }
+            { time: "07:30 AM", name: "SHYAMALAKSHMI (ശ്യാമളക്ഷ്മി)", nameEn: "Shyamalakshmi", route: "തളിപ്പറമ്പ് - ശ്രീകണ്ഠാപുരം - ഇരുട്ടി (Direct)", routeEn: "Taliparamba - Sreekandapuram - Iritty (Direct)" },
+            { time: "07:55 AM", name: "KSRTC Limited Stop", nameEn: "KSRTC LS", route: "തളിപ്പറമ്പ് - ഇരുട്ടി വഴി മാനന്തവാടി", routeEn: "via Iritty to Mananthavady" },
+            { time: "09:40 AM", name: "SADGURU (സദ്ഗുരു)", nameEn: "Sadguru", route: "ശ്രീകണ്ഠാപുരം - ഇരുട്ടി", routeEn: "Sreekandapuram to Iritty" },
+            { time: "11:05 AM", name: "KSRTC Ordinary", nameEn: "KSRTC Ordinary", route: "തളിപ്പറമ്പ് - പയ്യാവൂർ - ഇരുട്ടി", routeEn: "Taliparamba - Payyavoor - Iritty" },
+            { time: "01:15 PM", name: "SHYAMALAKSHMI (ശ്യാമളക്ഷ്മി)", nameEn: "Shyamalakshmi", route: "ശ്രീകണ്ഠാപുരം - ഇരുട്ടി", routeEn: "Sreekandapuram to Iritty" },
+            { time: "03:10 PM", name: "SADGURU (സദ്ഗുരു)", nameEn: "Sadguru", route: "ശ്രീകണ്ഠാപുരം - ഇരുട്ടി", routeEn: "Sreekandapuram to Iritty" },
+            { time: "04:50 PM", name: "KSRTC", nameEn: "KSRTC", route: "തളിപ്പറമ്പ് - ഇരുട്ടി - വിരാജ്പേട്ട വഴി മൈസൂർ", routeEn: "via Iritty - Virajpet to Mysore" },
+            { time: "06:20 PM", name: "KSRTC", nameEn: "KSRTC", route: "ശ്രീകണ്ഠാപുരം - ഇരുട്ടി (അവസാന സർവീസ്)", routeEn: "Sreekandapuram to Iritty (Last Service)" }
         ]
     },
     kuthuparamba: {
         to_kannur: [
-            { time: "06:00 AM", name: "TALENT [LS]", nameEn: "TALENT [LS]", route: "കണ്ണൂരിലേക്ക്", routeEn: "to Kannur" },
-            { time: "06:20 AM", name: "MM4 [LS]", nameEn: "MM4 [LS]", route: "പയ്യന്നൂർ ഭാഗത്തേക്ക്", routeEn: "Towards Payyanur" }
+            { time: "06:00 AM", name: "TALENT [LS] (ടാലന്റ്)", nameEn: "TALENT [LS]", route: "കൂത്തുപറമ്പ് - മട്ടന്നൂർ വഴി കണ്ണൂർ", routeEn: "Kuthuparamba - Mattannur to Kannur" },
+            { time: "06:20 AM", name: "MM4 [LS]", nameEn: "MM4 [LS]", route: "കണ്ണൂർ - പയ്യന്നൂർ ഭാഗത്തേക്ക്", routeEn: "Towards Kannur & Payyanur" },
+            { time: "06:45 AM", name: "KSRTC Ordinary", nameEn: "KSRTC Ordinary", route: "തോപ്പിൽ - കൂത്തുപറമ്പ് - കണ്ണൂർ", routeEn: "Thoppil - Kuthuparamba to Kannur" },
+            { time: "07:10 AM", name: "AMBADI (അമ്പാടി)", nameEn: "Ambadi", route: "കൂത്തുപറമ്പ് - കണ്ണൂർ (Direct)", routeEn: "Kuthuparamba to Kannur (Direct)" },
+            { time: "07:35 AM", name: "ROYAL (റോയൽ)", nameEn: "Royal", route: "കൂത്തുപറമ്പ് - കണ്ണൂർ", routeEn: "Kuthuparamba to Kannur" },
+            { time: "08:00 AM", name: "TALENT [LS] (ടാലന്റ്)", nameEn: "TALENT [LS]", route: "കൂത്തുപറമ്പ് - മട്ടന്നൂർ വഴി കണ്ണൂർ", routeEn: "Kuthuparamba - Mattannur to Kannur" },
+            { time: "08:25 AM", name: "KSRTC TT", nameEn: "KSRTC Town To Town", route: "കൂത്തുപറമ്പ് - കണ്ണൂർ", routeEn: "Kuthuparamba to Kannur (Fast)" },
+            { time: "09:00 AM", name: "SANMARIA [LS] (സാൻമരിയ)", nameEn: "SANMARIA [LS]", route: "മാനന്തവാടിയിൽ നിന്ന് കൂത്തുപറമ്പ് വഴി കണ്ണൂർ", routeEn: "From Mananthavady via Kuthuparamba to Kannur" },
+            { time: "09:45 AM", name: "AMBADI (അമ്പാടി)", nameEn: "Ambadi", route: "കൂത്തുപറമ്പ് - കണ്ണൂർ", routeEn: "Kuthuparamba to Kannur" },
+            { time: "10:30 AM", name: "ROYAL (റോയൽ)", nameEn: "Royal", route: "കൂത്തുപറമ്പ് - കണ്ണൂർ", routeEn: "Kuthuparamba to Kannur" },
+            { time: "11:15 AM", name: "KSRTC Ordinary", nameEn: "KSRTC Ordinary", route: "കൂത്തുപറമ്പ് - കണ്ണൂർ", routeEn: "Kuthuparamba to Kannur" },
+            { time: "12:10 PM", name: "MM4 [LS]", nameEn: "MM4 [LS]", route: "കൂത്തുപറമ്പ് - കണ്ണൂർ", routeEn: "Kuthuparamba to Kannur" },
+            { time: "01:25 PM", name: "TALENT [LS] (ടാലന്റ്)", nameEn: "TALENT [LS]", route: "കൂത്തുപറമ്പ് - കണ്ണൂർ", routeEn: "Kuthuparamba to Kannur" },
+            { time: "02:45 PM", name: "SANMARIA [LS] (സാൻമരിയ)", nameEn: "SANMARIA [LS]", route: "കൂത്തുപറമ്പ് - കണ്ണൂർ", routeEn: "Kuthuparamba to Kannur" },
+            { time: "03:50 PM", name: "ROYAL (റോയൽ)", nameEn: "Royal", route: "കൂത്തുപറമ്പ് - കണ്ണൂർ", routeEn: "Kuthuparamba to Kannur" },
+            { time: "04:30 PM", name: "KSRTC TT", nameEn: "KSRTC Town To Town", route: "കൂത്തുപറമ്പ് - കണ്ണൂർ", routeEn: "Kuthuparamba to Kannur" },
+            { time: "05:15 PM", name: "AMBADI (അമ്പാടി)", nameEn: "Ambadi", route: "കൂത്തുപറമ്പ് - കണ്ണൂർ വഴി പയ്യന്നൂർ", routeEn: "via Kannur to Payyanur" },
+            { time: "06:10 PM", name: "MM4 [LS]", nameEn: "MM4 [LS]", route: "കൂത്തുപറമ്പ് - കണ്ണൂർ", routeEn: "Kuthuparamba to Kannur" },
+            { time: "07:30 PM", name: "KSRTC Ordinary", nameEn: "KSRTC Ordinary", route: "കൂത്തുപറമ്പ് - കണ്ണൂർ (അവസാന സർവീസ്)", routeEn: "Kuthuparamba to Kannur (Last Service)" }
         ],
         from_kannur: [
-            { time: "05:20 AM", name: "SANMARIA [LS]", nameEn: "SANMARIA [LS]", route: "കൂത്തുപറമ്പ് വഴി തിരുനെല്ലിക്ക്", routeEn: "via Kuthuparamba to Thirunelly" }
+            { time: "05:20 AM", name: "SANMARIA [LS] (സാൻമരിയ)", nameEn: "SANMARIA [LS]", route: "കണ്ണൂരിൽ നിന്ന് കൂത്തുപറമ്പ് വഴി തിരുനെല്ലിക്ക്", routeEn: "from Kannur via Kuthuparamba to Thirunelly" },
+            { time: "06:40 AM", name: "KSRTC Ordinary", nameEn: "KSRTC Ordinary", route: "കണ്ണൂർ - കൂത്തുപറമ്പ് - തോപ്പിൽ", routeEn: "Kannur to Kuthuparamba and Thoppil" },
+            { time: "07:20 AM", name: "ROYAL (റോയൽ)", nameEn: "Royal", route: "കണ്ണൂർ - കൂത്തുപറമ്പ്", routeEn: "Kannur to Kuthuparamba" },
+            { time: "08:15 AM", name: "MM4 [LS]", nameEn: "MM4 [LS]", route: "കണ്ണൂർ - കൂത്തുപറമ്പ് വഴി മട്ടന്നൂർ", routeEn: "via Kuthuparamba to Mattannur" },
+            { time: "09:10 AM", name: "AMBADI (അമ്പാടി)", nameEn: "Ambadi", route: "കണ്ണൂർ - കൂത്തുപറമ്പ്", routeEn: "Kannur to Kuthuparamba" },
+            { time: "10:05 AM", name: "TALENT [LS] (ടാലന്റ്)", nameEn: "TALENT [LS]", route: "കണ്ണൂർ - കൂത്തുപറമ്പ്", routeEn: "Kannur to Kuthuparamba" },
+            { time: "11:45 AM", name: "KSRTC TT", nameEn: "KSRTC Town To Town", route: "കണ്ണൂർ - കൂത്തുപറമ്പ്", routeEn: "Kannur to Kuthuparamba" },
+            { time: "01:00 PM", name: "ROYAL (റോയൽ)", nameEn: "Royal", route: "കണ്ണൂർ - കൂത്തുപറമ്പ്", routeEn: "Kannur to Kuthuparamba" },
+            { time: "02:15 PM", name: "AMBADI (അമ്പാടി)", nameEn: "Ambadi", route: "കണ്ണൂർ - കൂത്തുപറമ്പ്", routeEn: "Kannur to Kuthuparamba" },
+            { time: "03:30 PM", name: "MM4 [LS]", nameEn: "MM4 [LS]", route: "കണ്ണൂർ - കൂത്തുപറമ്പ്", routeEn: "Kannur to Kuthuparamba" },
+            { time: "04:45 PM", name: "TALENT [LS] (ടാലന്റ്)", nameEn: "TALENT [LS]", route: "കണ്ണൂർ - കൂത്തുപറമ്പ്", routeEn: "Kannur to Kuthuparamba" },
+            { time: "05:40 PM", name: "KSRTC Ordinary", nameEn: "KSRTC Ordinary", route: "കണ്ണൂർ - കൂത്തുപറമ്പ്", routeEn: "Kannur to Kuthuparamba" },
+            { time: "06:50 PM", name: "SANMARIA [LS] (സാൻമരിയ)", nameEn: "SANMARIA [LS]", route: "കണ്ണൂർ - കൂത്തുപറമ്പ് വഴി മാനന്തവാടി", routeEn: "via Kuthuparamba to Mananthavady" },
+            { time: "08:15 PM", name: "KSRTC TT", nameEn: "KSRTC Town To Town", route: "കണ്ണൂർ - കൂത്തുപറമ്പ് (അവസാന സർവീസ്)", routeEn: "Kannur to Kuthuparamba (Last Service)" }
         ]
     }
 };
 
 const destRouteNames = {
     chelliparamba: [
-        { id: "taliparamba", ml: "തളിപ്പറമ്പ്", en: "Taliparamba" },
-        { id: "iritty", ml: "ഇരുട്ടി", en: "Iritty" }
+        { id: "taliparamba", ml: "തളിപ്പറമ്പ് ഭാഗത്തേക്ക്", en: "Towards Taliparamba" },
+        { id: "iritty", ml: "ഇരുട്ടി ഭാഗത്തേക്ക്", en: "Towards Iritty" }
     ],
     kuthuparamba: [
         { id: "to_kannur", ml: "കണ്ണൂർ ഭാഗത്തേക്ക്", en: "Towards Kannur" },
@@ -96,6 +149,7 @@ function renderRouteButtons() {
         btn.style.cursor = "pointer";
         btn.style.background = selectedRoute === routeObj.id ? "#ff2e4d" : "#fff";
         btn.style.color = selectedRoute === routeObj.id ? "#fff" : "#333";
+        btn.style.fontWeight = "bold";
         
         btn.textContent = currentLanguage === 'ml' ? routeObj.ml : routeObj.en;
         
@@ -131,6 +185,8 @@ function renderBusTimeline() {
 
     const now = new Date();
     const currentMinutes = now.getHours() * 60 + now.getMinutes();
+    
+    // Sort array linearly by real-world time values
     const sortedBuses = [...busArray].sort((a, b) => parseTimeToMinutes(a.time) - parseTimeToMinutes(b.time));
     let upcomingBuses = sortedBuses.filter(bus => parseTimeToMinutes(bus.time) >= currentMinutes);
     let busesToDisplay = showingAllBuses ? sortedBuses : upcomingBuses;
@@ -141,7 +197,11 @@ function renderBusTimeline() {
     }
 
     if (busesToDisplay.length === 0) {
-        busListContainer.innerHTML = '<p style="padding:20px; text-align:center; color:#ff2e4d; font-weight:bold;">🏁 No more buses left today.</p>';
+        busListContainer.innerHTML = `
+            <div style="padding:40px 20px; text-align:center;">
+                <p style="color:#ff2e4d; font-weight:bold; font-size:18px; margin:0;">🏁 ഇന്നത്തെ ബസുകൾ കഴിഞ്ഞു.</p>
+                <p style="color:#666; font-size:14px; margin-top:8px;">എല്ലാ സമയവിവരങ്ങളും കാണാൻ മുകളിലെ 'Show All Schedules' ബട്ടൺ ക്ലിക്ക് ചെയ്യുക.</p>
+            </div>`;
         return;
     }
 
@@ -155,16 +215,19 @@ function renderBusTimeline() {
         card.style.display = "flex";
         card.style.justifyContent = "space-between";
         card.style.alignItems = "center";
+        card.style.borderLeft = "4px solid #ff2e4d";
 
         const name = currentLanguage === 'ml' ? bus.name : bus.nameEn;
         const rPath = currentLanguage === 'ml' ? bus.route : bus.routeEn;
 
         card.innerHTML = `
-            <div>
-                <h4 style="margin:0; font-size:18px; color:#333;">${name}</h4>
-                <p style="margin:4px 0 0 0; font-size:14px; color:#666;">${rPath}</p>
+            <div style="padding-right: 10px;">
+                <h4 style="margin:0; font-size:16px; color:#333; font-weight:700;">${name}</h4>
+                <p style="margin:4px 0 0 0; font-size:13px; color:#666; line-height:1.4;">${rPath}</p>
             </div>
-            <div style="background:#ff2e4d; color:white; padding:6px 12px; border-radius:4px; font-weight:bold;">${bus.time}</div>
+            <div style="background:#ff2e4d; color:white; padding:8px 12px; border-radius:6px; font-weight:bold; font-size:14px; white-space:nowrap; box-shadow: 0 2px 4px rgba(255,46,77,0.2);">
+                ${bus.time}
+            </div>
         `;
         busListContainer.appendChild(card);
     });
