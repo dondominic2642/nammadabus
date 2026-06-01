@@ -48,7 +48,7 @@ const masterBusData = {
             { time: "12:50 PM", name: "ചൈത്രം", nameEn: "Chaithram", route: "പയ്യാവൂർ വഴി ഇരുട്ടി", routeEn: "via Payyavur to Iritty" },
             { time: "01:15 PM", name: "സെന്റ് മേരീസ്", nameEn: "St. Marys", route: "പയ്യാവൂർ വഴി ഇരുട്ടി", routeEn: "via Payyavur to Iritty" },
             { time: "02:00 PM", name: "സെവൻ സ്റ്റാർ", nameEn: "Seven Star", route: "പയ്യാവൂർ വഴി ഇരുട്ടി", routeEn: "via Payyavur to Iritty" },
-            { time: "02:20 PM", name: "ഷൈн സ്റ്റാർ", nameEn: "Shine Star", route: "പയ്യാവൂർ വഴി ഇരുട്ടി", routeEn: "via Payyavur to Iritty" },
+            { time: "02:20 PM", name: "ഷൈൻ സ്റ്റാർ", nameEn: "Shine Star", route: "പയ്യാവൂർ വഴി ഇരുട്ടി", routeEn: "via Payyavur to Iritty" },
             { time: "03:00 PM", name: "KSRTC", nameEn: "KSRTC", route: "പയ്യാവൂർ, ഇരുട്ടി വഴി മാനന്തവാടി", routeEn: "via Payyavur, Iritty to Mananthavady" },
             { time: "03:35 PM", name: "പ്രൊവിഡൻസ്", nameEn: "Providence", route: "പയ്യാവൂർ, ഇരുട്ടി വഴി തലശ്ശേരി", routeEn: "via Payyavur, Iritty to Thalassery" },
             { time: "03:50 PM", name: "സാത്വിക", nameEn: "Sathwika", route: "പയ്യാവൂർ വഴി ഇരുട്ടി", routeEn: "via Payyavur to Iritty" },
@@ -80,18 +80,18 @@ const masterBusData = {
             { time: "05:45 PM", name: "KSRTC", nameEn: "KSRTC", route: "ആലക്കോട് വഴി ചെറുപുഴ", routeEn: "via Alakode to Cherupuzha" }
         ],
         kudiyanmala: [
-            { time: "08:50 AM", name: "കേരള", nameEn: "Kerala", route: "கூടിയാന്മലക്ക് നേരിട്ട്", routeEn: "Direct to Kudiyanmala" },
-            { time: "11:00 AM", name: "ചൈത്രം", nameEn: "Chaithram", route: "கூടിയാന്മലക്ക് നേരിട്ട്", routeEn: "Direct to Kudiyanmala" },
-            { time: "12:15 PM", name: "സെവൻ സ്റ്റാർ", nameEn: "Seven Star", route: "கூടിയാന്മലക്ക് നേരിട്ട്", routeEn: "Direct to Kudiyanmala" },
-            { time: "02:15 PM", name: "ഗാലക്സി", nameEn: "Galaxy", route: "கூടിയാന്മലക്ക് നേരിട്ട്", routeEn: "Direct to Kudiyanmala" },
-            { time: "03:50 PM", name: "കേരള", nameEn: "Kerala", route: "கூടിയാന്മലക്ക് നേരിട്ട്", routeEn: "Direct to Kudiyanmala" },
-            { time: "05:15 PM", name: "ചൈത്രം", nameEn: "Chaithram", route: "கூടിയാന്മലക്ക് നേരിട്ട്", routeEn: "Direct to Kudiyanmala" },
+            { time: "08:50 AM", name: "കേരള", nameEn: "Kerala", route: "കൂടിയാന്മലക്ക് നേരിട്ട്", routeEn: "Direct to Kudiyanmala" },
+            { time: "11:00 AM", name: "ചൈത്രം", nameEn: "Chaithram", route: "കൂടിയാന്മലക്ക് നേരിട്ട്", routeEn: "Direct to Kudiyanmala" },
+            { time: "12:15 PM", name: "സെവൻ സ്റ്റാർ", nameEn: "Seven Star", route: "കൂടിയാന്മലക്ക് നേരിട്ട്", routeEn: "Direct to Kudiyanmala" },
+            { time: "02:15 PM", name: "ഗാലക്സി", nameEn: "Galaxy", route: "കൂടിയാന്മലക്ക് നേരിട്ട്", routeEn: "Direct to Kudiyanmala" },
+            { time: "03:50 PM", name: "കേരള", nameEn: "Kerala", route: "കൂടിയാന്മലക്ക് നേരിട്ട്", routeEn: "Direct to Kudiyanmala" },
+            { time: "05:15 PM", name: "ചൈത്രം", nameEn: "Chaithram", route: "കൂടിയാന്മലക്ക് നേരിട്ട്", routeEn: "Direct to Kudiyanmala" },
             { time: "05:40 PM", name: "ശ്യാമളക്ഷ്മി", nameEn: "Shyamalakshmi", route: "കൂടിയാന്മല വഴി വലിയരിക്കമല", routeEn: "via Kudiyanmala to Valiyarikkamala" },
-            { time: "06:15 PM", name: "സെവൻ സ്റ്റാർ", nameEn: "Seven Star", route: "கூടിയാന്മലക്ക് നേരിട്ട്", routeEn: "Direct to Kudiyanmala" }
+            { time: "06:15 PM", name: "സെവൻ സ്റ്റാർ", nameEn: "Seven Star", route: "കൂടിയാന്മലക്ക് നേരിട്ട്", routeEn: "Direct to Kudiyanmala" }
         ],
         eruppazha: [
             { time: "07:45 AM", name: "സൽസബീൽ", nameEn: "Salsabeel", route: "എരുപ്പശ്ശേരി (എരുപ്പഹ)", routeEn: "Eruppazha" },
-            { time: "08:30 AM", name: "പ്риൻസ്", nameEn: "Prince", route: "എരുപ്പശ്ശേരി (എരുപ്പഹ)", routeEn: "Eruppazha" },
+            { time: "08:30 AM", name: "പ്രിൻസ്", nameEn: "Prince", route: "എരുപ്പശ്ശേരി (എരുപ്പഹ)", routeEn: "Eruppazha" },
             { time: "09:40 AM", name: "ശ്രേയസ്", nameEn: "Shreyas", route: "എരുപ്പശ്ശേരി (എരുപ്പഹ)", routeEn: "Eruppazha" },
             { time: "10:20 AM", name: "സെന്റ് ജോർജ്", nameEn: "St. George", route: "എരുപ്പശ്ശേരി (എരുപ്പഹ)", routeEn: "Eruppazha" },
             { time: "11:50 AM", name: "സൽസബീൽ", nameEn: "Salsabeel", route: "എരുപ്പശ്ശേരി (എരുപ്പഹ)", routeEn: "Eruppazha" },
@@ -104,11 +104,11 @@ const masterBusData = {
         arikamala: [
             { time: "08:55 AM", name: "മീനാക്ഷി", nameEn: "Meenakshi", route: "ചെറിയരിക്കമല", routeEn: "Cheriyarikkamala" },
             { time: "12:05 PM", name: "Family", nameEn: "Family", route: "ചെറിയരിക്കമല", routeEn: "Cheriyarikkamala" },
-            { time: "02:30 PM", name: "KSRTC", nameEn: "KSRTC", route: "വലിയരിക്കമല", routeEn: "Valiyarikkamala" },
+            { time: "02:30 PM", name: "KSRTC", nameEn: "KSRTC", route: "വлияരിക്കമല", routeEn: "Valiyarikkamala" },
             { time: "02:30 PM", name: "AIശ്വര്യ", nameEn: "Aishwarya", route: "ചെറിയരിക്കമല", routeEn: "Cheriyarikkamala" },
             { time: "06:00 PM", name: "മീനാക്ഷി", nameEn: "Meenakshi", route: "ചെറിയരിക്കമല", routeEn: "Cheriyarikkamala" },
             { time: "06:55 PM", name: "നന്ദനം", nameEn: "Nandanam", route: "മിഡിലായം", routeEn: "Midilayam" },
-            { time: "07:25 PM", name: "KSRTC", nameEn: "KSRTC", route: "വലിയരിക്കമല", routeEn: "Valiyarikkamala" },
+            { time: "07:25 PM", name: "KSRTC", nameEn: "KSRTC", route: "വлияരിക്കമല", routeEn: "Valiyarikkamala" },
             { time: "07:45 PM", name: "നന്ദനം", nameEn: "Nandanam", route: "ചെറിയരിക്കമല", routeEn: "Cheriyarikkamala" }
         ],
         cherupuzha_net: [
@@ -140,7 +140,7 @@ const masterBusData = {
             { time: "05:00 PM", name: "KSRTC", nameEn: "KSRTC", route: "[Departure: ഇരിട്ടി] ബലാലിലേക്ക് (ചെമ്പേരി, ആലക്കോട്, വെള്ളരിക്കുണ്ട് വഴി)", routeEn: "[Dep: Iritty] to Balal (via Chemperi, Alakode, Vellarikundu)" },
             { time: "05:05 PM", name: "THEKKEDATH", nameEn: "THEKKEDATH", route: "[Departure: ഇരിട്ടി] ജോസ് ഗിരിക്ക് (ശ്രീകണ്ഠാപുരം, നടുവിൽ, ആലക്കോട് വഴി)", routeEn: "[Dep: Iritty] to Josegiri (via Sreekandapuram, Naduvil, Alakode)" },
             { time: "05:10 PM", name: "ANAND", nameEn: "ANAND", route: "[Departure: പയ്യാവൂർ] ചെറുപുഴ ഭാഗത്തേക്ക് പുറപ്പെടുന്നു", routeEn: "[Dep: Payyavur] Towards Cherupuzha" },
-            { time: "05:40 PM", name: "KSRTC", nameEn: "KSRTC", route: "[Departure: ഇരിട്ടി] കാഞ്ഞങ്ങാടേക്ക് (ചെറുപുഴ വഴി നേരിട്ട്)", routeEn: "[Dep: Iritty] to Kanhangad (via Cherupuzha)" },
+            { time: "05:40 PM", name: "KSRTC", nameEn: "KSRTC", route: "[Departure: ഇരിട്ടി] കാഞ്ഞങ്ങാടേക്ക് (ചറുപുഴ വഴി നേരിട്ട്)", routeEn: "[Dep: Iritty] to Kanhangad (via Cherupuzha)" },
             { time: "05:45 PM", name: "DIVINE", nameEn: "DIVINE", route: "[Departure: ഇരിട്ടി] കരുവൻചാലിലേക്ക് (പയ്യാവൂർ വഴി)", routeEn: "[Dep: Iritty] to Karuvanchal (via Payyavur)" },
             { time: "07:40 PM", name: "KSRTC", nameEn: "KSRTC", route: "[Departure: ഇരിട്ടി] ചീക്കാടിലേക്ക് (ആലക്കോട് വഴി)", routeEn: "[Dep: Iritty] to Cheekad (via Alakode)" }
         ]
@@ -238,22 +238,47 @@ function activateSecurity() {
 
 // 🔄 CHANGE SOURCE LOGIC (Called from HTML tabs)
 function selectSource(sourceId) {
-    selectedSource = sourceId.toLowerCase(); // HTML-ൽ നിന്നുള്ള വാല്യൂ ചെറുതാക്കുന്നു
+    // ഇൻപുട്ട് സ്ട്രിംഗ് ക്ലീൻ ആക്കുന്നു
+    let cleanId = sourceId.trim().toLowerCase();
     
-    // ടാബുകളുടെ ആക്റ്റീവ് സ്റ്റൈൽ മാറ്റാൻ
-    document.querySelectorAll('.src-tab').forEach(btn => btn.classList.remove('active'));
+    // ടൈപ്പോകൾ ഉണ്ടെങ്കിൽ ഡാറ്റാബേസ് കീയിലേക്ക് മാപ്പ് ചെയ്യുന്നു
+    if (cleanId.includes('chelliparamba') || cleanId.includes('ചെല്ലിപ്പറമ്പ്')) {
+        selectedSource = 'chelliparamba';
+    } else if (cleanId.includes('kuthuparamba') || cleanId.includes('കൂത്തുപറമ്പ്')) {
+        selectedSource = 'kuthuparamba';
+    } else {
+        selectedSource = cleanId;
+    }
     
-    // തനിയെ ആദ്യത്തെ ഡെസ്റ്റിനേഷൻ സെലക്ട് ചെയ്യാൻ
-    selectedDest = Object.keys(masterBusData[selectedSource])[0];
+    // HTML തനിയെ ആദ്യത്തെ ഡെസ്റ്റിനേഷൻ സെലക്ട് ചെയ്യാൻ
+    if (masterBusData[selectedSource]) {
+        selectedDest = Object.keys(masterBusData[selectedSource])[0];
+    }
     
+    // ആക്റ്റീവ് ബട്ടൺ സ്റ്റൈൽ മാറ്റാൻ HTML-ൽ ക്ലാസ് ആഡ് ചെയ്യാം
+    updateSourceTabStyles();
     renderDestinations();
     renderBuses();
+}
+
+function updateSourceTabStyles() {
+    // നിങ്ങളുടെ HTML-ൽ ബട്ടണുകൾക്ക് ഐഡി ഉണ്ടെങ്കിൽ സ്റ്റൈൽ മാറ്റാൻ ഇത് സഹായിക്കും
+    const tabs = document.querySelectorAll('[onclick*="selectSource"]');
+    tabs.forEach(tab => {
+        if (tab.getAttribute('onclick').toLowerCase().includes(selectedSource)) {
+            tab.style.backgroundColor = '#ff4d4d'; // Active red
+            tab.style.color = '#fff';
+        } else {
+            tab.style.backgroundColor = '#fff'; // Inactive white
+            tab.style.color = '#333';
+        }
+    });
 }
 
 // 🎯 RENDER DESTINATION TABS BASED ON SOURCE
 function renderDestinations() {
     const container = document.getElementById('destContainer');
-    if (!container) return;
+    if (!container) return; // ഇങ്ങനെയൊരു എലമെന്റ് HTML-ൽ ഇല്ലെങ്കിൽ എറർ വരാതിരിക്കാൻ
     
     container.innerHTML = '';
     const destinations = destRouteNames[selectedSource] || [];
@@ -262,10 +287,24 @@ function renderDestinations() {
         const btn = document.createElement('button');
         btn.className = `dest-tab ${selectedDest === dest.id ? 'active' : ''}`;
         btn.textContent = currentLang === 'ml' ? dest.ml : dest.en;
+        
+        // ഡിസൈൻ ഭംഗിയാക്കാൻ ബട്ടൺ സ്റ്റൈലുകൾ ജാവാസ്ക്രിപ്റ്റിൽ നൽകുന്നു
+        btn.style.margin = "5px";
+        btn.style.padding = "10px 15px";
+        btn.style.borderRadius = "20px";
+        btn.style.border = "1px solid #ddd";
+        btn.style.cursor = "pointer";
+        if (selectedDest === dest.id) {
+            btn.style.backgroundColor = "#ff4d4d";
+            btn.style.color = "#fff";
+        } else {
+            btn.style.backgroundColor = "#f5f5f5";
+            btn.style.color = "#333";
+        }
+
         btn.onclick = () => {
             selectedDest = dest.id;
-            document.querySelectorAll('.dest-tab').forEach(b => b.classList.remove('active'));
-            btn.classList.add('active');
+            renderDestinations();
             renderBuses();
         };
         container.appendChild(btn);
@@ -289,14 +328,22 @@ function renderBuses() {
         const card = document.createElement('div');
         card.className = 'bus-card';
         
+        // കാർഡിന്റെ ഡിസൈൻ സ്റ്റൈലുകൾ
+        card.style.border = "1px solid #eee";
+        card.style.borderRadius = "10px";
+        card.style.padding = "15px";
+        card.style.margin = "10px 0";
+        card.style.boxShadow = "0 2px 5px rgba(0,0,0,0.05)";
+        card.style.backgroundColor = "#fff";
+        
         const busName = currentLang === 'ml' ? bus.name : bus.nameEn;
         const busRoute = currentLang === 'ml' ? bus.route : bus.routeEn;
         
         card.innerHTML = `
-            <div class="bus-info">
-                <span class="bus-time"><i class="fa-regular fa-clock"></i> ${bus.time}</span>
-                <h3 class="bus-title">${busName}</h3>
-                <p class="bus-route">${busRoute}</p>
+            <div class="bus-info" style="display: flex; flex-direction: column; gap: 5px;">
+                <span class="bus-time" style="color: #ff4d4d; font-weight: bold; font-size: 1.1rem;">⏰ ${bus.time}</span>
+                <h3 class="bus-title" style="margin: 5px 0; color: #222;">${busName}</h3>
+                <p class="bus-route" style="margin: 0; color: #666; font-size: 0.9rem;">📍 ${busRoute}</p>
             </div>
         `;
         listContainer.appendChild(card);
@@ -307,16 +354,11 @@ function renderBuses() {
 function changeLang(lang) {
     currentLang = lang;
     
-    // UI-ലെ ചില തലക്കെട്ടുകൾ മാറ്റാൻ
     const sourceTitle = document.getElementById('sourceTitle');
-    const searchInput = document.getElementById('busSearchInput');
-    
     if (currentLang === 'ml') {
         if(sourceTitle) sourceTitle.textContent = "നിങ്ങൾ ഇപ്പോൾ എവിടെയാണ്?";
-        if(searchInput) searchInput.placeholder = "ബസ് പേര് അല്ലെങ്കിൽ റൂട്ട് സെർച്ച് ചെയ്യാം...";
     } else {
         if(sourceTitle) sourceTitle.textContent = "Where are you now?";
-        if(searchInput) searchInput.placeholder = "Search bus name or route...";
     }
     
     renderDestinations();
@@ -326,5 +368,5 @@ function changeLang(lang) {
 // 🚀 INITIALIZE APP ON LOAD
 window.addEventListener('DOMContentLoaded', () => {
     activateSecurity();
-    selectSource('chelliparamba'); // Default ആയി ചെമ്പേരി ലോഡ് ചെയ്യും
+    selectSource('chelliparamba'); // ഫസ്റ്റ് ലോഡിൽ ചെല്ലിപ്പറമ്പ് സെലക്ട് ചെയ്യും
 });
