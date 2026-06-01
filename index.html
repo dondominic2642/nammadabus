@@ -72,6 +72,36 @@
         <img src="icon-192.png" class="icon-192"> <!-- നിന്റെ ലോഗോ ഫയൽ നെയിം ഇവിടെ കൊടുക്കുക -->
     </div>
 </div>
+<script>
+    // 1. Notification Permission ചോദിക്കുന്നു
+if ("Notification" in window) {
+    Notification.requestPermission();
+}
+
+// 2. വോയിസ് അലേർട്ട് ഫങ്ക്ഷൻ (മലയാളം & ഇംഗ്ലീഷ്)
+function speakAlarm(busName, minutes, language) {
+    let message = (language === 'ml') 
+        ? `ശ്രദ്ധിക്കുക, ${busName} ബസ് ${minutes} മിനിറ്റിനുള്ളിൽ എത്തും.` 
+        : `Attention, ${busName} bus will arrive in ${minutes} minutes.`;
+    
+    let speech = new SpeechSynthesisUtterance(message);
+    speech.lang = (language === 'ml') ? 'ml-IN' : 'en-US';
+    window.speechSynthesis.speak(speech);
+}
+
+// 3. അലാറം ട്രിഗർ ചെയ്യേണ്ട ലോജിക് (ബസ് സമയം ആകുമ്പോൾ വിളിക്കാൻ)
+function triggerAlarm(busName, minutes, language) {
+    // നോട്ടിഫിക്കേഷൻ അയക്കുന്നു
+    if (Notification.permission === "granted") {
+        new Notification("Nammadabus Alert!", {
+            body: (language === 'ml') ? `${busName} ബസ് ${minutes} മിനിറ്റിനുള്ളിൽ!` : `${busName} bus in ${minutes} mins!`
+        });
+    }
+    
+    // വോയിസ് അലേർട്ട് വിളിക്കുന്നു
+    speakAlarm(busName, minutes, language);
+}
+</script>
     <header class="app-header">
         <h1>🚌 NammadaBus.in</h1>
         <p>നമ്മുടെ സ്വന്തം ബസ് സമയവിവരങ്ങൾ</p>
