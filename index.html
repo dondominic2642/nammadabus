@@ -104,21 +104,7 @@
             <h2 id="destTitle">ഏത് ഭാഗത്തേക്കാണ് പോകേണ്ടത്? (Destination)</h2>
             <div id="destContainer" class="dest-tabs-container">
                 </div>
-             <div class="alarm-controls">
-    <select id="alarm-time">
-        <option value="5">5 മിനിറ്റ് മുൻപ്</option>
-        <option value="10">10 മിനിറ്റ് മുൻപ്</option>
-        <option value="15">15 മിനിറ്റ് മുൻപ്</option>
-    </select>
-
-    <select id="lang-select">
-        <option value="ml">Malayalam</option>
-        <option value="en">English</option>
-    </select>
-
-    <button onclick="setMyAlarm('നിന്റെ ബസ് പേര് ഇവിടെ')">Set Alarm</button>
-</div>
-        </section>
+      
             </section>
     </main>
 
@@ -154,34 +140,7 @@ window.addEventListener('load', function() {
         }
     }, 2000); // 2 സെക്കൻഡ് കഴിഞ്ഞാൽ സ്പ്ലാഷ് മാറും
 });
-    if ("Notification" in window) {
-        Notification.requestPermission();
-    }
-
-    function speakAlarm(busName, minutes, language) {
-        let message = (language === 'ml') 
-            ? `ശ്രദ്ധിക്കുക, ${busName} ബസ് ${minutes} മിനിറ്റിനുള്ളിൽ എത്തും.` 
-            : `Attention, ${busName} bus will arrive in ${minutes} minutes.`;
-        
-        let speech = new SpeechSynthesisUtterance(message);
-        speech.lang = (language === 'ml') ? 'ml-IN' : 'en-US';
-        window.speechSynthesis.speak(speech);
-    }
-
-    function triggerAlarm(busName, minutes, language) {
-        if (Notification.permission === "granted") {
-            new Notification("Nammadabus Alert!", {
-                body: (language === 'ml') ? `${busName} ബസ് ${minutes} മിനിറ്റിനുള്ളിൽ!` : `${busName} bus in ${minutes} mins!`
-            });
-        }
-        speakAlarm(busName, minutes, language);
-    }
-
-    function setMyAlarm(busName) {
-        let minutes = document.getElementById('alarm-time').value;
-        let language = document.getElementById('lang-select').value;
-        triggerAlarm(busName, minutes, language);
-    }
+  
 </script>
 
 </script>
