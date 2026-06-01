@@ -1,99 +1,167 @@
 <!DOCTYPE html>
 <html lang="ml">
 <head>
-    <!-- Google Analytics -->
-    <script async src="https://www.googletagmanager.com/gtag/js?id=G-PHQ8GQDMMQ"></script>
-    <script>
-      window.dataLayer = window.dataLayer || [];
-      function gtag(){dataLayer.push(arguments);}
-      gtag('js', new Date());
-      gtag('config', 'G-PHQ8GQDMMQ');
-    </script>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Nammadabus - Chemperi Bus Tracker</title>
-    <link rel="stylesheet" href="style.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <title>NammadaBus.in</title>
     <style>
-        /* Splash Screen Style */
-        #splash-screen {
-            position: fixed; top: 0; left: 0; width: 100%; height: 100%;
-            background: #ffffff; display: flex; justify-content: center;
-            align-items: center; z-index: 9999;
+        :root {
+            --primary-red: #ff4d4d;
+            --dark-gray: #333;
+            --light-gray: #f5f5f5;
         }
-        .ripple-container { position: relative; width: 150px; height: 150px; display: flex; justify-content: center; align-items: center; }
-        .bus-logo { width: 80px; z-index: 2; }
-        .circle { position: absolute; width: 100px; height: 100px; border: 3px solid #ffcc00; border-radius: 50%; animation: ripple 2s linear infinite; z-index: 1; }
-        @keyframes ripple { 0% { transform: scale(0.5); opacity: 1; } 100% { transform: scale(2); opacity: 0; } }
+
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: #fcfcfc;
+            color: var(--dark-gray);
+        }
+
+        /* Top Header Banner */
+        .header-banner {
+            background-color: var(--primary-red);
+            color: white;
+            text-align: center;
+            padding: 20px 10px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+
+        .header-banner h1 {
+            margin: 0 0 10px 0;
+            font-size: 2.2rem;
+            font-weight: 800;
+            letter-spacing: 0.5px;
+        }
+
+        /* Language Switcher Links */
+        .lang-container {
+            font-size: 0.95rem;
+        }
+
+        .lang-link {
+            color: white;
+            text-decoration: none;
+            padding: 2px 8px;
+            border: 1px solid rgba(255, 255, 255, 0.5);
+            border-radius: 4px;
+            background: rgba(255, 255, 255, 0.1);
+            cursor: pointer;
+            transition: all 0.2s ease;
+        }
+
+        .lang-link:hover {
+            background: white;
+            color: var(--primary-red);
+        }
+
+        .lang-divider {
+            margin: 0 5px;
+            opacity: 0.7;
+        }
+
+        /* Main Content Container */
+        .main-content {
+            max-width: 700px;
+            margin: 0 auto;
+            padding: 20px 15px;
+            text-align: center;
+        }
+
+        /* Search / Input Box Hint styled from screenshot */
+        .search-hint {
+            border: 1px solid #ccc;
+            display: inline-block;
+            padding: 3px 8px;
+            color: #888;
+            font-size: 0.85rem;
+            margin-bottom: 15px;
+            border-radius: 3px;
+            background-color: #fff;
+        }
+
+        .section-title {
+            font-size: 1.3rem;
+            margin: 0 0 20px 0;
+            color: #444;
+            font-weight: 600;
+        }
+
+        /* Source Selection Tabs Layout */
+        .source-container {
+            display: flex;
+            justify-content: center;
+            gap: 12px;
+            margin-bottom: 25px;
+            flex-wrap: wrap;
+        }
+
+        .source-btn {
+            padding: 12px 24px;
+            font-size: 1.05rem;
+            font-weight: bold;
+            border: 2px solid var(--primary-red);
+            border-radius: 30px;
+            cursor: pointer;
+            background-color: white;
+            color: var(--primary-red);
+            transition: all 0.25s ease;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+        }
+
+        /* Dynamic Containers for JS injection */
+        #destContainer {
+            display: flex;
+            justify-content: center;
+            gap: 8px;
+            flex-wrap: wrap;
+            margin: 20px 0;
+            min-height: 45px;
+        }
+
+        #busList {
+            margin-top: 25px;
+            text-align: left;
+        }
+
+        /* Responsive adjustments */
+        @media (max-width: 480px) {
+            .header-banner h1 { font-size: 1.8rem; }
+            .source-btn { width: 100%; max-width: 280px; }
+        }
     </style>
 </head>
 <body>
 
-    <!-- Splash Screen -->
-    <div id="splash-screen">
-        <div class="ripple-container">
-            <div class="circle"></div>
-            <img src="icon-192.png" alt="Logo" class="bus-logo">
-        </div>
-    </div>
-
-    <header class="app-header">
+    <header class="header-banner">
         <h1>NammadaBus.in</h1>
-        <div class="lang-switch">
-            <button onclick="changeLang('ml')">മലയാളം</button> | <button onclick="changeLang('en')">English</button>
+        <div class="lang-container">
+            <span class="lang-link" onclick="changeLang('ml')">മലയാളം</span>
+            <span class="lang-divider">|</span>
+            <span class="lang-link" onclick="changeLang('en')">English</span>
         </div>
     </header>
 
-    <main class="container">
-        <div class="search-container">
-            <input type="text" id="busSearchInput" placeholder="ബസ് പേര് അല്ലെങ്കിൽ റൂട്ട് സെർച്ച് ചെയ്യാം...">
+    <main class="main-content">
+        
+        <div class="search-hint">ബസ് പേര് അല്ലെങ്കിൽ</div>
+
+        <h2 id="sourceTitle" class="section-title">നിങ്ങൾ ഇപ്പോൾ എവിടെയാണ്?</h2>
+
+        <div class="source-container">
+            <button class="source-btn" onclick="selectSource('chelliparamba')">ചെല്ലിപ്പറമ്പ് / ചെമ്പേരി</button>
+            <button class="source-btn" onclick="selectSource('kuthuparamba')">കൂത്തുപറമ്പ് / കണ്ണൂർ</button>
         </div>
 
-        <section class="tabs-section">
-            <h2 id="sourceTitle">നിങ്ങൾ ഇപ്പോൾ എവിടെയാണ്?</h2>
-            <div class="source-tabs">
-                <button class="src-tab active" onclick="selectSource('Chelliparamba')">ചെല്ലിപ്പറമ്പ് / ചെമ്പേരി</button>
-                <button class="src-tab" onclick="selectSource('Kuthuparamba')">கூത്തുപറമ്പ് / കണ്ണൂർ</button>
-            </div>
-            <div id="destContainer" class="dest-tabs-container"></div>
-        </section>
+        <hr style="border: 0; border-top: 1px solid #eee; margin: 20px 0;">
 
-        <section id="busList" class="bus-list">
-            <!-- ബസ് ലിസ്റ്റ് ഇവിടെ ലോഡ് ആകുന്നു -->
-        </section>
+        <div id="destContainer"></div>
 
-        <button id="openFeedbackBtn" class="feedback-trigger-btn" onclick="openFeedback()">💬 Suggestions</button>
+        <div id="busList"></div>
+
     </main>
 
-    <!-- Script Section -->
-    <script>
-        // Splash Screen Logic (2 seconds)
-        window.addEventListener('load', () => {
-            setTimeout(() => {
-                const splash = document.getElementById('splash-screen');
-                if(splash) splash.style.display = 'none';
-            }, 2000);
-        });
-
-        // Search Logic
-        document.getElementById('busSearchInput').addEventListener('input', function(e) {
-            let filter = e.target.value.toLowerCase();
-            document.querySelectorAll('.bus-card').forEach(card => {
-                card.style.display = card.textContent.toLowerCase().includes(filter) ? "flex" : "none";
-            });
-        });
-
-        // Feedback
-        function openFeedback() { window.location.href = "mailto:your-email@example.com?subject=Suggestions"; }
-        
-        // Language placeholder
-        function changeLang(lang) { 
-            console.log("Language changed to: " + lang); 
-            if(typeof renderBuses === "function") renderBuses(); 
-        }
-    </script>
-
-    <!-- Connect your app logic -->
     <script src="app.js"></script>
 </body>
 </html>
