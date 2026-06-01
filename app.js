@@ -6,7 +6,7 @@ const masterBusData = {
         taliparamba: [
             { time: "05:30 AM", name: "ജെ ജെ (ചെമ്പേരിയിൽ നിന്ന് 5:25)", nameEn: "JJ (From Chemperi 5:25)", route: "ശ്രീകണ്ഠാപുരം, തളിപ്പറമ്പ് വഴി", routeEn: "via Sreekandapuram, Taliparamba" },
             { time: "06:45 AM", name: "സാഗര (ചെമ്പേരിയിൽ നിന്ന് 6:35)", nameEn: "Sagara (From Chemperi 6:35)", route: "ശ്രീകണ്ഠാപുരം, തളിപ്പറമ്പ് വഴി", routeEn: "via Sreekandapuram, Taliparamba" },
-            { time: "06:55 AM", name: "KSRTC", nameEn: "KSRTC", route: "പുളിക്കുруമ്പ - തളിപ്പറമ്പ്", routeEn: "Pulikkurumba to Taliparamba" },
+            { time: "06:55 AM", name: "KSRTC", nameEn: "KSRTC", route: "പുളിക്കുരുമ്പ - തളിപ്പറമ്പ്", routeEn: "Pulikkurumba to Taliparamba" },
             { time: "07:35 AM", name: "നന്ദനം", nameEn: "Nandanam", route: "ശ്രീകണ്ഠാപുരം, തളിപ്പറമ്പ് വഴി", routeEn: "via Sreekandapuram, Taliparamba" },
             { time: "07:50 AM", name: "നന്ദനം (ചെമ്പേരിയിൽ നിന്ന് 7:40)", nameEn: "Nandanam (From Chemperi 7:40)", route: "ശ്രീകണ്ഠാപുരം, തളിപ്പറമ്പ് വഴി", routeEn: "via Sreekandapuram, Taliparamba" },
             { time: "08:30 AM", name: "കുന്നത്ത് (ചെമ്പേരിയിൽ നിന്ന് 8:20)", nameEn: "Kunnath (From Chemperi 8:20)", route: "ശ്രീകണ്ഠാപുരം, തളിപ്പറമ്പ് വഴി", routeEn: "via Sreekandapuram, Taliparamba" },
@@ -45,7 +45,7 @@ const masterBusData = {
             { time: "11:00 AM", name: "സെന്റ് ജോർജ്", nameEn: "St. George", route: "ശ്രീകണ്ഠാപുരം വഴി ഇരുട്ടി", routeEn: "via Sreekandapuram to Iritty" },
             { time: "11:10 AM", name: "സെന്റ് മേരീസ്", nameEn: "St. Marys", route: "പയ്യാവൂർ വഴി ഇരുട്ടി", routeEn: "via Payyavur to Iritty" },
             { time: "11:45 AM", name: "നിർമ്മാല്യം", nameEn: "Nirmalyam", route: "പയ്യാവൂർ വഴി ഇരുട്ടി", routeEn: "via Payyavur to Iritty" },
-            { time: "12:15 PM", name: "ഐ പി സി", nameEn: "IPC", route: "പയ്യാവൂർ വഴി ഇരുട്ടി", routeEn: "via Payyavur to Iritty" },
+            { time: "12:15 PM", name: "아이 പി സി", nameEn: "IPC", route: "പയ്യാവൂർ വഴി ഇരുട്ടി", routeEn: "via Payyavur to Iritty" },
             { time: "12:25 PM", name: "KSRTC", nameEn: "KSRTC", route: "പയ്യാവൂർ വഴി ഇരുട്ടി", routeEn: "via Payyavur to Iritty" },
             { time: "12:50 PM", name: "ചൈത്രം", nameEn: "Chaithram", route: "പയ്യാവൂർ വഴി ഇരുട്ടി", routeEn: "via Payyavur to Iritty" },
             { time: "01:15 PM", name: "സെന്റ് മേരീസ്", nameEn: "St. Marys", route: "പയ്യാവൂർ വഴി ഇരുട്ടി", routeEn: "via Payyavur to Iritty" },
@@ -142,7 +142,7 @@ const masterBusData = {
             { time: "05:00 PM", name: "KSRTC", nameEn: "KSRTC", route: "[Departure: ഇരിട്ടി] ബലാലിലേക്ക് (ചെമ്പേരി, ആലക്കോട്, വെള്ളരിക്കുണ്ട് വഴി)", routeEn: "[Dep: Iritty] to Balal (via Chemperi, Alakode, Vellarikundu)" },
             { time: "05:05 PM", name: "THEKKEDATH", nameEn: "THEKKEDATH", route: "[Departure: ഇരിട്ടി] ജോസ് ഗിരിക്ക് (ശ്രീകണ്ഠാപുരം, നടുവിൽ, ആലക്കോട് വഴി)", routeEn: "[Dep: Iritty] to Josegiri (via Sreekandapuram, Naduvil, Alakode)" },
             { time: "05:10 PM", name: "ANAND", nameEn: "ANAND", route: "[Departure: പയ്യാവൂർ] ചെറുപുഴ ഭാഗത്തേക്ക് പുറപ്പെടുന്നു", routeEn: "[Dep: Payyavur] Towards Cherupuzha" },
-            { time: "05:40 PM", name: "KSRTC", nameEn: "KSRTC", route: "[Departure: ഇരിട്ടി] കാഞ്ഞങ്ങാടേക്ക് (ചെറുപുഴ വഴി നേരിട്ട്)", routeEn: "[Dep: Iritty] to Kanhangad (via Cherupuzha)" },
+            { time: "05:40 PM", name: "KSRTC", nameEn: "KSRTC", route: "[Departure: ഇരിട്ടി] കാഞ്ഞങ്ങാടേക്ക് (ചറുപുഴ വഴി നേരിട്ട്)", routeEn: "[Dep: Iritty] to Kanhangad (via Cherupuzha)" },
             { time: "05:45 PM", name: "DIVINE", nameEn: "DIVINE", route: "[Departure: ഇരിട്ടി] കരുവൻചാലിലേക്ക് (പയ്യാവൂർ വഴി)", routeEn: "[Dep: Iritty] to Karuvanchal (via Payyavur)" },
             { time: "07:40 PM", name: "KSRTC", nameEn: "KSRTC", route: "[Departure: ഇരിട്ടി] ചീക്കാടിലേക്ക് (ആലക്കോട് വഴി)", routeEn: "[Dep: Iritty] to Cheekad (via Alakode)" }
         ]
@@ -218,25 +218,54 @@ let selectedRoute = '';
 let showingAllBuses = false; 
 
 // ==========================================
-// 🎯 DOM ELEMENTS
+// 🎯 DOM ELEMENTS (Safely referenced globally)
 // ==========================================
-const standSelect = document.getElementById('standSelect');
-const routeButtonsContainer = document.getElementById('routeButtonsContainer');
-const busListContainer = document.getElementById('busListContainer');
-const toggleBusesBtn = document.getElementById('toggleBusesBtn');
-const langToggleBtn = document.getElementById('langToggleBtn');
-const feedbackInput = document.getElementById('feedbackInput');
-const submitFeedbackBtn = document.getElementById('submitFeedbackBtn');
+let standSelect, routeButtonsContainer, busListContainer, toggleBusesBtn, langToggleBtn, feedbackInput, submitFeedbackBtn;
 
 // ==========================================
 // 🚀 INITIALIZATION
 // ==========================================
 document.addEventListener('DOMContentLoaded', () => {
-    injectMicroInteractionStyles(); // Dynamically mix enhanced layout CSS
+    injectMicroInteractionStyles(); 
+    initializeDOMElements();
     setupEventListeners();
+    
+    // Safety Fallback Initialization
+    syncSelectedRoute();
+    
     renderRouteButtons();
     renderBusTimeline();
 });
+
+function initializeDOMElements() {
+    standSelect = document.getElementById('standSelect');
+    routeButtonsContainer = document.getElementById('routeButtonsContainer');
+    busListContainer = document.getElementById('busListContainer');
+    toggleBusesBtn = document.getElementById('toggleBusesBtn');
+    langToggleBtn = document.getElementById('langToggleBtn');
+    feedbackInput = document.getElementById('feedbackInput');
+    submitFeedbackBtn = document.getElementById('submitFeedbackBtn');
+
+    // Debugging assistant: checks for missing IDs in html file
+    if (!standSelect) console.warn("Missing HTML Element: id='standSelect'");
+    if (!routeButtonsContainer) console.warn("Missing HTML Element: id='routeButtonsContainer'");
+    if (!busListContainer) console.warn("Missing HTML Element: id='busListContainer'");
+    if (!toggleBusesBtn) console.warn("Missing HTML Element: id='toggleBusesBtn'");
+    if (!langToggleBtn) console.warn("Missing HTML Element: id='langToggleBtn'");
+}
+
+// Ensure selectedRoute tracking logic matches database constraints dynamically
+function syncSelectedRoute() {
+    if (standSelect && standSelect.value) {
+        selectedStand = standSelect.value;
+    }
+    const availableRoutes = destRouteNames[selectedStand] || [];
+    if (availableRoutes.length > 0) {
+        selectedRoute = availableRoutes[0].id;
+    } else {
+        selectedRoute = '';
+    }
+}
 
 // ==========================================
 // 🎨 DYNAMIC CSS EFFECTS MIXIN
@@ -247,38 +276,28 @@ function injectMicroInteractionStyles() {
     const styleSheet = document.createElement('style');
     styleSheet.id = 'injected-ux-styles';
     styleSheet.textContent = `
-        /* Smooth transitions for content loading wrappers */
         #busListContainer {
             transition: transform 0.25s cubic-bezier(0.16, 1, 0.3, 1), opacity 0.2s ease;
+            min-height: 50px;
         }
-
-        /* Staggered cascading entry animation for individual cards */
         .bus-card {
             opacity: 0;
             transform: translateY(12px);
             animation: uxCardAppear 0.35s cubic-bezier(0.16, 1, 0.3, 1) forwards;
             transition: transform 0.2s ease, box-shadow 0.2s ease, background-color 0.2s ease;
         }
-        
         .bus-card:hover {
             transform: translateY(-2px);
             box-shadow: 0 6px 16px rgba(0,0,0,0.08);
         }
-
         @keyframes uxCardAppear {
-            to {
-                opacity: 1;
-                transform: translateY(0);
-            }
+            to { opacity: 1; transform: translateY(0); }
         }
-
-        /* Input field visual error state interaction */
         .shake-error {
             animation: uxShake 0.4s ease-in-out;
             border-color: #ef4444 !important;
             box-shadow: 0 0 0 3px rgba(239, 68, 68, 0.15) !important;
         }
-
         @keyframes uxShake {
             0%, 100% { transform: translateX(0); }
             25% { transform: translateX(-6px); }
@@ -292,44 +311,45 @@ function injectMicroInteractionStyles() {
 // ⚡ EVENT LISTENERS & INTERACTION FLOWS
 // ==========================================
 function setupEventListeners() {
-    standSelect.addEventListener('change', (e) => {
-        selectedStand = e.target.value;
-        selectedRoute = ''; 
-        showingAllBuses = false;
-        
-        // Quick container transition out before re-render
-        busListContainer.style.opacity = '0';
-        setTimeout(() => {
+    if (standSelect) {
+        standSelect.addEventListener('change', (e) => {
+            selectedStand = e.target.value;
+            showingAllBuses = false;
+            syncSelectedRoute();
+            
+            if (busListContainer) busListContainer.style.opacity = '0';
+            setTimeout(() => {
+                renderRouteButtons();
+                renderBusTimeline();
+                if (busListContainer) busListContainer.style.opacity = '1';
+            }, 150);
+        });
+    }
+
+    if (toggleBusesBtn) {
+        toggleBusesBtn.addEventListener('click', () => {
+            showingAllBuses = !showingAllBuses;
+            renderBusTimeline();
+        });
+    }
+
+    if (langToggleBtn) {
+        langToggleBtn.addEventListener('click', () => {
+            currentLanguage = currentLanguage === 'ml' ? 'en' : 'ml';
+            langToggleBtn.textContent = currentLanguage === 'ml' ? 'English' : 'മലയാളം';
+            langToggleBtn.classList.toggle('lang-en', currentLanguage === 'en');
+            
+            updateStaticLabels();
             renderRouteButtons();
             renderBusTimeline();
-            busListContainer.style.opacity = '1';
-        }, 150);
-    });
-
-    toggleBusesBtn.addEventListener('click', () => {
-        showingAllBuses = !showingAllBuses;
-        renderBusTimeline();
-    });
-
-    langToggleBtn.addEventListener('click', () => {
-        currentLanguage = currentLanguage === 'ml' ? 'en' : 'ml';
-        langToggleBtn.textContent = currentLanguage === 'ml' ? 'English' : 'മലയാളം';
-        
-        langToggleBtn.classList.toggle('lang-en', currentLanguage === 'en');
-        
-        updateStaticLabels();
-        renderRouteButtons();
-        renderBusTimeline();
-    });
+        });
+    }
 
     if (submitFeedbackBtn) {
         submitFeedbackBtn.addEventListener('click', handleFeedbackSubmission);
     }
 }
 
-// ==========================================
-// 🌐 TRANSLATIONS UTILITY
-// ==========================================
 function updateStaticLabels() {
     const titleEl = document.getElementById('appTitle');
     if (titleEl) {
@@ -341,14 +361,12 @@ function updateStaticLabels() {
 // 🛠️ ROUTE BUTTON RENDERER
 // ==========================================
 function renderRouteButtons() {
+    if (!routeButtonsContainer) return;
     routeButtonsContainer.innerHTML = '';
+    
     const routes = destRouteNames[selectedStand] || [];
 
-    routes.forEach((routeObj, index) => {
-        if (index === 0 && !selectedRoute) {
-            selectedRoute = routeObj.id; 
-        }
-
+    routes.forEach((routeObj) => {
         const btn = document.createElement('button');
         btn.className = `route-btn ${selectedRoute === routeObj.id ? 'active' : ''}`;
         btn.textContent = currentLanguage === 'ml' ? routeObj.ml : routeObj.en;
@@ -366,14 +384,17 @@ function renderRouteButtons() {
             btn.setAttribute('aria-pressed', 'true');
             selectedRoute = routeObj.id;
             
-            // Clean micro-slide effect on list items swap
-            busListContainer.style.transform = 'translateY(8px)';
-            busListContainer.style.opacity = '0.2';
+            if (busListContainer) {
+                busListContainer.style.transform = 'translateY(8px)';
+                busListContainer.style.opacity = '0.2';
+            }
             
             setTimeout(() => {
                 renderBusTimeline();
-                busListContainer.style.transform = 'translateY(0)';
-                busListContainer.style.opacity = '1';
+                if (busListContainer) {
+                    busListContainer.style.transform = 'translateY(0)';
+                    busListContainer.style.opacity = '1';
+                }
             }, 120);
         });
 
@@ -381,11 +402,10 @@ function renderRouteButtons() {
     });
 }
 
-// ==========================================
-// ⏰ TIME PARSER HELPER
-// ==========================================
 function parseTimeToMinutes(timeStr) {
+    if (!timeStr) return 0;
     const [time, modifier] = timeStr.split(' ');
+    if (!time || !modifier) return 0;
     let [hours, minutes] = time.split(':').map(Number);
     if (hours === 12) hours = 0;
     if (modifier === 'PM') hours += 12;
@@ -396,31 +416,34 @@ function parseTimeToMinutes(timeStr) {
 // 🕒 LIVE TIMELINE DISPLAY
 // ==========================================
 function renderBusTimeline() {
+    if (!busListContainer) return;
     busListContainer.innerHTML = '';
     
     const busArray = (masterBusData[selectedStand] && masterBusData[selectedStand][selectedRoute]) || [];
+    
     if (busArray.length === 0) {
         busListContainer.innerHTML = `
             <div class="empty-state-card">
                 <p class="no-buses">${currentLanguage === 'ml' ? 'ഈ റൂട്ടിൽ ബസ്സുകൾ ലഭ്യമല്ല' : 'No buses available for this route.'}</p>
             </div>`;
-        toggleBusesBtn.style.display = 'none';
+        if (toggleBusesBtn) toggleBusesBtn.style.display = 'none';
         return;
     }
 
     const now = new Date();
     const currentMinutes = now.getHours() * 60 + now.getMinutes();
 
-    // Chronological listing configuration
     const sortedBuses = [...busArray].sort((a, b) => parseTimeToMinutes(a.time) - parseTimeToMinutes(b.time));
     let upcomingBuses = sortedBuses.filter(bus => parseTimeToMinutes(bus.time) >= currentMinutes);
     let busesToDisplay = showingAllBuses ? sortedBuses : upcomingBuses;
 
-    toggleBusesBtn.style.display = 'block';
-    toggleBusesBtn.className = `toggle-view-btn ${showingAllBuses ? 'view-all' : 'view-upcoming'}`;
-    toggleBusesBtn.textContent = showingAllBuses 
-        ? (currentLanguage === 'ml' ? 'അടുത്ത ബസ്സുകൾ മാത്രം കാണിക്കുക' : '🎯 Show Upcoming Only')
-        : (currentLanguage === 'ml' ? 'എല്ലാ സമയത്തെയും ബസ്സുകൾ കാണിക്കുക' : '📅 Show All Schedules');
+    if (toggleBusesBtn) {
+        toggleBusesBtn.style.display = 'block';
+        toggleBusesBtn.className = `toggle-view-btn ${showingAllBuses ? 'view-all' : 'view-upcoming'}`;
+        toggleBusesBtn.textContent = showingAllBuses 
+            ? (currentLanguage === 'ml' ? 'അടുത്ത ബസ്സുകൾ മാത്രം കാണിക്കുക' : '🎯 Show Upcoming Only')
+            : (currentLanguage === 'ml' ? 'എല്ലാ സമയത്തെയും ബസ്സുകൾ കാണിക്കുക' : '📅 Show All Schedules');
+    }
 
     if (busesToDisplay.length === 0) {
         busListContainer.innerHTML = `
@@ -435,7 +458,6 @@ function renderBusTimeline() {
         
         const card = document.createElement('div');
         card.className = `bus-card ${isPast ? 'past-bus' : 'upcoming-bus'}`;
-        // Sets dynamic stagger index timing for modern appearance effect
         card.style.animationDelay = `${index * 35}ms`;
 
         const busName = currentLanguage === 'ml' ? bus.name : bus.nameEn;
@@ -457,9 +479,9 @@ function renderBusTimeline() {
 // 📨 FEEDBACK FORM FLOW WITH VISUAL LOADING
 // ==========================================
 function handleFeedbackSubmission() {
+    if (!feedbackInput || !submitFeedbackBtn) return;
     const text = feedbackInput.value.trim();
     if (!text) {
-        // Trigger non-breaking input element shake effect for tactile awareness
         feedbackInput.classList.add('shake-error');
         feedbackInput.focus();
         setTimeout(() => feedbackInput.classList.remove('shake-error'), 400);
@@ -471,10 +493,8 @@ function handleFeedbackSubmission() {
     submitFeedbackBtn.textContent = currentLanguage === 'ml' ? 'അയക്കുന്നു...' : 'Sending...';
     submitFeedbackBtn.style.opacity = '0.7';
 
-    // 600ms network delay simulation for user confirmation
     setTimeout(() => {
         console.log("Captured user suggestion:", text);
-        
         alert(currentLanguage === 'ml' ? 'നിങ്ങളുടെ നിർദ്ദേശം രേഖപ്പെടുത്തിയിട്ടുണ്ട്!' : 'Thank you! Your feedback has been noted.');
         
         feedbackInput.value = '';
