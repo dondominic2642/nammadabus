@@ -1,5 +1,5 @@
 // =========================================================================
-// 🚌 NAMMADA BUS - COMPLETE ROUTING & TIMING DATABASE (app.js)
+// 🚌 NAMMADA BUS - COMPLETE ROUTING, DATABASE & NAVIGATION SYSTEM
 // =========================================================================
 
 const masterBusData = {
@@ -37,10 +37,10 @@ const masterBusData = {
     },
     kuthuparamba: {
         to_kannur: [
-            { time: "06:00 AM", name: "TALENT [LS] (ടാലന്റ്)", nameEn: "TALENT [LS]", route: "കൂത്തുപറമ്പ് - മട്ടന്നൂർ വഴി കണ്ണൂർ", routeEn: "Kuthuparamba - Mattannur to Kannur" },
+            { time: "06:00 AM", name: "TALENT [LS] (ടാലന്റ്)", nameEn: "TALENT [LS]", route: "கூത്തുപറമ്പ് - മട്ടന്നൂർ വഴി കണ്ണൂർ", routeEn: "Kuthuparamba - Mattannur to Kannur" },
             { time: "06:20 AM", name: "MM4 [LS]", nameEn: "MM4 [LS]", route: "കണ്ണൂർ - പയ്യന്നൂർ ഭാഗത്തേക്ക്", routeEn: "Towards Kannur & Payyanur" },
             { time: "06:45 AM", name: "KSRTC Ordinary", nameEn: "KSRTC Ordinary", route: "തോപ്പിൽ - കൂത്തുപറമ്പ് - കണ്ണൂർ", routeEn: "Thoppil - Kuthuparamba to Kannur" },
-            { time: "07:10 AM", name: "AMBADI (അമ്പാടി)", nameEn: "Ambadi", route: "കൂത്തുപറമ്പ് - കണ്ണൂർ (Direct)", routeEn: "Kuthuparamba to Kannur (Direct)" },
+            { time: "07:10 AM", name: "AMBADI (അമ്പാടി)", nameEn: "Ambadi", route: "கூത്തുപറമ്പ് - കണ്ണൂർ (Direct)", routeEn: "Kuthuparamba to Kannur (Direct)" },
             { time: "07:35 AM", name: "ROYAL (റോയൽ)", nameEn: "Royal", route: "കൂത്തുപറമ്പ് - കണ്ണൂർ", routeEn: "Kuthuparamba to Kannur" },
             { time: "08:00 AM", name: "TALENT [LS] (ടാലന്റ്)", nameEn: "TALENT [LS]", route: "കൂത്തുപറമ്പ് - മട്ടന്നൂർ വഴി കണ്ണൂർ", routeEn: "Kuthuparamba - Mattannur to Kannur" },
             { time: "08:25 AM", name: "KSRTC TT", nameEn: "KSRTC Town To Town", route: "കൂത്തുപറമ്പ് - കണ്ണൂർ", routeEn: "Kuthuparamba to Kannur (Fast)" },
@@ -186,7 +186,6 @@ function renderBusTimeline() {
     const now = new Date();
     const currentMinutes = now.getHours() * 60 + now.getMinutes();
     
-    // Sort array linearly by real-world time values
     const sortedBuses = [...busArray].sort((a, b) => parseTimeToMinutes(a.time) - parseTimeToMinutes(b.time));
     let upcomingBuses = sortedBuses.filter(bus => parseTimeToMinutes(bus.time) >= currentMinutes);
     let busesToDisplay = showingAllBuses ? sortedBuses : upcomingBuses;
@@ -216,6 +215,8 @@ function renderBusTimeline() {
         card.style.justifyContent = "space-between";
         card.style.alignItems = "center";
         card.style.borderLeft = "4px solid #ff2e4d";
+        card.style.cursor = "pointer";
+        card.title = "Click to view route and live traffic on Google Maps";
 
         const name = currentLanguage === 'ml' ? bus.name : bus.nameEn;
         const rPath = currentLanguage === 'ml' ? bus.route : bus.routeEn;
@@ -223,12 +224,28 @@ function renderBusTimeline() {
         card.innerHTML = `
             <div style="padding-right: 10px;">
                 <h4 style="margin:0; font-size:16px; color:#333; font-weight:700;">${name}</h4>
-                <p style="margin:4px 0 0 0; font-size:13px; color:#666; line-height:1.4;">${rPath}</p>
+                <p style="margin:4px 0 0 0; font-size:13px; color:#666; line-height:1.4;">${rPath} <span style="font-size:11px; color:#ff2e4d; display:inline-block; margin-left:4px;">📍 Maps</span></p>
             </div>
             <div style="background:#ff2e4d; color:white; padding:8px 12px; border-radius:6px; font-weight:bold; font-size:14px; white-space:nowrap; box-shadow: 0 2px 4px rgba(255,46,77,0.2);">
                 ${bus.time}
             </div>
         `;
+
+        // 🗺️ GOOGLE MAPS ROUTE & TRAFFIC REDIRECT LOGIC
+        card.addEventListener('click', () => {
+            const startPlace = selectedStand === 'chelliparamba' ? 'Chelliparamba' : 'Kuthuparamba';
+            
+            let endPlace = '';
+            if (selectedRoute === 'taliparamba') endPlace = 'Taliparamba';
+            else if (selectedRoute === 'iritty') endPlace = 'Iritty';
+            else if (selectedRoute === 'to_kannur' || selectedRoute === 'from_kannur') endPlace = 'Kannur';
+
+            const searchQuery = encodeURIComponent(`Bus from ${startPlace} to ${endPlace} Kerala`);
+            const googleMapsUrl = `https://www.google.com/maps/search/?api=1&query=${searchQuery}`;
+
+            window.open(googleMapsUrl, '_blank');
+        });
+
         busListContainer.appendChild(card);
     });
 }
