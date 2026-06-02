@@ -13,64 +13,79 @@
 </head>
 <body>
 
+    <!-- APP HEADER -->
     <header class="app-header">
         <div class="header-container">
             <div class="logo-area">
                 <span class="bus-emoji">🚌</span>
                 <h1>NammadaBus<span>.in</span></h1>
             </div>
-            <p class="tagline">നമ്മുടെ സ്വന്തം ബസ് സമയവിവരങ്ങൾ</p>
+            <p id="appTagline" class="tagline">നമ്മുടെ സ്വന്തം ബസ് സമയവിവരങ്ങൾ</p>
         </div>
+        <button id="langToggleBtn" class="lang-floating-btn">English</button>
     </header>
 
     <main class="app-container">
-        <!-- 📍 STAND SELECT DROPDOWN SECTION -->
-        <div class="search-box-card" style="background: #fff; padding: 15px; border-radius: 12px; box-shadow: 0 4px 10px rgba(0,0,0,0.05); margin-bottom: 20px;">
-            <label for="standSelect" style="display:block; margin-bottom:8px; font-weight:bold; color:#333;">നിങ്ങൾ ഇപ്പോൾ എവിടെയാണ്? (Stand)</label>
-            <select id="standSelect" class="stand-dropdown" style="width:100%; padding:12px; border-radius:8px; border:1px solid #ccc; font-size:16px; font-family:'Poppins', 'Manjari', sans-serif;">
-                <option value="chelliparamba">Chelliparamba (ചെല്ലിപ്പറമ്പ്)</option>
-                <option value="kuthuparamba">Kuthuparamba (கூത്തുപറമ്പ്)</option>
-            </select>
-        </div>
-
-        <!-- 🎯 DESTINATION CHIPS SECTION -->
-        <div class="route-group" style="margin-top: 20px;">
-            <label class="section-title" style="font-weight:bold; display:block; margin-bottom:10px; color:#333;">ഏത് ഭാഗത്തേക്കാണ് പോകേണ്ടത്? (Destination)</label>
-            <div id="routeButtonsContainer" class="chip-container" style="display: flex; flex-wrap: wrap; gap: 8px;">
-                <!-- Buttons are injected here automatically by app.js -->
-            </div>
-        </div>
-
-        <!-- 📅 VIEW TOGGLE BUTTON -->
-        <div style="margin: 25px 0; text-align: center;">
-            <button id="toggleBusesBtn" class="toggle-view-btn" style="padding: 10px 20px; border-radius: 20px; cursor: pointer; border: 1px solid #ff2e4d; background: transparent; color: #ff2e4d; font-weight: bold; display: none; font-family: 'Poppins', sans-serif;">
-                📅 Show All Schedules
+        <!-- LIVE LOCATION SHARE BUTTON -->
+        <div class="live-share-wrapper">
+            <button id="liveShareBtn" class="live-share-btn">
+                <span class="pulse-dot"></span> 🟢 Live Location Share ലഭ്യമാണ്
             </button>
         </div>
 
-        <!-- ─── BUS SCHEDULE TIMELINE CONTAINER ─── -->
+        <!-- SEARCH CONTAINER -->
+        <div class="search-wrapper">
+            <input type="text" id="busSearchInput" placeholder="ബസ് പേര് അല്ലെങ്കിൽ റൂട്ട് ടൈപ്പ് ചെയ്യുക...">
+        </div>
+
+        <!-- STARTING POINT SELECTOR -->
+        <div class="selector-card">
+            <label id="startLabel" class="field-title">നിങ്ങൾ ഇപ്പോൾ എവിടെയാണ്? (Starting Point)</label>
+            <div class="segmented-control">
+                <button class="segment-btn active" data-value="chelliparamba">ചെല്ലിപ്പറമ്പ് / ചെമ്പേരി</button>
+                <button class="segment-btn" data-value="kuthuparamba">കൂത്തുപറമ്പ് / കണ്ണൂർ</button>
+            </div>
+        </div>
+
+        <!-- DESTINATION SCROLLABLE CHIPS -->
+        <div class="destination-wrapper">
+            <label id="destLabel" class="field-title">ഏത് ഭാഗത്തേക്കാണ് പോകേണ്ടത്? (Destination)</label>
+            <div id="routeButtonsContainer" class="horizontal-scroll-chips">
+                <!-- Dynamically populated via JS -->
+            </div>
+        </div>
+
+        <!-- TIME RANGE TOGGLE VIEW BUTTON -->
+        <div class="toggle-container">
+            <button id="toggleBusesBtn" class="toggle-view-btn">എല്ലാ സമയത്തെയും ബസ്സുകൾ കാണിക്കുക</button>
+        </div>
+
+        <!-- BUS TIMELINE CONTAINER -->
         <section class="results-section" id="busListContainer">
-            <!-- Bus cards appear here dynamically -->
+            <!-- Bus cards generated automatically via JavaScript -->
         </section>
     </main>
 
-    <!-- LANGUAGE TOGGLE BUTTON -->
-    <button id="langToggleBtn" style="position:fixed; bottom:20px; right:20px; background:#ff2e4d; color:white; border:none; padding:10px 15px; border-radius:20px; font-weight:bold; cursor:pointer; z-index:1000; box-shadow: 0 4px 10px rgba(255,46,77,0.3);">English</button>
+    <!-- FLOATING SUGGESTIONS/FEEDBACK BUTTON -->
+    <button id="feedbackOpenBtn" class="feedback-floating-btn">
+        <span class="chat-icon">💬</span> Suggestions
+    </button>
 
-    <footer class="app-footer" style="text-align:center; padding:20px; margin-top:40px; color:#666;">
+    <!-- MODAL POPUPS -->
+    <div id="feedbackModal" class="modal-overlay">
+        <div class="modal-card">
+            <button id="modalCloseBtn" class="modal-close">&times;</button>
+            <h3 id="modalTitle">നിങ്ങളുടെ നിർദ്ദേശങ്ങൾ അറിയിക്കൂ</h3>
+            <textarea id="modalTextarea" placeholder="എന്തെങ്കിലും മാറ്റങ്ങൾ ഉണ്ടെങ്കിൽ റൂട്ടും സമയവും ഇവിടെ എഴുതുക..."></textarea>
+            <button id="modalSubmitBtn" class="modal-submit">Submit</button>
+        </div>
+    </div>
+
+    <!-- FOOTER -->
+    <footer class="app-footer">
         <p>© 2026 NammadaBus.in</p>
     </footer>
 
-    <!-- LINK SCRIPTS -->
     <script src="./app.js"></script>
-    <script>
-        if ('serviceWorker' in navigator) {
-            window.addEventListener('load', () => {
-                navigator.serviceWorker.register('./service-worker.js')
-                    .then(reg => console.log('Service Worker Registered!', reg.scope))
-                    .catch(err => console.error('PWA Fail:', err));
-            });
-        }
-    </script>
 </body>
 </html>
