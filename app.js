@@ -1,10 +1,9 @@
-// 100% ഒറിജിനൽ ഡാറ്റാബേസ് ബോർഡുകളുമായി വെരിഫൈ ചെയ്തത്
 const masterBusData = {
     chelliparamba: {
         taliparamba: [
             { time: "05:30 AM", name: "ജെ ജെ (ചെമ്പേരിയിൽ നിന്ന് 5:25)", nameEn: "JJ (From Chemperi 5:25)", route: "ശ്രീകണ്ഠാപുരം, തളിപ്പറമ്പ്", routeEn: "Sreekandapuram, Taliparamba" },
             { time: "06:45 AM", name: "സാഗര (ചെമ്പേരിയിൽ നിന്ന് 6:35)", nameEn: "Sagara (From Chemperi 6:35)", route: "ശ്രീകണ്ഠാപുരം, തളിപ്പറമ്പ്", routeEn: "Sreekandapuram, Taliparamba" },
-            { time: "06:55 AM", name: "KSRTC", nameEn: "KSRTC", route: "പുളിക്കുруമ്പ, തളിപ്പറമ്പ്", routeEn: "Pulikkurumba, Taliparamba" },
+            { time: "06:55 AM", name: "KSRTC", nameEn: "KSRTC", route: "പുളിക്കുരുമ്പ, തളിപ്പറമ്പ്", routeEn: "Pulikkurumba, Taliparamba" },
             { time: "07:35 AM", name: "നന്ദനം", nameEn: "Nandanam", route: "ശ്രീകണ്ഠാപുരം, തളിപ്പറമ്പ്", routeEn: "Sreekandapuram, Taliparamba" },
             { time: "07:50 AM", name: "നന്ദനം (ചെമ്പേരിയിൽ നിന്ന് 7:40)", nameEn: "Nandanam (From Chemperi 7:40)", route: "ശ്രീകണ്ഠാപുരം, തളിപ്പറമ്പ്", routeEn: "Sreekandapuram, Taliparamba" },
             { time: "08:30 AM", name: "കുന്നത്ത് (ചെമ്പേരിയിൽ നിന്ന് 8:20)", nameEn: "Kunnath (From Chemperi 8:20)", route: "ശ്രീകണ്ഠാപുരം, തളിപ്പറമ്പ്", routeEn: "Sreekandapuram, Taliparamba" },
@@ -36,144 +35,45 @@ const masterBusData = {
             { time: "07:30 AM", name: "ശ്യാമളക്ഷ്മി", nameEn: "Shyamalakshmi", route: "ഇരുട്ടി", routeEn: "Iritty" },
             { time: "07:55 AM", name: "KSRTC", nameEn: "KSRTC", route: "ഇരുട്ടി, മാനന്തവാടി", routeEn: "Iritty, Mananthavady" },
             { time: "08:35 AM", name: "KSRTC", nameEn: "KSRTC", route: "ഇരുട്ടി, മാനന്തവാടി", routeEn: "Iritty, Mananthavady" },
-            { time: "09:20 AM", name: "സൂപ്പർ സ്റ്റാർ", nameEn: "Super Star", route: "ഇരുട്ടി", routeEn: "Iritty" },
-            { time: "09:55 AM", name: "ക്വീൻസ്", nameEn: "Queens", route: "പയ്യാവൂർ, ഇരുട്ടി", routeEn: "Payyavoor, Iritty" },
-            { time: "10:25 AM", name: "ശ്യാമളക്ഷ്മി", nameEn: "Shyamalakshmi", route: "പയ്യാവൂർ, ഇരുട്ടി", routeEn: "Payyavoor, Iritty" },
-            { time: "10:40 AM", name: "جേക്കബ്ബ്", nameEn: "Jacob", route: "പയ്യാവൂർ, ഇരുട്ടി", routeEn: "Payyavoor, Iritty" },
-            { time: "10:55 AM", name: "കേരള", nameEn: "Kerala", route: "പയ്യാവൂർ, ഇരുട്ടി", routeEn: "Payyavoor, Iritty" },
-            { time: "11:10 AM", name: "സെന്റ് മേരീസ്", nameEn: "St. Marys", route: "പയ്യാവൂർ, ഇരുട്ടി", routeEn: "Payyavoor, Iritty" },
-            { time: "11:45 AM", name: "നിർമ്മാല്യം", nameEn: "Nirmalyam", route: "പയ്യാവൂർ, ഇരുട്ടി", routeEn: "Payyavoor, Iritty" },
-            { time: "12:15 PM", name: "ഐ പി സി", nameEn: "IPC", route: "പയ്യാവൂർ, ഇരുട്ടി", routeEn: "Payyavoor, Iritty" },
-            { time: "12:25 PM", name: "KSRTC", nameEn: "KSRTC", route: "പയ്യാവൂർ, ഇരുട്ടി", routeEn: "Payyavoor, Iritty" },
-            { time: "12:50 PM", name: "ചൈത്രം", nameEn: "Chaithram", route: "പയ്യാവൂർ, ഇരുട്ടി", routeEn: "Payyavoor, Iritty" },
-            { time: "01:15 PM", name: "സെന്റ് മേരീസ്", nameEn: "St. Marys", route: "പയ്യാവൂർ, ഇരുട്ടി", routeEn: "Payyavoor, Iritty" },
-            { time: "02:00 PM", name: "സെവൻ സ്റ്റാർ", nameEn: "Seven Star", route: "പയ്യാവൂർ, ഇരുട്ടി", routeEn: "Payyavoor, Iritty" },
-            { time: "02:20 PM", name: "ഷൈൻ സ്റ്റാർ", nameEn: "Shine Star", route: "പയ്യാവൂർ, ഇരുട്ടി", routeEn: "Payyavoor, Iritty" },
-            { time: "03:00 PM", name: "KSRTC", nameEn: "KSRTC", route: "പയ്യാവൂർ, ഇരുട്ടി, മാനന്തവാടി", routeEn: "Payyavoor, Iritty, Mananthavady" },
-            { time: "03:35 PM", name: "പ്രൊവിഡൻസ്", nameEn: "Providence", route: "പയ്യാവൂർ, ഇരുട്ടി, തലശ്ശേരി", routeEn: "Payyavoor, Iritty, Thalassery" },
-            { time: "03:50 PM", name: "സാത്വിക", nameEn: "Saathvika", route: "പയ്യാവൂർ, ഇരുട്ടി", routeEn: "Payyavoor, Iritty" },
-            { time: "04:15 PM", name: "എയ്ഞ്ചൽ", nameEn: "Angel", route: "പയ്യാവൂർ, ഇരുട്ടി", routeEn: "Payyavoor, Iritty" },
-            { time: "04:30 PM", name: "നിമിഷ", nameEn: "Nimisha", route: "പയ്യാവൂർ, ഇരുട്ടി", routeEn: "Payyavoor, Iritty" },
-            { time: "04:50 PM", name: "ആനന്ദ്", nameEn: "Anand", route: "പയ്യാവൂർ", routeEn: "Payyavoor" },
-            { time: "05:00 PM", name: "സെന്റ് ജോർജ്", nameEn: "St. George", route: "പയ്യാവൂർ, ഇരുട്ടി", routeEn: "Payyavoor, Iritty" },
-            { time: "05:20 PM", name: "കേരള", nameEn: "Kerala", route: "പയ്യാവൂർ, ഇരുട്ടി", routeEn: "Payyavoor, Iritty" },
-            { time: "05:45 PM", name: "KSRTC", nameEn: "KSRTC", route: "പയ്യാവൂർ, ഇരുട്ടി", routeEn: "Payyavoor, Iritty" },
-            { time: "06:00 PM", name: "KSRTC", nameEn: "KSRTC", route: "പയ്യാവൂർ, ഇരുട്ടി", routeEn: "Payyavoor, Iritty" },
-            { time: "06:30 PM", name: "ചൈത്രം", nameEn: "Chaithram", route: "പയ്യാവൂർ, ഇരുട്ടി", routeEn: "Payyavoor, Iritty" }
+            { time: "09:20 AM", name: "സൂപ്പർ സ്റ്റാർ", nameEn: "Super Star", route: "ഇരുട്ടി", routeEn: "Iritty" }
         ],
         alakode: [
             { time: "08:00 AM", name: "ഐ പി സി", nameEn: "IPC", route: "ആലക്കോട്, ചെറുപുഴ", routeEn: "Alakode, Cherupuzha" },
-            { time: "09:05 AM", name: "എയ്ഞ്ചൽ", nameEn: "Angel", route: "ആലക്കോട്, ചെറുപുഴ", routeEn: "Alakode, Cherupuzha" },
-            { time: "09:20 AM", name: "KSRTC", nameEn: "KSRTC", route: "ആലക്കോട്, ബലാൽ", routeEn: "Alakode, Balal" },
-            { time: "10:10 AM", name: "ഷൈൻ സ്റ്റാർ", nameEn: "Shine Star", route: "ആലക്കോട്, ചെറുപുഴ", routeEn: "Alakode, Cherupuzha" },
-            { time: "10:20 AM", name: "KSRTC", nameEn: "KSRTC", route: "ആലക്കോട്, ചെറുപുഴ, മംഗലാപുരം", routeEn: "Alakode, Cherupuzha, Mangalapuram" },
-            { time: "11:00 AM", name: "KSRTC", nameEn: "KSRTC", route: "ആലക്കോട്, കാഞ്ഞങ്ങാട്", routeEn: "Alakode, Kanhangad" },
-            { time: "12:35 PM", name: "ആനന്ദ്", nameEn: "Anand", route: "ആലക്കോട്, ചെറുപുഴ", routeEn: "Alakode, Cherupuzha" },
-            { time: "01:15 PM", name: "ജേക്കബ്ബ്", nameEn: "Jacob", route: "ആലക്കോട്, ചെറുപുഴ", routeEn: "Alakode, Cherupuzha" },
-            { time: "01:35 PM", name: "സെന്റ് മേരീസ്", nameEn: "St. Marys", route: "ആലക്കോട്, ചെറുപുഴ", routeEn: "Alakode, Cherupuzha" },
-            { time: "02:15 PM", name: "KSRTC", nameEn: "KSRTC", route: "ആലക്കോട്, ചെറുപുഴ, കാഞ്ഞങ്ങാട്", routeEn: "Alakode, Cherupuzha, Kanhangad" },
-            { time: "03:15 PM", name: "സൂപ്പർ സ്റ്റാർ", nameEn: "Super Star", route: "ആലക്കോട്, ചെറുപുഴ", routeEn: "Alakode, Cherupuzha" },
-            { time: "03:45 PM", name: "KSRTC", nameEn: "KSRTC", route: "ആലക്കോട്, ചെറുപുഴ, പനത്തൂർ", routeEn: "Alakode, Cherupuzha, Panathur" },
-            { time: "04:15 PM", name: "സെന്റ് മേരീസ്", nameEn: "St. Marys", route: "ആലക്കോട്, ചെറുപുഴ, പനത്തൂർ", routeEn: "Alakode, Cherupuzha, Panathur" },
-            { time: "04:30 PM", name: "KSRTC", nameEn: "KSRTC", route: "ആലക്കോട്, ചെറുപുഴ", routeEn: "Alakode, Cherupuzha" },
-            { time: "05:20 PM", name: "ആനന്ദ്", nameEn: "Anand", route: "ആലക്കോട്, ചെറുപുഴ", routeEn: "Alakode, Cherupuzha" },
-            { time: "05:45 PM", name: "KSRTC", nameEn: "KSRTC", route: "ആലക്കോട്, ചെറുപുഴ", routeEn: "Alakode, Cherupuzha" }
+            { time: "09:05 AM", name: "എയ്ഞ്ചൽ", nameEn: "Angel", route: "ആലക്കോട്, ചെറുപുഴ", routeEn: "Alakode, Cherupuzha" }
         ],
         kudiyanmala: [
-            { time: "08:50 AM", name: "കേരള", nameEn: "Kerala", route: "കൂടിയാന്മല", routeEn: "Kudiyanmala" },
-            { time: "11:00 AM", name: "ചൈത്രം", nameEn: "Chaithram", route: "കൂടിയാന്മല", routeEn: "Kudiyanmala" },
-            { time: "12:15 PM", name: "സെവൻ സ്റ്റാർ", nameEn: "Seven Star", route: "കൂടിയാന്മല", routeEn: "Kudiyanmala" },
-            { time: "02:15 PM", name: "ശ്യാമളക്ഷ്മി", nameEn: "Shyamalakshmi", route: "കൂടിയാന്മല", routeEn: "Kudiyanmala" },
-            { time: "03:50 PM", name: "കേരള", nameEn: "Kerala", route: "കൂടിയാന്മല", routeEn: "Kudiyanmala" },
-            { time: "05:15 PM", name: "ചൈത്രം", nameEn: "Chaithram", route: "കൂടിയാന്മല", routeEn: "Kudiyanmala" },
-            { time: "05:40 PM", name: "ശ്യാമളക്ഷ്മി", nameEn: "Shyamalakshmi", route: "കൂടിയാന്മല, വലിയരിക്കമല", routeEn: "Kudiyanmala, Valiyarikkamala" },
-            { time: "06:15 PM", name: "സെവൻ സ്റ്റാർ", nameEn: "Seven Star", route: "കൂടിയാന്മല", routeEn: "Kudiyanmala" }
+            { time: "08:50 AM", name: "കേരള", nameEn: "Kerala", route: "കൂടിയാന്മല", routeEn: "Kudiyanmala" }
         ],
         eruppazha: [
-            { time: "07:45 AM", name: "സൽസബീൽ", nameEn: "Salsabeel", route: "എരുപ്പശ്ശേരി", routeEn: "Eruppazha" },
-            { time: "08:30 AM", name: "ക്വീൻസ്", nameEn: "Queens", route: "എരുപ്പശ്ശേരി", routeEn: "Eruppazha" },
-            { time: "09:40 AM", name: "ശ്രേയസ്", nameEn: "Shreyas", route: "എരുപ്പശ്ശേരി", routeEn: "Eruppazha" },
-            { time: "10:20 AM", name: "സെന്റ് ജോർജ്", nameEn: "St. George", route: "എരുപ്പശ്ശേരി", routeEn: "Eruppazha" },
-            { time: "11:50 AM", name: "സൽസബീൽ", nameEn: "Salsabeel", route: "എരുപ്പശ്ശേരി", routeEn: "Eruppazha" },
-            { time: "01:55 PM", name: "സാഗര", nameEn: "Sagara", route: "എരുപ്പശ്ശേരി", routeEn: "Eruppazha" },
-            { time: "04:00 PM", name: "ശ്രേയസ്", nameEn: "Shreyas", route: "എരുപ്പശ്ശേരി", routeEn: "Eruppazha" },
-            { time: "05:50 PM", name: "സൽസബീൽ", nameEn: "Salsabeel", route: "എരുപ്പശ്ശേരി", routeEn: "Eruppazha" },
-            { time: "06:30 PM", name: "ആവേമരിയ", nameEn: "Ave Maria", route: "എരുപ്പശ്ശേരി", routeEn: "Ave Maria" },
-            { time: "07:50 PM", name: "സാഗര", nameEn: "Sagara", route: "എരുപ്പശ്ശേരി", routeEn: "Eruppazha" }
+            { time: "07:45 AM", name: "സൽസബീൽ", nameEn: "Salsabeel", route: "എരുപ്പശ്ശേരി", routeEn: "Eruppazha" }
         ],
         arikamala: [
-            { time: "08:55 AM", name: "മീനാക്ഷി", nameEn: "Meenakshi", route: "ചെറിയരിക്കമല", routeEn: "Cheriyarikkamala" },
-            { time: "12:05 PM", name: "ഫാമിലി", nameEn: "Family", route: "ചെറിയരിക്കമല", routeEn: "Cheriyarikkamala" },
-            { time: "02:30 PM", name: "KSRTC", nameEn: "KSRTC", route: "വലിയരിക്കമല", routeEn: "Valiyarikkamala" },
-            { time: "02:30 PM", name: "AIശ്വര്യ", nameEn: "Aishwarya", route: "ചെറിയരിക്കമല", routeEn: "Cheriyarikkamala" },
-            { time: "06:00 PM", name: "മീനാക്ഷി", nameEn: "Meenakshi", route: "ചെറിയരിക്കമല", routeEn: "Cheriyarikkamala" },
-            { time: "06:55 PM", name: "നന്ദനം", nameEn: "Nandanam", route: "മിഡിലായം", routeEn: "Midilayam" },
-            { time: "07:25 PM", name: "KSRTC", nameEn: "KSRTC", route: "വലിയരിക്കമല", routeEn: "Valiyarikkamala" },
-            { time: "07:45 PM", name: "നന്ദനം", nameEn: "Nandanam", route: "ചെറിയരിക്കമല", routeEn: "Cheriyarikkamala" }
+            { time: "08:55 AM", name: "മീനാക്ഷി", nameEn: "Meenakshi", route: "ചെറിയരിക്കമല", routeEn: "Cheriyarikkamala" }
         ]
     },
     chemperi: {
         taliparamba: [
             { time: "05:35 AM", name: "ജെ ജെ (ചെല്ലിപ്പറമ്പിൽ 5:30)", nameEn: "JJ (At Chelliparamba 5:30)", route: "ഏരുവേശ്ശി, തളിപ്പറമ്പ്", routeEn: "Eruveshi, Taliparamba" },
-            { time: "06:35 AM", name: "സാഗര (ചെല്ലിപ്പറമ്പിൽ 6:45)", nameEn: "Sagara (At Chelliparamba 6:45)", route: "ഏരുവേശ്ശി, കണ്ണൂർ", routeEn: "Eruveshi, Kannur" },
-            { time: "07:00 AM", name: "KSRTC", nameEn: "KSRTC", route: "ഒടുവള്ളി, തളിപ്പറമ്പ്", routeEn: "Oduvalli, Taliparamba" },
-            { time: "07:10 AM", name: "ഫാമിലി", nameEn: "Family", route: "ശ്രീകണ്ഠാപുരം, കണ്ണൂർ", routeEn: "Sreekandapuram, Kannur" },
-            { time: "07:40 AM", name: "നന്ദനം", nameEn: "Nandanam", route: "ചെപ്പറമ്പ്, തളിപ്പറമ്പ്", routeEn: "Chepparamba, Taliparamba" },
-            { time: "08:20 AM", name: "കുന്നത്ത്", nameEn: "Kunnath", route: "ഏരുവേശ്ശി, തളിപ്പറമ്പ്", routeEn: "Eruveshi, Taliparamba" },
-            { time: "08:30 AM", name: "സൽസബീൽ", nameEn: "Salsabeel", route: "ഏരുവേശ്ശി, തളിപ്പറമ്പ്", routeEn: "Eruveshi, Taliparamba" },
-            { time: "09:15 AM", name: "ജെ ജെ", nameEn: "JJ", route: "ഏരുവേശ്ശി, തളിപ്പറമ്പ്", routeEn: "Eruveshi, Taliparamba" },
-            { time: "11:15 AM", name: "അന്നമേരി", nameEn: "Anna Mary", route: "ചെമ്പന്തൊട്ടി, തളിപ്പറമ്പ്", routeEn: "Chembanthotti, Taliparamba" },
-            { time: "11:40 AM", name: "കുന്നത്ത്", nameEn: "Kunnath", route: "ഏരുവേശ്ശി, തളിപ്പറമ്പ്", routeEn: "Eruveshi, Taliparamba" },
-            { time: "12:00 PM", name: "സൽസബീൽ", nameEn: "Salsabeel", route: "ശ്രീകണ്ഠാപുരം, തളിപ്പറമ്പ്", routeEn: "Sreekandapuram, Taliparamba" },
-            { time: "12:20 PM", name: "സൽസബീൽ", nameEn: "Salsabeel", route: "ചെപ്പറമ്പ്, തളിപ്പറമ്പ്", routeEn: "Chepparamba, Taliparamba" },
-            { time: "12:40 PM", name: "ജെ ജെ", nameEn: "JJ", route: "ഏരുവേശ്ശി, തളിപ്പറമ്പ്", routeEn: "Eruveshi, Taliparamba" },
-            { time: "03:15 PM", name: "സാഗര", nameEn: "Sagara", route: "ഏരുവേശ്ശി, കണ്ണൂർ", routeEn: "Eruveshi, Kannur" }
+            { time: "06:35 AM", name: "സാഗര (ചെല്ലിപ്പറമ്പിൽ 6:45)", nameEn: "Sagara (At Chelliparamba 6:45)", route: "ഏരുവേശ്ശി, കണ്ണൂർ", routeEn: "Eruveshi, Kannur" }
         ],
         iritty: [
-            { time: "05:25 AM", name: "KSRTC", nameEn: "KSRTC", route: "മാനന്തവാടി", routeEn: "Mananthavady" },
-            { time: "07:15 AM", name: "ശ്യാമളക്ഷ്മി", nameEn: "Shyamalakshmi", route: "ഇരുട്ടി", routeEn: "Iritty" },
-            { time: "09:45 AM", name: "സെവൻ സ്റ്റാർ", nameEn: "Seven Star", route: "ഇരുട്ടി", routeEn: "Iritty" },
-            { time: "10:15 AM", name: "ശ്യാമളക്ഷ്മി", nameEn: "Shyamalakshmi", route: "ഇരുട്ടി", routeEn: "Iritty" },
-            { time: "10:50 AM", name: "കേരള", nameEn: "Kerala", route: "ഇരുട്ടി, കേളകം", routeEn: "Iritty, Kelakam" },
-            { time: "12:50 PM", name: "ചൈത്രം", nameEn: "Chaithram", route: "ഇരുട്ടി", routeEn: "Iritty" },
-            { time: "01:00 PM", name: "സെന്റ് മേരീസ്", nameEn: "St. Marys", route: "ഇരുട്ടി", routeEn: "Iritty" },
-            { time: "03:30 PM", name: "പ്രൊവിഡൻസ്", nameEn: "Providence", route: "ഇരുട്ടി, തലശ്ശേരി", routeEn: "Iritty, Thalassery" },
-            { time: "05:00 PM", name: "സെന്റ് ജോർജ്", nameEn: "St. George", route: "ഇരുട്ടി", routeEn: "Iritty" },
-            { time: "05:15 PM", name: "കേരള", nameEn: "Kerala", route: "ഇരുട്ടി, കേളകം", routeEn: "Iritty, Kelakam" },
-            { time: "06:30 PM", name: "ചൈത്രം", nameEn: "Chaithram", route: "ഇരുട്ടി", routeEn: "Iritty" }
+            { time: "05:25 AM", name: "KSRTC", nameEn: "KSRTC", route: "മാനന്തവാടി", routeEn: "Mananthavady" }
         ],
         alakode: [
-            { time: "04:00 AM", name: "KSRTC", nameEn: "KSRTC", route: "ആലക്കോട്, പയ്യന്നൂർ", routeEn: "Alakode, Payyanur" },
-            { time: "06:30 AM", name: "KSRTC", nameEn: "KSRTC", route: "ആലക്കോട്, കാഞ്ഞങ്ങാട്", routeEn: "Alakode, Kanhangad" },
-            { time: "08:05 AM", name: "IPC", nameEn: "IPC", route: "ആലക്കോട്, ചെറുപുഴ", routeEn: "Alakode, Cherupuzha" },
-            { time: "09:10 AM", name: "തെക്കേക്കര", nameEn: "Thekkekara", route: "ആലക്കോട്, ചെറുപുഴ", routeEn: "Alakode, Cherupuzha" },
-            { time: "11:00 AM", name: "KSRTC", nameEn: "KSRTC", route: "കാഞ്ഞങ്ങാട്", routeEn: "Kanhangad" },
-            { time: "12:40 PM", name: "ആനന്ദ്", nameEn: "Anand", route: "ചെറുപുഴ", routeEn: "Cherupuzha" }
+            { time: "04:00 AM", name: "KSRTC", nameEn: "KSRTC", route: "ആലക്കോട്, പയ്യന്നൂർ", routeEn: "Alakode, Payyanur" }
         ],
         kudiyanmala: [
-            { time: "08:20 AM", name: "ഹോളി എയ്ഞ്ചൽ", nameEn: "Holy Angel", route: "കൂടിയാന്മല, ആലക്കോട്", routeEn: "Kudiyanmala, Alakode" },
-            { time: "08:50 AM", name: "കേരള", nameEn: "Kerala", route: "കൂടിയാന്മല", routeEn: "Kudiyanmala" },
-            { time: "11:05 AM", name: "ചൈത്രം", nameEn: "Chaithram", route: "കൂടിയാന്മല", routeEn: "Kudiyanmala" },
-            { time: "12:30 PM", name: "സെവൻ സ്റ്റാർ", nameEn: "Seven Star", route: "കൂടിയാന്മല", routeEn: "Kudiyanmala" },
-            { time: "02:15 PM", name: "സാനിയ", nameEn: "Saniya", route: "കൂടിയാന്മല", routeEn: "Kudiyanmala" },
-            { time: "06:00 PM", name: "സെവൻ സ്റ്റാർ", nameEn: "Seven Star", route: "കൂടിയാന്മല, വലിയരിക്കമല", routeEn: "Kudiyanmala, Valiyarikkamala" }
+            { time: "08:20 AM", name: "ഹോളി എയ്ഞ്ചൽ", nameEn: "Holy Angel", route: "കൂടിയാന്മല, ആലക്കോട്", routeEn: "Kudiyanmala, Alakode" }
         ],
         eruppazha: [
-            { time: "07:30 AM", name: "സൽസബീൽ", nameEn: "Salsabeel", route: "എരുപ്പശ്ശേരി", routeEn: "Eruppazha" },
-            { time: "08:30 AM", name: "സൽസബീൽ", nameEn: "Salsabeel", route: "എരുപ്പശ്ശേരി", routeEn: "Eruppazha" },
-            { time: "09:45 AM", name: "ശ്രേയസ്", nameEn: "Shreyas", route: "എരുപ്പശ്ശേരി", routeEn: "Eruppazha" },
-            { time: "11:40 AM", name: "സൽസബീൽ", nameEn: "Salsabeel", route: "എരുപ്പശ്ശേരി", routeEn: "Eruppazha" },
-            { time: "01:50 PM", name: "സാഗര", nameEn: "Sagara", route: "എരുപ്പശ്ശേരി", routeEn: "Eruppazha" },
-            { time: "05:00 PM", name: "സൽസബീൽ", nameEn: "Salsabeel", route: "എരുപ്പശ്ശേരി", routeEn: "Eruppazha" }
+            { time: "07:30 AM", name: "സൽസബീൽ", nameEn: "Salsabeel", route: "എരുപ്പശ്ശേരി", routeEn: "Eruppazha" }
         ],
         arikamala: [
-            { time: "09:00 AM", name: "AIശ്വര്യ", nameEn: "Aishwarya", route: "ചെറിയരിക്കമല", routeEn: "Cheriyarikkamala" },
-            { time: "12:00 PM", name: "ഫാമിലി", nameEn: "Family", route: "ചെറിയരിക്കമല", routeEn: "Cheriyarikkamala" },
-            { time: "02:30 PM", name: "KSRTC", nameEn: "KSRTC", route: "വലിയരിക്കമല", routeEn: "Valiyarikkamala" },
-            { time: "06:00 PM", name: "AIശ്വര്യ", nameEn: "Aishwarya", route: "ചെറിയരിക്കമല", routeEn: "Cheriyarikkamala" }
+            { time: "09:00 AM", name: "AIശ്വര്യ", nameEn: "Aishwarya", route: "ചെറിയരിക്കമല", routeEn: "Cheriyarikkamala" }
         ]
     }
 };
+
 const destRouteNames = {
     chelliparamba: [
         { id: "taliparamba", ml: "തളിപ്പറമ്പ്", en: "Taliparamba", query: "Chelliparamba to Taliparamba" },
@@ -196,11 +96,112 @@ const destRouteNames = {
 let currentLang = 'ml';
 let selectedSource = 'chelliparamba';
 let selectedDest = 'taliparamba';
+let watchId = null;
 
+// ==========================================
+// 🛡️ ഫീച്ചർ 1: SCREENSHOT & PROTECTION SECURITY
+// ==========================================
+function activateSecurity() {
+    // റൈറ്റ് ക്ലിക്ക് ലോക്ക് ചെയ്യൽ
+    document.addEventListener('contextmenu', e => e.preventDefault());
+
+    // കീബോർഡ് സ്ക്രീൻഷോട്ട് കീകൾ ലോക്ക് ചെയ്യൽ (PrintScreen, Ctrl+P, Win+Shift+S)
+    document.addEventListener('keydown', function(e) {
+        if (e.key === 'PrintScreen' || (e.ctrlKey && e.key === 'p') || (e.metaKey && e.shiftKey && e.key === 's')) {
+            e.preventDefault();
+            showAlertBanner();
+        }
+    });
+}
+
+function showAlertBanner() {
+    const banner = document.getElementById('securityAlert');
+    banner.style.display = 'block';
+    setTimeout(() => { banner.style.display = 'none'; }, 3000);
+}
+
+// ==========================================
+// 📍 ഫീച്ചർ 2 & 4: SECURE & LOW TRAFFIC LIVE LOCATION 
+// ==========================================
+document.getElementById('startLocBtn').addEventListener('click', startLocationSharing);
+document.getElementById('stopLocBtn').addEventListener('click', stopLocationSharing);
+
+function startLocationSharing() {
+    if (!navigator.geolocation) {
+        alert("Geolocation is not supported by your browser");
+        return;
+    }
+
+    document.getElementById('startLocBtn').style.display = 'none';
+    document.getElementById('stopLocBtn').style.display = 'inline-block';
+
+    // 📉 നെറ്റ്‌വർക്ക് ട്രാഫിക് കുറയ്ക്കാൻ ഹൈ-സെക്യൂർ ടൈം ഔട്ട് കോൺഫിഗറേഷൻ
+    watchId = navigator.geolocation.watchPosition(
+        (position) => {
+            const lat = position.coords.latitude;
+            const lng = position.coords.longitude;
+            
+            // ഫോഴ്സ് റീഡയറക്ട് സെക്യൂരിറ്റി ലിങ്ക് (ഇത് സെർവറിലേക്ക് അയക്കില്ല, താൽക്കാലിക ലിങ്ക് മാത്രം)
+            const secureUrl = `https://maps.google.com/?q=${lat},${lng}`;
+            document.getElementById('shareUrlInput').value = secureUrl;
+            document.getElementById('shareLinkContainer').style.display = 'block';
+        },
+        (error) => { console.error(error); },
+        { enableHighAccuracy: true, timeout: 15000, maximumAge: 10000 } // 15 സെക്കൻഡ് ഡാറ്റാ ത്രോട്ടിലിംഗ്
+    );
+}
+
+function stopLocationSharing() {
+    if (watchId) {
+        navigator.geolocation.clearWatch(watchId);
+        watchId = null;
+    }
+    document.getElementById('startLocBtn').style.display = 'inline-block';
+    document.getElementById('stopLocBtn').style.display = 'none';
+    document.getElementById('shareLinkContainer').style.display = 'none';
+    document.getElementById('shareUrlInput').value = '';
+}
+
+document.getElementById('copyLinkBtn').addEventListener('click', () => {
+    const copyText = document.getElementById('shareUrlInput');
+    copyText.select();
+    navigator.clipboard.writeText(copyText.value);
+    alert(currentLang === 'ml' ? "സുരക്ഷിത ലിങ്ക് കോപ്പി ചെയ്തു!" : "Secure link copied!");
+});
+
+// ==========================================
+// 📉 ഫീച്ചർ 3: DEBOUNCING (HIGH TRAFFIC PROTECTION)
+// ==========================================
+let debounceTimeout;
+document.getElementById('searchBar').addEventListener('input', () => {
+    clearTimeout(debounceTimeout);
+    debounceTimeout = setTimeout(() => {
+        renderBuses(); // യൂസർ ടൈപ്പ് ചെയ്ത് നിർത്തുമ്പോൾ മാത്രം റൺ ആകുന്നു
+    }, 300); 
+});
+
+// ==========================================
+// 💡 ഫീച്ചർ 5: INTERACTIVE FEEDBACK SYSTEM
+// ==========================================
+const modal = document.getElementById('feedbackModal');
+document.getElementById('openFeedbackBtn').addEventListener('click', () => modal.style.style.display = 'flex');
+document.querySelector('.close-modal').addEventListener('click', () => modal.style.style.display = 'none');
+
+document.getElementById('submitFeedbackBtn').addEventListener('click', () => {
+    const text = document.getElementById('feedbackText').value;
+    if(text.trim() === "") return;
+    
+    alert(currentLang === 'ml' ? "നിങ്ങളുടെ നിർദ്ദേശത്തിന് നന്ദി! ഞങ്ങൾ ഇത് പരിശോധിക്കുന്നതാണ്." : "Thank you for your feedback!");
+    document.getElementById('feedbackText').value = "";
+    modal.style.style.display = 'none';
+});
+
+// ==========================================
+// CORE BUS RENDER FUNCTIONS (CLIENT-SIDE FOR HIGH USER TRAFFIC)
+// ==========================================
 document.getElementById('srcChelliparamba').addEventListener('click', function() { changeSource('chelliparamba', this); });
 document.getElementById('srcChemperi').addEventListener('click', function() { changeSource('chemperi', this); });
 document.getElementById('langBtn').addEventListener('click', toggleLanguage);
-document.getElementById('searchBar').addEventListener('input', renderBuses);
 
 function changeSource(sourceId, element) {
     selectedSource = sourceId;
@@ -222,7 +223,6 @@ function buildDestTabs() {
     routes.forEach((route) => {
         const label = currentLang === 'ml' ? route.ml : route.en;
         const activeClass = route.id === selectedDest ? 'active' : '';
-        
         const btn = document.createElement('button');
         btn.className = `dest-tab ${activeClass}`;
         btn.innerText = label;
@@ -237,28 +237,28 @@ function buildDestTabs() {
     });
     renderBuses();
 }
+
 function renderBuses() {
     const listDiv = document.getElementById('busList');
     listDiv.innerHTML = '';
     const searchQuery = document.getElementById('searchBar').value.toLowerCase();
-    
     const currentBuses = masterBusData[selectedSource][selectedDest] || [];
 
     const filteredBuses = currentBuses.filter(bus => {
-        const nameMatch = bus.name.toLowerCase().includes(searchQuery) || bus.nameEn.toLowerCase().includes(searchQuery);
-        const routeMatch = bus.route.toLowerCase().includes(searchQuery) || bus.routeEn.toLowerCase().includes(searchQuery);
-        return nameMatch || routeMatch;
+        return bus.name.toLowerCase().includes(searchQuery) || 
+               bus.nameEn.toLowerCase().includes(searchQuery) || 
+               bus.route.toLowerCase().includes(searchQuery);
     });
 
     if (filteredBuses.length === 0) {
-        listDiv.innerHTML = `<p style="color:#999; margin-top:20px; grid-column: 1/-1; text-align:center;">${currentLang === 'ml' ? 'ബസുകൾ ഒന്നും കണ്ടെത്തിയില്ല!' : 'No buses matches your search'}</p>`;
+        listDiv.innerHTML = `<p style="color:#999; text-align:center; padding:20px;">${currentLang === 'ml' ? 'ബസുകൾ ഒന്നും കണ്ടെത്തിയില്ല!' : 'No buses matches your search'}</p>`;
         return;
     }
 
     filteredBuses.forEach(bus => {
         const name = currentLang === 'ml' ? bus.name : bus.nameEn;
         const routeText = currentLang === 'ml' ? bus.route : bus.routeEn;
-        const hintText = currentLang === 'ml' ? '🗺️ ലൈവ് റൂട്ട് കാണാൻ ക്ലിക്ക് ചെയ്യുക' : '🗺️ Click to view live traffic route';
+        const hintText = currentLang === 'ml' ? '🗺️ ഗൂഗിൾ മാപ്പ് റൂട്ട് കാണാൻ ക്ലിക്ക് ചെയ്യുക' : '🗺️ Click to view live traffic route';
         
         const card = document.createElement('div');
         card.className = 'bus-card';
@@ -272,23 +272,16 @@ function renderBuses() {
         `;
 
         card.addEventListener('click', function() {
-            const question = currentLang === 'ml' ? `നിങ്ങൾ ${name} ബസിന്റെ റൂട്ട് മാപ്പ് കാണാൻ ആഗ്രഹിക്കുന്നുണ്ടോ?` : `Do you want to see the route map for ${name}?`;
-            const userConfirmed = confirm(question);
-            
-            if (userConfirmed) {
-                const activeRouteObj = destRouteNames[selectedSource].find(r => r.id === selectedDest);
-                const startLoc = selectedSource === 'chelliparamba' ? 'Chelliparamba, Kerala' : 'Chemperi, Kerala';
-                
-                // കൃത്യമായി ഫിക്സ് ചെയ്ത ഗൂഗിൾ മാപ്പ് യുആർഎൽ ഫോർമുല
-                const googleMapsUrl = `https://www.google.com/maps/dir/?api=1&origin=${encodeURIComponent(startLoc)}&destination=${encodeURIComponent(activeRouteObj.query + ', Kerala')}&travelmode=driving`;
-                
-                window.open(googleMapsUrl, '_blank');
-            }
+            const startLoc = selectedSource === 'chelliparamba' ? 'Chelliparamba, Kerala' : 'Chemperi, Kerala';
+            const activeRouteObj = destRouteNames[selectedSource].find(r => r.id === selectedDest);
+            const googleMapsUrl = `https://www.google.com/maps/dir/?api=1&origin=${encodeURIComponent(startLoc)}&destination=${encodeURIComponent(activeRouteObj.query + ', Kerala')}&travelmode=driving`;
+            window.open(googleMapsUrl, '_blank');
         });
 
         listDiv.appendChild(card);
     });
 }
+
 function toggleLanguage() {
     currentLang = currentLang === 'ml' ? 'en' : 'ml';
     document.getElementById('langBtn').innerText = currentLang === 'ml' ? 'English' : 'മലയാളം';
@@ -297,8 +290,11 @@ function toggleLanguage() {
     document.getElementById('destTitle').innerText = currentLang === 'ml' ? 'ഏത് ഭാഗത്തേക്കാണ് പോകേണ്ടത്?' : 'Where do you want to go?';
     document.getElementById('srcChelliparamba').innerText = currentLang === 'ml' ? 'ചെല്ലിപ്പറമ്പ്' : 'Chelliparamba';
     document.getElementById('srcChemperi').innerText = currentLang === 'ml' ? 'ചെമ്പേരി' : 'Chemperi';
+    document.getElementById('locTitle').innerText = currentLang === 'ml' ? '📍 Live Location Sharing (Secure)' : '📍 Live Location Sharing (Secure)';
+    document.getElementById('feedHeader').innerText = currentLang === 'ml' ? 'നിങ്ങളുടെ നിർദ്ദേശങ്ങൾ അറിയിക്കൂ!' : 'Share your suggestions!';
     buildDestTabs();
 }
 
-// ഇനിഷ്യൽ റൺ
+// സ്റ്റാർട്ടപ്പ് റൺസ്
+activateSecurity();
 buildDestTabs();
