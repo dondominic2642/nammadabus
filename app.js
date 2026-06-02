@@ -377,6 +377,12 @@ function renderBusTimeline() {
             let endPlace = '';
             if (selectedRoute === 'taliparamba') endPlace = 'Taliparamba';
             else if (selectedRoute === 'iritty') endPlace = 'Iritty';
+            else if (selectedRoute === 'alakode') endPlace = 'alakode'; 
+            else if (selectedRoute === 'kudiyanmala') endPlace = 'kudiyanmala'; 
+            else if (selectedRoute === 'eruppazha') endPlace = 'eruppuzha'; 
+            else if (selectedRoute === 'arikamala') endPlace = 'arikamala';
+             else if (selectedRoute === 'cherupuzha_net') endPlace = 'cherupuzha_net';
+             else if (selectedRoute === 'kuthuparamba') endPlace = 'kuthuparamba';     
             else if (selectedRoute === 'to_kannur' || selectedRoute === 'from_kannur') endPlace = 'Kannur';
 
             const searchQuery = encodeURIComponent(`Bus from ${startPlace} to ${endPlace} Kerala`);
