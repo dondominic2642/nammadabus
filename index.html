@@ -1,194 +1,74 @@
 <!DOCTYPE html>
 <html lang="ml">
 <head>
-    <script async src="https://www.googletagmanager.com/gtag/js?id=G-PHQ8GQDMMQ"></script>
-    <script>
-      window.dataLayer = window.dataLayer || [];
-      function gtag(){dataLayer.push(arguments);}
-      gtag('js', new Date());
-
-      gtag('config', 'G-PHQ8GQDMMQ');
-    </script>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Nammadabus - Chemperi Bus Tracker</title>
-    
+    <title>Bus Timetable - Chelliparamba & Chemperi</title>
     <link rel="stylesheet" href="style.css">
-    
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <style>
-    #splash-screen {
-        position: fixed;
-        top: 0; left: 0; width: 100%; height: 100%;
-        background: #ffffff;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        z-index: 9999;
-    }
-
-    .ripple-container {
-        position: relative;
-        width: 150px; /* സൈസ് അല്പം കൂട്ടി */
-        height: 150px;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-    }
-
-    .bus-logo {
-        width: 100px; /* ലോഗോയുടെ സൈസ് */
-        height: auto;
-        z-index: 2; /* ലോഗോ മുകളിൽ വരാൻ */
-    }
-
-    .circle {
-        position: absolute;
-        width: 100px; /* സർക്കിളിന്റെ സൈസ് ലോഗോയ്ക്ക് തുല്യം */
-        height: 100px;
-        border: 3px solid #ffcc00;
-        border-radius: 50%;
-        animation: ripple 2s linear infinite;
-        z-index: 1; /* സർക്കിൾ ലോഗോയ്ക്ക് പിന്നിൽ വരാൻ */
-    }
-
-    @keyframes ripple {
-        0% { transform: scale(1); opacity: 1; }
-        100% { transform: scale(2.5); opacity: 0; }
-    }
-</style>
-
 </head>
 <body>
 
     <header>
         <div class="header-container">
-            <div class="logo-section">
-                <i class="fa-solid fa-bus"></i>
-                <h1>Nammadabus</h1>
-            </div>
-            <span class="live-badge">Live</span>
+            <h1>🚌 Bus Time</h1>
+            <button id="langBtn" class="lang-btn">English</button>
         </div>
     </header>
 
-    <main>
-        <div class="search-card">
-            <label>ബസ് തിരയുക</label>
-            <div class="search-wrapper">
-                <input type="text" id="busSearchInput" placeholder="എവിടേക്കാണ് പോകേണ്ടത്? (eg: Kannur, Alakode...)">
-                <button class="search-btn">
-                    <i class="fa-solid fa-magnifying-glass"></i>
-                </button>
-            </div>
+    <main class="main-container">
+        
+        <div id="securityAlert" class="security-banner" style="display:none;">
+            🔒 Security Active: Screenshots & Actions Logged!
         </div>
 
-        <div class="filter-container">
-            <button onclick="filterRoute('all')" class="filter-btn active">എല്ലാം</button>
-            <button onclick="filterRoute('kannur')" class="filter-btn">Kannur</button>
-            <button onclick="filterRoute('taliparamba')" class="filter-btn">Taliparamba</button>
-            <button onclick="filterRoute('payyanur')" class="filter-btn">Payyanur</button>
-        </div>
-
-        <h3 class="bus-list-title">അടുത്ത സർവീസുകൾ</h3>
-        <div id="busListContainer">
-            
-            <div class="bus-card" data-route="kannur">
-                <div class="bus-info-left">
-                    <div class="bus-icon-box">
-                        <i class="fa-solid fa-bus-simple"></i>
-                    </div>
-                    <div>
-                        <span class="bus-type-tag type-ls">Limited Stop</span>
-                        <h4 class="bus-route-name">ചെമ്പേരി ➔ കണ്ണൂർ</h4>
-                        <p class="bus-via-route">Via നടുവിൽ, തളിപ്പറമ്പ്</p>
-                    </div>
-                </div>
-                <div class="bus-time-right">
-                    <p class="bus-time">10:15 AM</p>
-                    <p class="bus-status">പുറപ്പെടാറായി</p>
-                </div>
+        <section class="location-box">
+            <h3 id="locTitle">📍 Live Location Sharing (Secure)</h3>
+            <p id="locDesc" class="sub-text">നിങ്ങളുടെ സുഹൃത്തുക്കൾക്കോ പാർട്ണർക്കോ തത്സമയ ലൊക്കേഷൻ സുരക്ഷിതമായി അയക്കാം. (ഡാറ്റ സെർവറിൽ സൂക്ഷിക്കില്ല)</p>
+            <div class="loc-controls">
+                <button id="startLocBtn" class="btn-primary">Share Live Location</button>
+                <button id="stopLocBtn" class="btn-danger" style="display:none;">Stop Sharing</button>
             </div>
-
-            <div class="bus-card" data-route="taliparamba">
-                <div class="bus-info-left">
-                    <div class="bus-icon-box">
-                        <i class="fa-solid fa-bus-simple"></i>
-                    </div>
-                    <div>
-                        <span class="bus-type-tag type-ord">Ordinary</span>
-                        <h4 class="bus-route-name">ചെമ്പേരി ➔ തളിപ്പറമ്പ്</h4>
-                        <p class="bus-via-route">Via മലപ്പട്ടം</p>
-                    </div>
-                </div>
-                <div class="bus-time-right">
-                    <p class="bus-time">10:45 AM</p>
-                    <p class="bus-status status-wait">30 മിനിറ്റ്</p>
-                </div>
+            <div id="shareLinkContainer" style="display:none; margin-top:10px;">
+                <input type="text" id="shareUrlInput" readonly>
+                <button id="copyLinkBtn" class="btn-secondary">Copy Link</button>
             </div>
+        </section>
 
-            <div class="bus-card" data-route="payyanur">
-                <div class="bus-info-left">
-                    <div class="bus-icon-box">
-                        <i class="fa-solid fa-bus-simple"></i>
-                    </div>
-                    <div>
-                        <span class="bus-type-tag type-ord">Ordinary</span>
-                        <h4 class="bus-route-name">ചെമ്പേരി ➔ പയ്യന്നൂർ</h4>
-                        <p class="bus-via-route">Via ആലക്കോട്</p>
-                    </div>
-                </div>
-                <div class="bus-time-right">
-                    <p class="bus-time">11:20 AM</p>
-                    <p class="bus-status status-wait">1 മണിക്കൂർ</p>
-                </div>
+        <section class="selector-section">
+            <h2 id="sourceTitle">നിങ്ങൾ ഇപ്പോൾ എവിടെയാണ്?</h2>
+            <div class="source-buttons">
+                <button id="srcChelliparamba" class="src-btn active">ചെല്ലിപ്പറമ്പ്</button>
+                <button id="srcChemperi" class="src-btn">ചെമ്പേരി</button>
             </div>
+        </section>
 
-        </div>
+        <section class="search-section">
+            <input type="text" id="searchBar" placeholder="ബസ് പേര് അല്ലെങ്കിൽ റൂട്ട് സെർച്ച് ചെയ്യാം...">
+        </section>
+
+        <section class="selector-section">
+            <h2 id="destTitle">ഏത് ഭാഗത്തേക്കാണ് പോകേണ്ടത്?</h2>
+            <div id="destContainer" class="dest-tabs-container"></div>
+        </section>
+
+        <section id="busList" class="bus-grid"></section>
+        
     </main>
 
-    <footer>
-        <p>Nammadabus.in &copy; 2026</p>
-        <p style="font-size: 10px; color: #cbd5e1; margin-top: 5px;">Made with ❤️ for Chemperi</p>
-    </footer>
+    <div class="feedback-container">
+        <button id="openFeedbackBtn" class="feedback-trigger">💡 Feedback & Suggestions</button>
+    </div>
 
-    <script>
-        // 1. ലൈവ് സെർച്ച് ലോജിക്
-        document.getElementById('busSearchInput').addEventListener('input', function(e) {
-            let filterValue = e.target.value.toLowerCase();
-            let busCards = document.querySelectorAll('.bus-card');
-            
-            busCards.forEach(function(card) {
-                let text = card.textContent.toLowerCase();
-                if(text.includes(filterValue)) {
-                    card.style.display = "flex";
-                } else {
-                    card.style.display = "none";
-                }
-            });
-        });
+    <div id="feedbackModal" class="modal">
+        <div class="modal-content">
+            <span class="close-modal">&times;</span>
+            <h3 id="feedHeader">നിങ്ങളുടെ നിർദ്ദേശങ്ങൾ അറിയിക്കൂ!</h3>
+            <p id="feedSub" class="sub-text">ഈ ആപ്പ് കൂടുതൽ മെച്ചപ്പെടുത്താൻ സഹായിക്കുന്ന എന്തും നിങ്ങൾക്ക് പങ്കുവെക്കാം.</p>
+            <textarea id="feedbackText" placeholder="നിങ്ങളുടെ സജഷൻ ഇവിടെ ടൈപ്പ് ചെയ്യുക..."></textarea>
+            <button id="submitFeedbackBtn" class="btn-primary">Submit Feedback</button>
+        </div>
+    </div>
 
-        // 2. ഫിൽട്ടർ ബട്ടൺ ലോജിക്
-        function filterRoute(route) {
-            let busCards = document.querySelectorAll('.bus-card');
-            busCards.forEach(function(card) {
-                if(route === 'all' || card.getAttribute('data-route') === route) {
-                    card.style.display = "flex";
-                } else {
-                    card.style.display = "none";
-                }
-            });
-
-            // ക്ലിക്ക് ചെയ്ത ബട്ടൺ നീല കളർ ആക്കാൻ
-            let buttons = document.querySelectorAll('.filter-btn');
-            buttons.forEach(btn => btn.classList.remove('active'));
-            event.target.classList.add('active');
-        }
-        window.addEventListener('load', function() {
-    setTimeout(function() {
-        document.getElementById('splash-screen').style.display = 'none';
-    }, 2000); // 60000ms = 60 സെക്കൻഡ് (1 മിനിറ്റ്)
-});
-    </script>
+    <script src="app.js"></script>
 </body>
 </html>
-
