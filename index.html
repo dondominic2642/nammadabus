@@ -3,85 +3,93 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>NammadaBus.in</title>
-    <link rel="manifest" href="./manifest.json">
-    <meta name="theme-color" content="#ff2e4d">
-    <link rel="stylesheet" href="./style.css">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Manjari:wght@400;700&family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
-    <style>
-        body { font-family: 'Poppins', 'Manjari', sans-serif; background-color: #f4f6f9; margin: 0; padding: 0; color: #333; }
-        .app-header { background: #ff2e4d; color: white; text-align: center; padding: 25px 15px; box-shadow: 0 4px 12px rgba(255,46,77,0.2); }
-        .header-container h1 { margin: 0; font-size: 28px; font-weight: 700; letter-spacing: -0.5px; }
-        .header-container h1 span { color: #ffe3e6; font-size: 20px; }
-        .tagline { margin: 5px 0 0 0; font-size: 14px; opacity: 0.9; }
-        .app-container { max-width: 600px; margin: 0 auto; padding: 20px 15px; box-shadow: none; }
-        .search-box-card { background: #fff; padding: 20px; border-radius: 16px; box-shadow: 0 8px 24px rgba(0,0,0,0.04); margin-bottom: 25px; border: 1px solid #edf2f7; }
-        .dropdown-label { display: block; margin-bottom: 10px; font-weight: bold; color: #2d3748; font-size: 15px; }
-        .stand-dropdown { width: 100%; padding: 14px; border-radius: 12px; border: 1px solid #e2e8f0; font-size: 16px; font-family: inherit; background-color: #fff; color: #4a5568; outline: none; transition: border-color 0.2s; box-sizing: border-box; }
-        .stand-dropdown:focus { border-color: #ff2e4d; }
-        .route-group { margin-top: 15px; }
-        .section-title { font-weight: bold; display: block; margin-bottom: 12px; color: #2d3748; font-size: 15px; }
-        .chip-container { display: flex; flex-wrap: wrap; gap: 4px; margin-bottom: 10px; }
-        .toggle-view-btn { padding: 11px 24px; border-radius: 25px; cursor: pointer; border: 1px solid #ff2e4d; background: transparent; color: #ff2e4d; font-weight: bold; display: none; font-family: inherit; font-size: 14px; transition: all 0.2s; }
-        .toggle-view-btn:hover { background: #ffebeb; }
-        .results-section { margin-top: 10px; transition: all 0.15s ease-out; }
-        .app-footer { text-align: center; padding: 30px 15px; margin-top: 40px; color: #a0aec0; font-size: 13px; border-top: 1px solid #edf2f7; }
-    </style>
+    <title>NammadaBus.in | Live Bus Timings</title>
+    <link rel="stylesheet" href="style.css">
+    
+    <!-- PWA & Mobile App Settings -->
+    <link rel="manifest" href="manifest.json">
+    <meta name="theme-color" content="#ff4757">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
 </head>
 <body>
 
-    <header class="app-header">
-        <div class="header-container">
-            <div class="logo-area" style="display: flex; align-items: center; justify-content: center; gap: 8px;">
-                <span class="bus-emoji" style="font-size: 28px;">🚌</span>
-                <h1>NammadaBus<span>.in</span></h1>
-            </div>
-            <p class="tagline">നമ്മുടെ സ്വന്തം ബസ് സമയവിവരങ്ങൾ</p>
+    <!-- 🚌 360° SPIN & FADE INTRO SPLASH SCREEN -->
+    <div id="introScreen" class="intro-overlay">
+        <div class="intro-content">
+            <div class="intro-logo">🚌</div>
+            <h1 class="intro-title">NammadaBus.in</h1>
         </div>
+    </div>
+
+    <!-- MAIN APP CONTENT (INTRO കഴിഞ്ഞാൽ ഇത് കാണാം) -->
+    <header class="app-header">
+        <h1>🚌 NammadaBus.in</h1>
+        <p>നമ്മുടെ സ്വന്തം ബസ് സമയവിവരങ്ങൾ</p>
+        <button id="langBtn" class="lang-btn">English</button>
     </header>
 
-    <main class="app-container">
-        <div class="search-box-card">
-            <label for="standSelect" class="dropdown-label">നിങ്ങൾ ഇപ്പോൾ എവിടെയാണ്? (Stand)</label>
-            <select id="standSelect" class="stand-dropdown">
-                <option value="chelliparamba">Chelliparamba (ചെല്ലിപ്പറമ്പ്)</option>
-                <option value="kuthuparamba">Kuthuparamba (കൂത്തുപറമ്പ്)</option>
-            </select>
+    <main class="container">
+        <!-- Live Location Feature -->
+        <section class="location-section">
+            <button id="startLocBtn" class="btn btn-start">📍 Live Location Share ചെയ്യാം</button>
+            <button id="stopLocBtn" class="btn btn-stop" style="display:none;">🛑 Sharing നിർത്താം</button>
+            <div id="shareLinkContainer" class="share-box" style="display:none;">
+                <input type="text" id="shareUrlInput" readonly>
+                <button id="copyLinkBtn" class="btn-copy">Copy</button>
+            </div>
+        </section>
+
+        <!-- Search Bar -->
+        <div class="search-container">
+            <input type="text" id="searchBar" placeholder="ബസ് പേര് അല്ലെങ്കിൽ റൂട്ട് സെർച്ച് ചെയ്യാം...">
         </div>
 
-        <div class="route-group">
-            <label class="section-title">ഏത് ഭാഗത്തേക്കാണ് പോകേണ്ടത്? (Destination)</label>
-            <div id="routeButtonsContainer" class="chip-container">
-                </div>
-        </div>
+        <!-- Dynamic Tabs -->
+        <section class="tabs-section">
+            <h2 id="sourceTitle">നിങ്ങൾ ഇപ്പോൾ എവിടെയാണ്? (Starting Point)</h2>
+            <div class="source-tabs">
+                <button id="srcChelliparamba" class="src-tab active">ചെല്ലിപ്പറമ്പ് / ചെമ്പേരി</button>
+                <button id="srcKuthuparamba" class="src-tab">கூത്തുപറമ്പ് / കണ്ണൂർ</button>
+            </div>
 
-        <div style="margin: 25px 0; text-align: center;">
-            <button id="toggleBusesBtn" class="toggle-view-btn">
-                📅 Show All Schedules
-            </button>
-        </div>
+            <h2 id="destTitle">ഏത് ഭാഗത്തേക്കാണ് പോകേണ്ടത്? (Destination)</h2>
+            <div id="destContainer" class="dest-tabs-container">
+                <!-- Destinations injected via JS -->
+            </div>
+        </section>
 
-        <section class="results-section" id="busListContainer">
-            </section>
+        <!-- Bus List Display -->
+        <section id="busList" class="bus-list">
+            <!-- Bus cards injected via JS -->
+        </section>
     </main>
 
-    <button id="langToggleBtn" style="position:fixed; bottom:20px; right:20px; background:#ff2e4d; color:white; border:none; padding:10px 18px; border-radius:25px; font-weight:bold; cursor:pointer; z-index:1000; box-shadow: 0 4px 12px rgba(255,46,77,0.3); font-family: 'Poppins', sans-serif; font-size: 14px;">English</button>
+    <!-- Feedback Feature -->
+    <button id="openFeedbackBtn" class="feedback-trigger-btn">💬 Suggestions</button>
+    
+    <div id="feedbackModal" class="modal">
+        <div class="modal-content">
+            <span class="close-modal">&times;</span>
+            <h3>നിങ്ങളുടെ നിർദ്ദേശങ്ങൾ അറിയിക്കൂ</h3>
+            <textarea id="feedbackText" placeholder="പുതിയ സമയങ്ങൾ അല്ലെങ്കിൽ മാറ്റങ്ങൾ ഇവിടെ ടൈപ്പ് ചെയ്യാം..."></textarea>
+            <button id="submitFeedbackBtn" class="btn btn-start">Submit</button>
+        </div>
+    </div>
 
-    <footer class="app-footer">
-        <p>© 2026 NammadaBus.in</p>
-    </footer>
+    <!-- Security Alert Banner -->
+    <div id="securityAlert" class="security-banner">⚠️ Security Lock: Screenshots and printing are disabled on this app.</div>
 
-    <script src="./app.js"></script>
+    <!-- Service Worker Registration -->
     <script>
         if ('serviceWorker' in navigator) {
             window.addEventListener('load', () => {
-                navigator.serviceWorker.register('./service-worker.js')
-                    .then(reg => console.log('Service Worker Registered!'))
-                    .catch(err => console.error('PWA Fail:', err));
+                navigator.serviceWorker.register('sw.js')
+                    .then(() => console.log('App ready for offline use.'))
+                    .catch(err => console.error('PWA Setup Failed:', err));
             });
         }
     </script>
+    <script src="app.js"></script>
 </body>
 </html>
