@@ -372,42 +372,16 @@ function renderRouteButtons() {
         btn.textContent = currentLanguage === 'ml' ? routeObj.ml : routeObj.en;
         btn.setAttribute('aria-pressed', selectedRoute === routeObj.id ? 'true' : 'false');
         
-        // 🎨 ബട്ടണുകൾ ഒട്ടിപ്പിടിക്കാതിരിക്കാനും ഭംഗിയാക്കാനുമുള്ള പുതിയ സ്റ്റൈലുകൾ ഇവിടെ ചേർത്തു:
-        btn.style.margin = "6px 4px";
-        btn.style.padding = "10px 18px";
-        btn.style.fontSize = "14px";
-        btn.style.borderRadius = "25px";
-        btn.style.cursor = "pointer";
-        btn.style.fontWeight = "600";
-        btn.style.transition = "all 0.2s ease";
-        btn.style.border = selectedRoute === routeObj.id ? "1px solid #ff2e4d" : "1px solid #ddd";
-        btn.style.background = selectedRoute === routeObj.id ? "#ff2e4d" : "#f8f9fa";
-        btn.style.color = selectedRoute === routeObj.id ? "#fff" : "#333";
-        btn.style.boxShadow = selectedRoute === routeObj.id ? "0 4px 8px rgba(255,46,77,0.2)" : "none";
-        
         btn.addEventListener('click', () => {
             if (selectedRoute === routeObj.id) return;
             
             document.querySelectorAll('.route-btn').forEach(b => {
                 b.classList.remove('active');
                 b.setAttribute('aria-pressed', 'false');
-                
-                // ക്ലിക്ക് ചെയ്യുമ്പോൾ ബാക്കിയുള്ള ബട്ടണുകളുടെ കളർ മാറ്റാൻ:
-                b.style.background = "#f8f9fa";
-                b.style.color = "#333";
-                b.style.border = "1px solid #ddd";
-                b.style.boxShadow = "none";
             });
             
             btn.classList.add('active');
             btn.setAttribute('aria-pressed', 'true');
-            
-            // സെലക്ട് ചെയ്ത ബട്ടണിന്റെ കളർ മാറ്റാൻ:
-            btn.style.background = "#ff2e4d";
-            btn.style.color = "#fff";
-            btn.style.border = "1px solid #ff2e4d";
-            btn.style.boxShadow = "0 4px 8px rgba(255,46,77,0.2)";
-            
             selectedRoute = routeObj.id;
             
             if (busListContainer) {
@@ -427,6 +401,7 @@ function renderRouteButtons() {
         routeButtonsContainer.appendChild(btn);
     });
 }
+
 function parseTimeToMinutes(timeStr) {
     if (!timeStr) return 0;
     const [time, modifier] = timeStr.split(' ');

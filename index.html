@@ -3,89 +3,99 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>NammadaBus.in</title>
+    <title>NammadaBus.in - നമ്മുടെ സ്വന്തം ബസ് സമയവിവരങ്ങൾ</title>
+    
     <link rel="manifest" href="./manifest.json">
     <meta name="theme-color" content="#ff2e4d">
+    
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="default">
+    <meta name="apple-mobile-web-app-title" content="Nammada Bus">
+    <link rel="apple-touch-icon" href="./icon-192.png">
+
     <link rel="stylesheet" href="./style.css">
+    
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Manjari:wght@400;700&family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
 </head>
 <body>
 
-    <!-- APP HEADER -->
     <header class="app-header">
         <div class="header-container">
             <div class="logo-area">
                 <span class="bus-emoji">🚌</span>
                 <h1>NammadaBus<span>.in</span></h1>
             </div>
-            <p id="appTagline" class="tagline">നമ്മുടെ സ്വന്തം ബസ് സമയവിവരങ്ങൾ</p>
+            <p class="tagline">നമ്മുടെ സ്വന്തം ബസ് സമയവിവരങ്ങൾ</p>
         </div>
-        <button id="langToggleBtn" class="lang-floating-btn">English</button>
     </header>
 
     <main class="app-container">
-        <!-- LIVE LOCATION SHARE BUTTON -->
-        <div class="live-share-wrapper">
-            <button id="liveShareBtn" class="live-share-btn">
-                <span class="pulse-dot"></span> 🟢 Live Location Share ലഭ്യമാണ്
+        
+        <div class="action-banner">
+            <button id="liveLocationBtn" class="btn-live">
+                <span class="pulse-dot"></span> Live Location Share ചെയ്യാം
             </button>
         </div>
 
-        <!-- SEARCH CONTAINER -->
-        <div class="search-wrapper">
-            <input type="text" id="busSearchInput" placeholder="ബസ് പേര് അല്ലെങ്കിൽ റൂട്ട് ടൈപ്പ് ചെയ്യുക...">
-        </div>
-
-        <!-- STARTING POINT SELECTOR -->
-        <div class="selector-card">
-            <label id="startLabel" class="field-title">നിങ്ങൾ ഇപ്പോൾ എവിടെയാണ്? (Starting Point)</label>
-            <div class="segmented-control">
-                <button class="segment-btn active" data-value="chelliparamba">ചെല്ലിപ്പറമ്പ് / ചെമ്പേരി</button>
-                <button class="segment-btn" data-value="kuthuparamba">കൂത്തുപറമ്പ് / കണ്ണൂർ</button>
+        <div class="search-box-card">
+            <div class="input-wrapper">
+                <span class="search-icon">🔍</span>
+                <input type="text" id="busSearchInput" placeholder="ബസ് പേര് അല്ലെങ്കിൽ റൂട്ട് ടൈപ്പ് ചെയ്യാം...">
             </div>
         </div>
 
-        <!-- DESTINATION SCROLLABLE CHIPS -->
-        <div class="destination-wrapper">
-            <label id="destLabel" class="field-title">ഏത് ഭാഗത്തേക്കാണ് പോകേണ്ടത്? (Destination)</label>
-            <div id="routeButtonsContainer" class="horizontal-scroll-chips">
-                <!-- Dynamically populated via JS -->
+        <section class="routing-section">
+            <div class="route-group">
+                <label class="section-title">നിങ്ങൾ ഇപ്പോൾ എവിടെയാണ്? <span class="sub-label">(Starting Point)</span></label>
+                <div class="chip-container" id="originChips">
+                    </div>
             </div>
-        </div>
 
-        <!-- TIME RANGE TOGGLE VIEW BUTTON -->
-        <div class="toggle-container">
-            <button id="toggleBusesBtn" class="toggle-view-btn">എല്ലാ സമയത്തെയും ബസ്സുകൾ കാണിക്കുക</button>
-        </div>
-
-        <!-- BUS TIMELINE CONTAINER -->
-        <section class="results-section" id="busListContainer">
-            <!-- Bus cards generated automatically via JavaScript -->
+            <div class="route-group">
+                <label class="section-title">ഏത് ഭാഗത്തേക്കാണ് പോകേണ്ടത്? <span class="sub-label">(Destination)</span></label>
+                <div class="chip-row-wrapper">
+                    <button class="nav-arrow left" id="slideLeftBtn" aria-label="Scroll Left">❬</button>
+                    <div class="chip-container horizontal-scroll" id="destinationChips">
+                        </div>
+                    <button class="nav-arrow right" id="slideRightBtn" aria-label="Scroll Right">❭</button>
+                </div>
+            </div>
         </section>
+
+        <div id="filterStatusMessage" class="status-info-bar">
+            കണ്ണൂർ ഭാഗത്ത് നിന്ന് കൂട്ടുപുഴ റൂട്ടിലെ ബസുകൾ കാണിക്കുന്നു
+        </div>
+
+        <section class="results-section" id="busResultsContainer">
+            </section>
     </main>
 
-    <!-- FLOATING SUGGESTIONS/FEEDBACK BUTTON -->
-    <button id="feedbackOpenBtn" class="feedback-floating-btn">
-        <span class="chat-icon">💬</span> Suggestions
-    </button>
-
-    <!-- MODAL POPUPS -->
-    <div id="feedbackModal" class="modal-overlay">
+    <div class="modal-overlay" id="feedbackModal">
         <div class="modal-card">
-            <button id="modalCloseBtn" class="modal-close">&times;</button>
-            <h3 id="modalTitle">നിങ്ങളുടെ നിർദ്ദേശങ്ങൾ അറിയിക്കൂ</h3>
-            <textarea id="modalTextarea" placeholder="എന്തെങ്കിലും മാറ്റങ്ങൾ ഉണ്ടെങ്കിൽ റൂട്ടും സമയവും ഇവിടെ എഴുതുക..."></textarea>
-            <button id="modalSubmitBtn" class="modal-submit">Submit</button>
+            <button class="modal-close-btn" id="closeModalBtn" aria-label="Close Feedback">×</button>
+            <h3>നിങ്ങളുടെ നിർദ്ദേശങ്ങൾ അറിയിക്കൂ</h3>
+            <textarea id="feedbackText" placeholder="എവിടെയാണ് മാറ്റങ്ങൾ വരുത്തേണ്ടത്? ഇവിടെ ടൈപ്പ് ചെയ്യാം..."></textarea>
+            <button class="btn-submit" id="submitFeedbackBtn">Submit</button>
         </div>
     </div>
 
-    <!-- FOOTER -->
     <footer class="app-footer">
-        <p>© 2026 NammadaBus.in</p>
+        <p>© 2026 NammadaBus.in | Created with ❤️</p>
     </footer>
 
     <script src="./app.js"></script>
+
+    <script>
+        if ('serviceWorker' in navigator) {
+            window.addEventListener('load', () => {
+                // Points perfectly to your verified service-worker.js to clean up any 404 errors
+                navigator.serviceWorker.register('./service-worker.js')
+                    .then(reg => console.log('Service Worker successfully registered! Scope:', reg.scope))
+                    .catch(err => console.error('PWA Service Worker Registration failed:', err));
+            });
+        }
+    </script>
 </body>
 </html>
